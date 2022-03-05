@@ -1,0 +1,51 @@
+.swatch {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-right: calc(0.75rem - 1px);
+  overflow: hidden;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 9999px !important;
+  transition: all 300ms;
+}
+
+.swatch:hover {
+  transform: scale(1.1);
+}
+
+.swatch > span {
+  position: absolute;
+}
+
+.color {
+  transition: all 300ms;
+  color: black;
+}
+
+.color:hover {
+  color: var(--text-color);
+}
+
+.color.dark,
+.color.dark:hover {
+  color: white !important;
+}
+
+.active {
+  border: 1px dotted var(--border-color);
+}
+
+.textLabel {
+  width: auto;
+  padding: 0 0.25em;
+  min-width: 3rem;
+}
+
+.active.textLabel {
+  padding-right: calc(1rem - 1px);
+  padding-left: calc(1rem - 1px);
+  border: 1px solid var(--border-color);
+}

@@ -1,0 +1,79 @@
+import s from './ProductSidebar.module.css'
+import { useAddItem } from '@framework/cart'
+import { FC, useEffect, useState } from 'react'
+import { ProductOptions } from '@components/product'
+import { Product } from '@commerce/types/product'
+import { useUI } from '@components/ui'
+import {
+  getProductVariant,
+  selectDefaultOptionFromProduct,
+  SelectedOptions,
+} from '../helpers'
+import usePrice from '@commerce/product/use-price'
+import Button from '@components/ui/Button'
+
+interface ProductSidebarProps {
+  product: Product
+  className?: string
+}
+
+const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
+  const addItem = useAddItem()
+  const { openSidebar } = useUI()
+  const [loading, setLoading] = useState(false)
+  const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({})
+
+  const { price } = usePrice({
+    amount: product.price.value,
+    baseAmount: product.price.retailPrice,
+    currencyCode: product.price.currencyCode!,
+  })
+
+  useEffect(() => {
+    selectDefaultOptionFromProduct(product, setSelectedOptions)
+  }, [product])
+
+  const variant = getProductVariant(product, selectedOptions)
+  const addToCart = async () => {
+    setLoading(true)
+    try {
+      await addItem({
+        productId: String(product.id),
+        variantId: String(variant ? variant.id : product.variants[0]?.id),
+      })
+      openSidebar()
+      setLoading(false)
+    } catch (err) {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div className={className}>
+      <ProductOptions
+        options={product.options}
+        selectedOptions={selectedOptions}
+        setSelectedOptions={setSelectedOptions}
+      />
+
+      {process.env.COMMERCE_CART_ENABLED && (
+        <div>
+          <Button
+            aria-label="Add to Cart"
+            type="button"
+            className={s.button}
+            onClick={addToCart}
+            loading={loading}
+            disabled={variant?.availableForSale === false}
+          >
+            {variant?.availableForSale === false
+              ? 'Not available'
+              : `Add To Cart - ${price}`}
+          </Button>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default ProductSidebar

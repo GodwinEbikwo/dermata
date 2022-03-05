@@ -1,0 +1,38 @@
+.body {
+  margin: auto;
+  max-width: 72rem;
+}
+
+.heading {
+  cursor: pointer;
+}
+
+.pageHeading {
+  font-weight: 500;
+}
+
+.sectionHeading {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.body ul,
+.body ol {
+  @apply pl-6;
+}
+
+.body ul {
+  list-style-type: disc;
+}
+
+.body ol {
+  list-style-type: decimal;
+}
+
+.body a {
+  text-decoration: underline;
+}
+
+.body a:hover {
+  text-decoration: none;
+}

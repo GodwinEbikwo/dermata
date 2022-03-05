@@ -1,0 +1,76 @@
+.root {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: var(--size-300);
+  padding-top: 0;
+}
+
+.list {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-items: end;
+}
+
+.item {
+  position: relative;
+  margin-left: 0.75rem;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.item svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--text-color);
+}
+
+.item:first-child {
+  margin-left: 0;
+}
+
+.item:focus:active {
+  margin-left: 0;
+}
+
+.bagCountTitle {
+  margin-right: 0.25rem;
+  color: var(--black);
+  text-transform: capitalize;
+}
+
+.bagCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--sage3);
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 9999px;
+  color: var(--accent);
+}
+
+.avatarButton {
+  display: inline-flex;
+  justify-content: center;
+  border-radius: 9999px;
+}
+
+.mobileMenu {
+  margin-left: 1rem;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+.avatarButton:focus,
+.mobileMenu:focus {
+  outline: none;
+}

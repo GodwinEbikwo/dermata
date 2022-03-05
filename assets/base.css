@@ -1,0 +1,273 @@
+:root {
+  --sage1: hsl(155 7% 8.4%);
+  --sage2: hsl(150 7.4% 10.6%);
+  --sage3: hsl(150 6.7% 13.1%);
+  --sage4: hsl(150 6.4% 15.3%);
+  --sage5: hsl(150 6.1% 17.4%);
+  --sage6: hsl(150 5.8% 19.9%);
+  --sage7: hsl(150 5.5% 23.6%);
+  --sage8: hsl(150 5.1% 30.6%);
+  --sage9: hsl(155 6% 42.5%);
+  --sage10: hsl(153 4.8% 48.2%);
+  --sage11: hsl(155 5% 61.8%);
+  --sage12: hsl(155 6% 93%);
+
+  --py-2: 1rem;
+  --px-2: 1rem;
+  --golden-ratio: 1.75rem;
+  --max-width: 90rem;
+
+  --bg: var(--sage1);
+  --text-color: hsl(210 6% 93%);
+
+  --nav-padding: 1.15rem;
+
+  --nav-toggle: var(--text-color);
+  --white: #fff;
+  --black: #000;
+  --marquee-text: var(--white);
+
+  --button-bg: #fff;
+  --button-text: #000;
+
+  --input-text: #fff;
+  --input-bg: var(--sage5);
+  --input-border-color: var(--accent-8);
+
+  --profile-bg: var(--sage3);
+
+  --accent-0: #fff;
+  --accent-1: #fafafa;
+  --accent-2: #eaeaea;
+  --accent-3: #999;
+  --accent-4: #888;
+  --accent-5: #666;
+  --accent-6: #444;
+  --accent-7: #333;
+  --accent-8: #111;
+  --accent-9: #000;
+
+  --font: 'Inter', Arial, sans-serif;
+
+  --border-color: rgba(255, 255, 255, 0.15);
+  --ls-sm: -0.011em;
+  --ls-md: -0.049em;
+  --ls-lg: -0.055em;
+  --btn-ls: 0.05em;
+
+  --spacer-half: 1rem;
+  --spacer: 2rem;
+  --spacer-md: 3rem;
+  --spacer-lg: 5rem;
+  --easing: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  --size-300: clamp(0.8rem, 0.75rem + 0.24vw, 0.85rem);
+  --size-400: clamp(0.88rem, 0.83rem + 0.24vw, 0.95rem); /*1rem*/
+  --size-500: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+  --size-600: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
+  --size-700: clamp(1.71rem, 1.45rem + 1.29vw, 2.37rem);
+  --size-800: clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem);
+  --size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
+  --size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
+}
+
+[data-theme='light'] {
+  --sage1: hsl(155 30% 98.8%);
+  --sage2: hsl(150 16.7% 97.6%);
+  --sage3: hsl(151 10.6% 95.2%);
+  --sage4: hsl(151 8.8% 93%);
+  --sage5: hsl(151 7.8% 90.8%);
+  --sage6: hsl(152 7.2% 88.4%);
+  --sage7: hsl(153 6.7% 85.3%);
+  --sage8: hsl(154 6.1% 77.5%);
+  --sage9: hsl(155 3.5% 55.5%);
+  --sage10: hsl(154 2.8% 51.7%);
+  --sage11: hsl(155 3% 43%);
+  --sage12: hsl(155 24% 9%);
+
+  --bg: var(--sage1);
+  --text-color: #222;
+  --white: #000;
+  --accent: #101010;
+  --black: #fff;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --input-bg: hsl(0 0% 9.5%);
+  --profile-bg: hsl(120 16.7% 97.6%);
+  --input-border-color: var(--sage11);
+
+  --button-bg: #000;
+  --button-text: #fff;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --px-2: 2rem;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+button,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+svg,
+img,
+strong,
+ol,
+ul,
+li,
+form,
+aside,
+article,
+footer,
+header,
+input,
+optgroup,
+select,
+textarea,
+fieldset,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 62.5%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(90, 90, 90, 1);
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: grabbing;
+}
+
+html {
+  background-color: var(--bg);
+}
+
+html:not(.has-scroll-init) {
+  cursor: wait;
+  overflow: hidden;
+}
+
+body {
+  overflow-x: auto;
+  line-height: 1.5;
+  font-family: var(--font);
+  font-weight: normal;
+  font-size: var(--size-300);
+  color: var(--text-color);
+  transition: all 300ms;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.enter-cookies {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: all 1s var(--easing);
+}
+
+.exit-cookies {
+  opacity: 0;
+  transform: translateY(150%);
+  transition: all 1s var(--easing);
+}
+
+.animated {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-timing-function: var(--easing);
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    y: '-30%';
+  }
+
+  to {
+    opacity: 1;
+    y: '0%';
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}

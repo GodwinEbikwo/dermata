@@ -1,0 +1,113 @@
+import { FC, useEffect, useState } from 'react'
+import cn from 'classnames'
+import Link from 'next/link'
+import { Product } from '@commerce/types/product'
+import s from './ProductCard.module.css'
+import Image, { ImageProps } from 'next/image'
+import usePrice from '@framework/product/use-price'
+
+interface Props {
+  width?: number
+  height?: number
+  className?: string
+  product: Product
+  noNameTag?: boolean
+  imgProps?: Omit<ImageProps, 'src' | 'layout' | 'placeholder' | 'blurDataURL'>
+  variant?: 'default' | 'slim' | 'simple'
+}
+
+const placeholderImg = '/product-img-placeholder.svg'
+
+const ProductCard: FC<Props> = ({
+  width,
+  height,
+  product,
+  imgProps,
+  className,
+  noNameTag = false,
+  variant = 'default',
+}) => {
+  const { price } = usePrice({
+    amount: product.price.value,
+    baseAmount: product.price.retailPrice,
+    currencyCode: product.price.currencyCode!,
+  })
+
+  const rootClassName = cn(
+    s.root,
+    { [s.simple]: variant === 'simple' },
+    className
+  )
+
+  return (
+    <Link href={`/product/${product.slug}`}>
+      <a className={rootClassName} aria-label={product.name}>
+        {variant === 'simple' && (
+          <>
+            <div className={s.imageContainer} data-scroll>
+              {product?.images && (
+                <Image
+                  alt={product.name || 'Product Image'}
+                  className="himg"
+                  src={product.images[0]?.url || placeholderImg}
+                  width={width ? width : 960}
+                  height={height ? height : 960}
+                  quality={100}
+                  layout="responsive"
+                  {...imgProps}
+                />
+              )}
+            </div>
+
+            {!noNameTag && (
+              <div className={s.productBottom}>
+                {product.availableForSale === false ? (
+                  <div className={s.available}>sold out</div>
+                ) : (
+                  <div className={s.name}>
+                    <span className={s.price}> {product.name} － </span>
+                    <span className={s.price}>{`${price}`}</span>
+                  </div>
+                )}
+              </div>
+            )}
+          </>
+        )}
+
+        {variant === 'default' && (
+          <>
+            <div className={s.imageContainer}>
+              {product?.images && (
+                <div>
+                  <Image
+                    alt={product.name || 'Product Image'}
+                    className={s.productImage}
+                    src={product.images[0]?.url || placeholderImg}
+                    width={450}
+                    height={600}
+                    quality="85"
+                    layout="responsive"
+                    {...imgProps}
+                  />
+                </div>
+              )}
+              {!noNameTag && (
+                <div className={s.imageContainerBottom}>
+                  <div className={s.name}>
+                    <span>{product.name}</span>
+                  </div>
+
+                  <div className={s.price}>
+                    {`${price} ${product.price?.currencyCode}`}
+                  </div>
+                </div>
+              )}
+            </div>
+          </>
+        )}
+      </a>
+    </Link>
+  )
+}
+
+export default ProductCard

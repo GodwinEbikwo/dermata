@@ -1,0 +1,61 @@
+.off {
+  display: hidden;
+}
+
+.linkBtn {
+  font-size: var(--size-300);
+  text-transform: capitalize;
+}
+
+.actions {
+  margin-bottom: 0.5em;
+}
+
+@media (max-width: 767px) {
+  .dropdownMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--sage4);
+    color: var(---text-color);
+    z-index: 40;
+    padding: 1rem;
+    visibility: hidden;
+    clip-path: inset(0 0 0 100%);
+    transition: clip-path 1.15s cubic-bezier(0.77, 0, 0.18, 1),
+      visibility 1.15s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
+  }
+
+  .showDisplay {
+    clip-path: inset(0%);
+    transition: clip-path 1s cubic-bezier(0.76, 0, 0.24, 1);
+    visibility: visible;
+  }
+}
+
+@media (min-width: 768px) {
+  .dropdownMenu {
+    position: absolute;
+    top: 60px;
+    left: -168px;
+    min-width: 200px;
+    min-height: 150px;
+    background-color: var(--accent);
+    color: var(--black);
+    z-index: 40;
+    padding: 1rem;
+    visibility: hidden;
+    clip-path: inset(0 0 0 100%);
+    transition: clip-path 1.15s cubic-bezier(0.77, 0, 0.18, 1),
+      visibility 1.15s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
+  }
+
+  .showDisplay {
+    clip-path: inset(0%);
+    transition: clip-path 1s cubic-bezier(0.76, 0, 0.24, 1);
+    visibility: visible;
+  }
+}

@@ -1,0 +1,47 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  height: 2.25rem;
+}
+
+.actions {
+  display: flex;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  padding: 0.25rem;
+  user-select: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.actions:hover {
+  transition: border-color;
+  z-index: 10;
+}
+
+.actions:focus {
+  outline: none;
+}
+
+.actions:disabled {
+  cursor: not-allowed;
+}
+
+.label {
+  margin-left: 0.5rem;
+  width: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.input {
+  pointer-events: auto;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  background-color: transparent;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: var(--text-color);
+}

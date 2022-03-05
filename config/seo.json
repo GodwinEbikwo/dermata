@@ -1,0 +1,26 @@
+{
+  "title": "Dermata ",
+  "titleTemplate": "%s",
+  "description": "An art and lifestyle brand",
+  "openGraph": {
+    "title": "Dermata",
+    "description": "An art and lifestyle brand",
+    "type": "website",
+    "locale": "en_GB",
+    "url": "https://Dermata.vercel.app",
+    "site_name": "Dermata art and lifestyle brand",
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/godwinebikwo/image/upload/v1645334092/Dermatapng_j6grlk.png",
+        "width": 1280,
+        "height": 800,
+        "alt": "Dermata Commerce"
+      }
+    ]
+  },
+  "twitter": {
+    "handle": "@Dermata",
+    "site": "@Dermata",
+    "cardType": "summary_large_image"
+  }
+}
