@@ -11,6 +11,7 @@ import useCart from '@framework/cart/use-cart'
 import useCustomer from '@framework/customer/use-customer'
 import { Avatar } from '@components/common'
 import { LineItem } from '@commerce/types/cart'
+import UserNav from '../UserNav'
 
 interface Link {
   href: string
@@ -148,6 +149,18 @@ export default function Header({ links }: NavbarProps) {
                 </Link>
               </li>
             </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div className={s.mobileNav}>
+        <div className={s.mobileNavInner}>
+          <Link href="/">
+            <a className={s.mobileNavLogo}>Dermata</a>
+          </Link>
+
+          <nav className={s.userNavBoxInner}>
+            <UserNav />
           </nav>
         </div>
       </div>

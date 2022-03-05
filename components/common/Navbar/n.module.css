@@ -53,6 +53,43 @@
   outline: none;
 }
 
+.mobileNav {
+  display: block;
+}
+
+.mobileNavInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em var(--px-2);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg);
+}
+
+/* mobile nav style */
+
+.mobileNavLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--size-500);
+  border: none;
+  font-family: 'MonumentExtended-Regular';
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.userNavBoxInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userNavBoxInner > * + * {
+  position: relative;
+  margin-left: 0.75rem;
+}
+
 @media only screen and (max-width: 1024px) {
   .header {
     display: none;
@@ -62,6 +99,12 @@
 @media only screen and (max-width: 1599px) {
   .header {
     grid-template-columns: 20% auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .mobileNav {
+    display: none;
   }
 }
 

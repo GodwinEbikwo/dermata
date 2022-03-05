@@ -85,6 +85,23 @@ p {
   display: none;
 }
 
+.mobile-visible {
+  display: block;
+}
+
+.desktop-visible {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-visible {
+    display: none;
+  }
+  .desktop-visible {
+    display: block;
+  }
+}
+
 .debug {
   border: 1px solid red;
 }

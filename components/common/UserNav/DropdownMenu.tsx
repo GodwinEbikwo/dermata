@@ -98,7 +98,6 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false }) => {
           <li className={s.actions}>
             <Button
               variant="slim"
-              style={{ background: 'var(--bg)', color: 'var(--white)' }}
               className={s.linkBtn}
               onClick={() => {
                 theme === 'dark' ? setTheme('light') : setTheme('dark')

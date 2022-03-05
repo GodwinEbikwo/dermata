@@ -4,6 +4,7 @@
   margin-bottom: var(--spacer);
   overflow: visible;
   padding-top: var(--spacer);
+  padding: var(--spacer-md) var(--px-2);
 }
 
 .button {
@@ -137,8 +138,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: var(--spacer);
-  padding: var(--spacer-lg) var(--px-2);
+  padding: var(--spacer-half) var(--px-2);
 }
 
 .rgridTitle h3 {
@@ -150,7 +150,7 @@
 
 .prefix {
   display: inline-block;
-  font-size: 4em;
+  font-size: 2em;
   line-height: 1;
   margin-right: 0.1em;
 }
@@ -161,7 +161,7 @@
   flex-wrap: wrap;
   gap: var(--gap);
   width: 100%;
-  padding: 0 var(--px-2);
+  padding: 0;
 }
 
 .rgrid > * {
@@ -177,5 +177,9 @@
   .rgridTitle {
     padding: 0;
     padding-bottom: var(--spacer-half);
+  }
+
+  .prefix {
+    font-size: 4em;
   }
 }

@@ -7,6 +7,7 @@
 
 .hleft {
   position: relative;
+  width: 100%;
 }
 
 .hLeftInner {
@@ -35,14 +36,14 @@
   /* padding: 3rem 0; */
 }
 
-.hright .btnContainer {
+.btnContainer {
   position: absolute;
   padding: 0 var(--spacer);
   bottom: var(--spacer);
   width: 100%;
 }
 
-.hright .cta_btn {
+.cta_btn {
   width: 100%;
 }
 

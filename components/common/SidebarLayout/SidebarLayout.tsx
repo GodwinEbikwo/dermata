@@ -65,7 +65,7 @@ const RootHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  z-index: 10;
+  z-index: -1;
   min-height: 46px;
 
   .back {
@@ -79,7 +79,6 @@ const RootHeader = styled.header`
     margin-right: 1.5rem;
     cursor: pointer;
     transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    color: var(--text-color);
 
     svg {
       width: 1.5rem;

@@ -46,11 +46,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--sage3);
+  background-color: var(--button-bg);
   width: 1.35rem;
   height: 1.35rem;
   border-radius: 9999px;
-  color: var(--accent);
+  color: var(--button-text);
 }
 
 .avatarButton {

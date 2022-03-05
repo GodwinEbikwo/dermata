@@ -2,9 +2,9 @@ const Menu = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="var(--black)"
+      fill="none"
       viewBox="0 0 24 24"
-      stroke="var(--black)"
+      stroke="#000"
       {...props}
     >
       <path
