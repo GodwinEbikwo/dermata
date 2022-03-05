@@ -34,14 +34,10 @@ export default function Hero({ products }: any) {
               <span className={s.prefix}>—</span>
               <h1 className={s.one_title}>
                 <FancySpan>
-                  <m.span className="inline-flex" variants={revealIn}>
-                    Dermata Spring
-                  </m.span>
+                  <m.span className="inline-flex">Dermata Spring</m.span>
                 </FancySpan>
                 <FancySpan>
-                  <m.span className="inline-flex" variants={revealIn}>
-                    Collection
-                  </m.span>
+                  <m.span className="inline-flex">Collection</m.span>
                 </FancySpan>
               </h1>
             </div>
