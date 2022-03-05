@@ -40,7 +40,6 @@
 .states_title {
   text-align: center;
   font-weight: 600;
-  letter-spacing: var(--ls-md);
 }
 
 .states_para {

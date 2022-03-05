@@ -1,10 +1,11 @@
 import s from './hero.module.css'
 import Image from 'next/image'
-import Div100vh from 'react-div-100vh'
+import Div100vh, { use100vh } from 'react-div-100vh'
 import { m } from 'framer-motion'
 import { ProductCard } from '@components/product'
 import { variantsAni, revealIn } from '@config/transitions'
 import useEmblaCarousel from 'embla-carousel-react'
+import { First } from './h'
 
 function FancySpan({ children }: any) {
   return <span className="block relative overflow-hidden">{children}</span>
@@ -24,10 +25,15 @@ function NotCard({ label }: any) {
 }
 
 export default function Hero({ products }: any) {
-  const [emblaRef] = useEmblaCarousel()
+  const height = use100vh()
+  const halfHeight = height ? height / 1.135 : '50vh'
   return (
     <section className="relative">
-      <Div100vh className={s.root}>
+      <div className={s.root}>
+        <First />
+      </div>
+
+      {/* <Div100vh className={s.root}>
         <div className={s.content}>
           <aside className={s.one}>
             <div className={s.one_inner}>
@@ -56,10 +62,9 @@ export default function Hero({ products }: any) {
             </div>
           </aside>
         </div>
-      </Div100vh>
+      </Div100vh> */}
 
       <m.ul
-        key="grid"
         initial="initial"
         whileInView="enter"
         variants={variantsAni}
@@ -82,7 +87,6 @@ export default function Hero({ products }: any) {
       </m.ul>
 
       <m.ul
-        key="grid"
         initial="initial"
         whileInView="enter"
         variants={variantsAni}
@@ -106,7 +110,6 @@ export default function Hero({ products }: any) {
       </m.ul>
 
       <m.ul
-        key="grid"
         initial="initial"
         whileInView="enter"
         variants={variantsAni}

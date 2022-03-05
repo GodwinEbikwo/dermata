@@ -8,7 +8,6 @@
 
 .header {
   border-bottom: 1px solid var(--border-color);
-  letter-spacing: 0.02rem;
   backface-visibility: hidden;
   user-select: none;
   transform-style: flat;
@@ -54,6 +53,12 @@
   outline: none;
 }
 
+@media only screen and (max-width: 1024px) {
+  .header {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 1599px) {
   .header {
     grid-template-columns: 20% auto;
@@ -93,7 +98,6 @@
   width: 100%;
   height: 100%;
   border: none;
-  letter-spacing: 0.02rem;
   text-transform: uppercase;
   padding: 0.2rem 1.5rem 0;
   font-size: var(--size-300);
