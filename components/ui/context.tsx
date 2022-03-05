@@ -231,7 +231,7 @@ export const ManagedUIContext: FC = ({ children }) => (
   <UIProvider>
     <ThemeProvider
       themes={['light', 'dark']}
-      defaultTheme="dark"
+      defaultTheme="light"
       disableTransitionOnChange
     >
       {children}
