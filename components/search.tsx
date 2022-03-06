@@ -145,7 +145,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 </button>
               </DropdownMenuTrigger>
 
-              <StyledContent sideOffset={3}>
+              <StyledContent sideOffset={0}>
                 {categories.map((cat: any) => (
                   <StyledItemList key={cat.path}>
                     <Link
@@ -157,7 +157,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                     >
                       <a
                         arial-label={cat.name}
-                        className="link link--metis  hide-for-mobile"
+                        className="link link--metis"
                         onClick={(e) => handleClick(e, 'categories')}
                       >
                         {cat.name}
@@ -178,7 +178,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 </button>
               </DropdownMenuTrigger>
 
-              <StyledContent sideOffset={3}>
+              <StyledContent sideOffset={0}>
                 {Object.entries(SORT).map(([key, text]) => (
                   <StyledItemList key={key}>
                     <Link
@@ -226,7 +226,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 <>
                   {rangeMap(12, (i) => (
                     <Skeleton key={i}>
-                      <div style={{ width: '25rem', height: '30rem' }} />
+                      <div style={{ width: '25rem', height: '20rem' }} />
                     </Skeleton>
                   ))}
                 </>

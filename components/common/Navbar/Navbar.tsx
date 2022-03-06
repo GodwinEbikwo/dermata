@@ -12,6 +12,7 @@ import useCustomer from '@framework/customer/use-customer'
 import { Avatar } from '@components/common'
 import { LineItem } from '@commerce/types/cart'
 import UserNav from '../UserNav'
+import Menu from '@components/icons/Menu'
 
 interface Link {
   href: string
@@ -39,7 +40,7 @@ function Form() {
 
 const countItem = (count: number, item: LineItem) => count + item.quantity
 
-export default function Header({ links }: NavbarProps) {
+function Header({ links }: NavbarProps) {
   const { theme, setTheme } = useTheme()
   const { data } = useCart()
   const { data: customer } = useCustomer()
@@ -155,15 +156,29 @@ export default function Header({ links }: NavbarProps) {
 
       <div className={s.mobileNav}>
         <div className={s.mobileNavInner}>
+          <Button
+            aria-label="toggle"
+            className={s.item}
+            variant="naked"
+            onClick={() => {
+              setSidebarView('MOBILEMENU_VIEW')
+              toggleSidebar()
+            }}
+          >
+            <Menu />
+          </Button>
+
           <Link href="/">
             <a className={s.mobileNavLogo}>Dermata</a>
           </Link>
 
-          <nav className={s.userNavBoxInner}>
+          <div className={s.userNavBoxInner}>
             <UserNav />
-          </nav>
+          </div>
         </div>
       </div>
     </header>
   )
 }
+
+export default Header

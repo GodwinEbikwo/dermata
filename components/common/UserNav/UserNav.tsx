@@ -36,7 +36,6 @@ const UserNav: FC<Props> = ({ className }) => {
               }}
               aria-label={`Cart items: ${itemsCount}`}
             >
-              <span className={s.bagCountTitle}>Bag</span>
               {itemsCount > 0 ? (
                 <span className={s.bagCount}>{itemsCount}</span>
               ) : (
@@ -46,7 +45,7 @@ const UserNav: FC<Props> = ({ className }) => {
           </li>
         )}
 
-        {process.env.COMMERCE_CUSTOMERAUTH_ENABLED && (
+        {/* {process.env.COMMERCE_CUSTOMERAUTH_ENABLED && (
           <li className={s.item}>
             {customer ? (
               <DropdownMenu />
@@ -60,9 +59,9 @@ const UserNav: FC<Props> = ({ className }) => {
               </button>
             )}
           </li>
-        )}
+        )} */}
 
-        <li className={s.mobileMenu}>
+        {/* <li className={s.mobileMenu}>
           <Button
             aria-label="toggle"
             className={s.item}
@@ -74,7 +73,7 @@ const UserNav: FC<Props> = ({ className }) => {
           >
             <Menu />
           </Button>
-        </li>
+        </li> */}
       </ul>
     </nav>
   )

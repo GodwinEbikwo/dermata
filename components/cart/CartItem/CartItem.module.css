@@ -43,6 +43,7 @@
 .name_price {
   display: flex;
   justify-content: space-between;
+  letter-spacing: var(--ls-sm);
 }
 
 .root_options {
@@ -68,9 +69,11 @@
   justify-content: center;
   border: 1px solid var(--border-color);
   height: 1.25rem;
-  padding: 0.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  padding: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 
 .root_price {

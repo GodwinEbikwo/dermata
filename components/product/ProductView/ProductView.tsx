@@ -5,7 +5,7 @@ import s from './p.module.css'
 import { Product } from '@commerce/types/product'
 import usePrice from '@commerce/product/use-price'
 import { useAddItem } from '@framework/cart'
-import { useUI } from '@components/ui'
+import { useUI, Text } from '@components/ui'
 import {
   getProductVariant,
   selectDefaultOptionFromProduct,
@@ -13,12 +13,12 @@ import {
 } from '../helpers'
 import Link from 'next/link'
 import Button from '@components/ui/Button'
-import parse, { domToReact } from 'html-react-parser'
 import Accordion from '@components/ui/Accordion'
 import SliderCarousel from '../EmblaSlider/slider'
 import { shimmer, toBase64 } from '@config/img-helpers'
 import styled from 'styled-components'
 import ProductCard from '../ProductCard'
+import { ProductOptions } from '..'
 
 interface ProductViewProps {
   product: Product
@@ -57,24 +57,8 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
     }
   }
 
-  const options = {
-    replace: ({ attribs, children }: any) => {
-      if (!attribs) {
-        return
-      }
-
-      if (attribs.class === 'prettify') {
-        return (
-          <span style={{ color: 'hotpink' }}>
-            {domToReact(children, options)}
-          </span>
-        )
-      }
-    },
-  }
-
   //@ts-ignore
-  const rawString = parse(product?.descriptionHtml, options)
+
   const images = product.images
 
   return (
@@ -105,31 +89,39 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
         </aside>
 
         <aside className={s.gridRight}>
-          <div data-scroll>
+          <div>
             <div className={s.pinfo}>
-              <span className={s.prefix}>—</span>
               <h3 className={s.productTitle}>{product.name}</h3>
               <h3 className={s.productPrice}>{price}</h3>
             </div>
 
-            <div style={{ marginBottom: 'var(--spacer-half)' }}>
-              <div className={s.rawString}>{rawString}</div>
-            </div>
+            <ProductOptions
+              options={product.options}
+              selectedOptions={selectedOptions}
+              setSelectedOptions={setSelectedOptions}
+            />
 
-            {process.env.COMMERCE_CART_ENABLED && (
-              <Button
-                aria-label={`Add ${product.name} to your cart`}
-                type="button"
-                onClick={addToCart}
-                loading={loading}
-                className={s.button}
-                disabled={variant?.availableForSale === false}
-              >
-                {variant?.availableForSale === false
-                  ? 'Product not available'
-                  : `Add To Cart - ${price}`}
-              </Button>
-            )}
+            <Text
+              className={s.productDesc}
+              html={product.descriptionHtml || product.description}
+            />
+
+            <div className={s.btnContainer}>
+              {process.env.COMMERCE_CART_ENABLED && (
+                <Button
+                  aria-label={`Add ${product.name} to your cart`}
+                  type="button"
+                  onClick={addToCart}
+                  loading={loading}
+                  className={s.button}
+                  disabled={variant?.availableForSale === false}
+                >
+                  {variant?.availableForSale === false
+                    ? 'Product not available'
+                    : `Add To Cart - ${price}`}
+                </Button>
+              )}
+            </div>
 
             <div className={s.accordionContainer}>
               <Accordion title="Shipping & Returns">
@@ -161,16 +153,15 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
       </div>
 
       <div className={s.rgridTitle}>
-        <div className={s.pinfo}>
-          <span className={s.prefix}>—</span>
-          <h3 style={{ display: 'inline' }}>
-            <Link href="/search">
-              <a>More</a>
-            </Link>
-            <br />
-            Products
-          </h3>
-        </div>
+        <h3>
+          <Link href="/search">
+            <a>
+              More
+              <br />
+              Products
+            </a>
+          </Link>
+        </h3>
       </div>
 
       <ul className={s.rgrid}>

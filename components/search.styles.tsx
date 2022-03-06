@@ -91,7 +91,7 @@ export const SearchContainerInner = styled.div`
 
   .s_second {
     display: grid;
-    grid-gap: 2em;
+    grid-gap: 1em;
     grid-template-columns: repeat(1, minmax(0, 1fr));
 
     @media (min-width: 375px) {
@@ -99,6 +99,7 @@ export const SearchContainerInner = styled.div`
     }
 
     @media (min-width: 1252px) {
+      grid-gap: 2em;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       height: fit-content;
       grid-column: 1 / span 12;

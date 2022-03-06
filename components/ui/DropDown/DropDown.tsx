@@ -27,7 +27,7 @@ export const StyledContent = styled(DropdownMenuPrimitive.Content)`
   box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.15),
     0px 10px 20px -15px rgba(22, 23, 24, 0.4);
 
-  @media (prefers-reduced-motion: no-preference) {
+  /* @media (prefers-reduced-motion: no-preference) {
     animation-duration: 400ms;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
@@ -47,7 +47,7 @@ export const StyledContent = styled(DropdownMenuPrimitive.Content)`
         animation-name: ${slideUpAndFade};
       }
     }
-  }
+  } */
 `
 
 export const StyledItem = styled(DropdownMenuPrimitive.Item)`
