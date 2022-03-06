@@ -122,32 +122,6 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                 </Button>
               )}
             </div>
-
-            <div className={s.accordionContainer}>
-              <Accordion title="Shipping & Returns">
-                <List>
-                  <li>Delivery in 3-5 business days</li>
-                  <li>30 day return & exchange window</li>
-                  <li>Defects are replaced free of charge</li>
-                  <li>VAT & duty free delivery</li>
-                </List>
-              </Accordion>
-              <Accordion title="Sustainability">
-                <List>
-                  <li>100% recyclable packaging.</li>
-                  <li>Locally sourced & recycled materials</li>
-                </List>
-              </Accordion>
-              <Accordion title="Help & Contact ">
-                <Link href="/contact">
-                  <a className="link link--metis">Contact us by email</a>
-                </Link>
-                <br />
-                <Link href="/contact">
-                  <a className="link link--metis">Contact us by Instagram</a>
-                </Link>
-              </Accordion>
-            </div>
           </div>
         </aside>
       </div>

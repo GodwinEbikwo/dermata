@@ -28,41 +28,10 @@ export default function Hero({ products }: any) {
   const height = use100vh()
   const halfHeight = height ? height / 1.135 : '50vh'
   return (
-    <section className="relative">
-      <div className={s.root}>
+    <section className={s.root}>
+      {/* <div className={s.root}>
         <First />
-      </div>
-
-      {/* <Div100vh className={s.root}>
-        <div className={s.content}>
-          <aside className={s.one}>
-            <div className={s.one_inner}>
-              <span className={s.prefix}>—</span>
-              <h1 className={s.one_title}>
-                <FancySpan>
-                  <m.span className="inline-flex">Dermata Spring</m.span>
-                </FancySpan>
-                <FancySpan>
-                  <m.span className="inline-flex">Collection</m.span>
-                </FancySpan>
-              </h1>
-            </div>
-          </aside>
-
-          <aside className={s.two}>
-            <div className={s.two_inner} data-scroll>
-              <Image
-                src="https://res.cloudinary.com/godwinebikwo/image/upload/q_100/v1646219775/9_2400x2400_vfjaic.jpg"
-                alt="alt season"
-                layout="fill"
-                objectFit="fill"
-                quality={100}
-                className="a-img"
-              />
-            </div>
-          </aside>
-        </div>
-      </Div100vh> */}
+      </div> */}
 
       <m.ul
         initial="initial"
