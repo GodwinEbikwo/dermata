@@ -29,7 +29,6 @@
     "email-validator": "^2.0.4",
     "embla-carousel-react": "^6.0.2",
     "framer-motion": "^6.0.0",
-    "html-react-parser": "^1.4.6",
     "immutability-helper": "^3.1.1",
     "js-cookie": "^2.2.1",
     "locomotive-scroll": "^4.1.3",
