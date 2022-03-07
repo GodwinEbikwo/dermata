@@ -29,9 +29,9 @@ export default function Hero({ products }: any) {
   const halfHeight = height ? height / 1.135 : '50vh'
   return (
     <section className={s.root}>
-      {/* <div className={s.root}>
+      <div className={s.root}>
         <First />
-      </div> */}
+      </div>
 
       <m.ul
         initial="initial"

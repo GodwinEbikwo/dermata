@@ -8,6 +8,11 @@
 .hleft {
   position: relative;
   width: 100%;
+  background-color: var(--sage3);
+  background-image: url('https://res.cloudinary.com/godwinebikwo/image/upload/e_grayscale/v1646679540/joeyy-lee-s8SJ8pmxPDA-unsplash_dzfghb.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hLeftInner {
@@ -17,19 +22,16 @@
   padding: 0 var(--px-2);
 }
 
-.hleftTitle {
-  letter-spacing: 0.02em;
-  max-width: 7.5ch;
-  margin-bottom: 1rem;
+.BannerTitle {
   line-height: 1;
-  font-family: 'MonumentExtended-Regular';
   text-transform: uppercase;
+  color: white;
 }
 
 .hright {
   position: relative;
   background-color: var(--sage3);
-  background-image: url('https://res.cloudinary.com/godwinebikwo/image/upload/q_100/v1646219775/9_2400x2400_vfjaic.jpg');
+  background-image: url('https://res.cloudinary.com/godwinebikwo/image/upload/e_grayscale/v1646680459/buffalo-5-1024x_ua0owq.jpg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;

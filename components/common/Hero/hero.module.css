@@ -1,6 +1,6 @@
 .root {
   position: relative;
-  padding-top: var(--spacer);
+  padding-top: var(--spacer-half);
   width: 100%;
 }
 
@@ -70,7 +70,7 @@
 
 @media (min-width: 1024px) {
   .root {
-    padding-top: 10vh;
+    padding-top: 5.5vh;
   }
 
   .content {
