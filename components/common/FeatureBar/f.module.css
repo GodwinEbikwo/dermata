@@ -47,7 +47,7 @@
 @media (min-width: 768px) {
   .root {
     right: var(--px-2);
-    width: 22.5%;
+    width: 26.5%;
     bottom: var(--spacer-half);
     font-size: var(--size-300);
     max-width: 100%;
