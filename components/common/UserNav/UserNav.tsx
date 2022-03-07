@@ -36,6 +36,7 @@ const UserNav: FC<Props> = ({ className }) => {
               }}
               aria-label={`Cart items: ${itemsCount}`}
             >
+              <span className={s.itemName}>cart</span>
               {itemsCount > 0 ? (
                 <span className={s.bagCount}>{itemsCount}</span>
               ) : (

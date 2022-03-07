@@ -14,12 +14,19 @@
   justify-items: end;
 }
 
+.itemName {
+  display: inline-block;
+  margin-right: 0.5em;
+  padding-top: 0.15em;
+}
+
 .item {
   position: relative;
   margin-left: 0.75rem;
   display: flex;
   cursor: pointer;
   align-items: center;
+  color: var(--text-color);
 }
 
 .item svg {
