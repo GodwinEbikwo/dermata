@@ -132,7 +132,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
-                  style={{ fontWeight: 500 }}
+                  style={{ fontWeight: 500, color: 'var(--text-color)' }}
                   className="cursor-pointer text-uppercase"
                 >
                   Filter
@@ -165,7 +165,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
-                  style={{ fontWeight: 500 }}
+                  style={{ fontWeight: 500, color: 'var(--text-color)' }}
                   className="cursor-pointer text-uppercase"
                 >
                   Sort by
