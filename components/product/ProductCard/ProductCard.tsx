@@ -65,8 +65,11 @@ const ProductCard: FC<Props> = ({
                   <div className={s.available}>sold out</div>
                 ) : (
                   <div className={s.name}>
-                    <span className={s.price}> {product.name} － </span>
-                    <span className={s.price}>{`${price}`}</span>
+                    <div className={s.price}>
+                      <span>－</span>
+                      {product.name}
+                    </div>
+                    <div className={s.price}>{`${price}`}</div>
                   </div>
                 )}
               </div>

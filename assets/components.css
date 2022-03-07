@@ -272,7 +272,7 @@ p {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transform: scale3d(1.25, 1.25, 1.25) rotate(8deg);
+  transform: scale3d(1.25, 1.25, 1.25);
   transform-origin: 50% 50%;
   transition: transform 1.35s cubic-bezier(0.215, 0.61, 0.355, 1),
     opacity 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -282,7 +282,7 @@ p {
 
 .is-inview .a-img {
   opacity: 1;
-  transform: scale3d(1, 1, 1) rotate(0deg);
+  transform: scale3d(1, 1, 1);
 }
 
 .himg {

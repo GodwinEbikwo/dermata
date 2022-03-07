@@ -84,22 +84,16 @@ export default function Search({ categories, brands }: SearchPropsType) {
                     <div
                       style={{
                         transition: 'all ease-in 300ms',
-                        fontWeight: 500,
+                        fontWeight: 600,
                       }}
                       className={cn('animated text-uppercase', {
                         fadeIn: data.found,
                         hidden: !data.found,
                       })}
                     >
-                      Showing {data.products.length} results for{' '}
-                      <span
-                        className="inline-block text-uppercase"
-                        style={{
-                          fontWeight: 700,
-                        }}
-                      >
-                        {activeCategory?.name}
-                      </span>
+                      <span>－</span> {activeCategory?.name} (
+                      {data.products.length} item
+                      {data.products.length === 1 ? '' : 's'})
                     </div>
                     <span
                       className={cn('animated', {

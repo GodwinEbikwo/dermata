@@ -1,22 +1,45 @@
 import { useMemo } from 'react'
 import { useCommerce } from '..'
 
-export function formatPrice({
-  amount,
-  currencyCode,
-  locale,
-}: {
+interface props {
   amount: number
   currencyCode: string
   locale: string
-}) {
-  const formatCurrency = new Intl.NumberFormat(locale, {
+  minimumFractionDigits: number
+}
+
+export function formatPrice({ amount, currencyCode, locale }: props) {
+  const options = {
     style: 'currency',
     currency: currencyCode,
-  })
+    minimumFractionDigits: 0,
+  }
 
+  // check if the remainder is equal to zero an set accordingly
+  if (amount % 100 === 0) {
+    options.minimumFractionDigits = 0
+  }
+
+  const formatCurrency = Intl.NumberFormat(locale, options)
   return formatCurrency.format(amount)
 }
+
+// export function formatPrice({
+//   amount,
+//   currencyCode,
+//   locale,
+// }: {
+//   amount: number
+//   currencyCode: string
+//   locale: string
+// }) {
+//   const formatCurrency = new Intl.NumberFormat(locale, {
+//     style: 'currency',
+//     currency: currencyCode,
+//   })
+
+//   return formatCurrency.format(amount)
+// }
 
 export function formatVariantPrice({
   amount,
@@ -35,9 +58,17 @@ export function formatVariantPrice({
     ? formatDiscount.format((baseAmount - amount) / baseAmount)
     : null
 
-  const price = formatPrice({ amount, currencyCode, locale })
+  const price = formatPrice({
+    amount,
+    currencyCode,
+    locale,
+  })
   const basePrice = hasDiscount
-    ? formatPrice({ amount: baseAmount, currencyCode, locale })
+    ? formatPrice({
+        amount: baseAmount,
+        currencyCode,
+        locale,
+      })
     : null
 
   return { price, basePrice, discount }

@@ -4,7 +4,7 @@ import { useMenu } from '@context/search-context'
 import DropdownMenuDemo from '@components/ui/DropDown'
 import { Sun } from '@components/icons'
 import { useTheme } from 'next-themes'
-import { I18nWidget } from '..'
+import { I18nWidget, Searchbar } from '..'
 import { useUI } from '@components/ui/context'
 import Button from '@components/ui/Button'
 import useCart from '@framework/cart/use-cart'
@@ -56,7 +56,7 @@ function Header({ links }: NavbarProps) {
 
         <div className={s.header_main_top}>
           <div className={s.header_search}>
-            <Form />
+            <Searchbar id="mobile-search" />
           </div>
 
           <div className={s.header_controls}>
@@ -136,7 +136,7 @@ function Header({ links }: NavbarProps) {
             <ul className="flex">
               <li className={s.header_nav_item}>
                 <Link href="/">
-                  <a>Store</a>
+                  <a>Blog</a>
                 </Link>
               </li>
               <li className={s.header_nav_item}>

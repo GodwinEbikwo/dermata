@@ -89,9 +89,17 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
         </aside>
 
         <aside className={s.gridRight}>
-          <div>
-            <div className={s.pinfo}>
-              <h3 className={s.productTitle}>{product.name}</h3>
+          <div data-scroll id="product-info">
+            <div
+              className={s.pinfo}
+              data-scroll
+              data-scroll-sticky="true"
+              data-scroll-target="#product-info"
+            >
+              <h3 className={s.productTitle}>
+                <span>－</span>
+                {product.name}
+              </h3>
               <h3 className={s.productPrice}>{price}</h3>
             </div>
 
@@ -130,6 +138,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
         <h3>
           <Link href="/search">
             <a>
+              <span>－</span>
               More
               <br />
               Products
