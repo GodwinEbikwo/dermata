@@ -117,11 +117,6 @@
   display: flex;
   cursor: pointer;
   align-items: center;
-}
-
-.item svg {
-  width: 1.5rem;
-  height: 1.5rem;
   color: var(--text-color);
 }
 

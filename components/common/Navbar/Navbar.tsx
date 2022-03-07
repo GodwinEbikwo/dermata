@@ -165,7 +165,7 @@ function Header({ links }: NavbarProps) {
               toggleSidebar()
             }}
           >
-            <Menu />
+            <span>Menu</span>
           </Button>
 
           <Link href="/">
