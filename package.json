@@ -19,7 +19,6 @@
     "node": ">=14.x"
   },
   "dependencies": {
-    "@cyriacbr/react-split-text": "^1.0.0",
     "@radix-ui/react-dropdown-menu": "^0.1.6",
     "@vercel/fetch": "^6.1.1",
     "autoprefixer": "^10.2.6",
