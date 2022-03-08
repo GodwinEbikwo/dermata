@@ -21,7 +21,7 @@
 }
 
 .bgCover {
-  position: fixed;
+  position: absolute;
   height: 50vh;
   width: 100vw;
   overflow: hidden;
@@ -42,6 +42,7 @@
 
 @media (min-width: 700px) {
   .bgCover {
+    position: fixed;
     height: 100vh;
     width: 50vw;
     overflow: hidden;

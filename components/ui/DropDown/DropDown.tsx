@@ -2,6 +2,7 @@ import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import styled, { keyframes } from 'styled-components'
 import { ArrowRight, Contact, Orders, Profile } from '@components/icons'
 import { useRouter } from 'next/router'
+import useLogout from '@framework/auth/use-logout'
 
 export const slideUpAndFade = keyframes`
   from {
@@ -27,7 +28,7 @@ export const StyledContent = styled(DropdownMenuPrimitive.Content)`
   box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.15),
     0px 10px 20px -15px rgba(22, 23, 24, 0.4);
 
-  /* @media (prefers-reduced-motion: no-preference) {
+  @media (prefers-reduced-motion: no-preference) {
     animation-duration: 400ms;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
@@ -47,7 +48,7 @@ export const StyledContent = styled(DropdownMenuPrimitive.Content)`
         animation-name: ${slideUpAndFade};
       }
     }
-  } */
+  }
 `
 
 export const StyledItem = styled(DropdownMenuPrimitive.Item)`
@@ -70,6 +71,11 @@ export const StyledItem = styled(DropdownMenuPrimitive.Item)`
 
   &:focus {
     background-color: var(--accent-2);
+  }
+
+  &.bold {
+    font-weight: 600;
+    text-transform: uppercase;
   }
 `
 
@@ -114,73 +120,77 @@ export const RightSlot = styled.div`
 
 const DropdownMenuDemo = () => {
   const router = useRouter()
+  const logout = useLogout()
   return (
-    <>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <a className="cursor-pointer">
-            <Profile />
-          </a>
-        </DropdownMenuTrigger>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <a className="cursor-pointer">
+          <Profile />
+        </a>
+      </DropdownMenuTrigger>
 
-        <DropdownMenuContent sideOffset={5}>
-          <DropdownMenuItem
-            onSelect={(e: any) => {
-              e.preventDefault()
-              router.push({
-                pathname: '/cart',
-              })
-            }}
-          >
-            Cart
-            <RightSlot>
-              <ArrowRight />
-            </RightSlot>
-          </DropdownMenuItem>
-          <DropdownMenuItem
-            onSelect={(e: any) => {
-              e.preventDefault()
-              router.push({
-                pathname: '/orders',
-              })
-            }}
-          >
-            Orders
-            <RightSlot>
-              <Orders />
-            </RightSlot>
-          </DropdownMenuItem>
-          <DropdownMenuItem
-            onSelect={(e: any) => {
-              e.preventDefault()
-              router.push({
-                pathname: '/profile',
-              })
-            }}
-          >
-            Profile
-            <RightSlot>
-              <Profile />
-            </RightSlot>
-          </DropdownMenuItem>
-          <DropdownMenuItem
-            onSelect={(e: any) => {
-              e.preventDefault()
-              router.push({
-                pathname: '/refunds',
-              })
-            }}
-          >
-            Contact
-            <RightSlot>
-              <Contact />
-            </RightSlot>
-          </DropdownMenuItem>
-          <DropdownMenuItem disabled>Derma</DropdownMenuItem>
-          <DropdownMenuArrow />
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </>
+      <DropdownMenuContent sideOffset={5}>
+        <DropdownMenuItem
+          onSelect={(e: any) => {
+            e.preventDefault()
+            router.push({
+              pathname: '/cart',
+            })
+          }}
+        >
+          Cart
+          <RightSlot>
+            <ArrowRight />
+          </RightSlot>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onSelect={(e: any) => {
+            e.preventDefault()
+            router.push({
+              pathname: '/orders',
+            })
+          }}
+        >
+          Orders
+          <RightSlot>
+            <Orders />
+          </RightSlot>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onSelect={(e: any) => {
+            e.preventDefault()
+            router.push({
+              pathname: '/profile',
+            })
+          }}
+        >
+          Profile
+          <RightSlot>
+            <Profile />
+          </RightSlot>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onSelect={(e: any) => {
+            e.preventDefault()
+            router.push({
+              pathname: '/refunds',
+            })
+          }}
+        >
+          Contact
+          <RightSlot>
+            <Contact />
+          </RightSlot>
+        </DropdownMenuItem>
+
+        <DropdownMenuItem className="bold" onSelect={() => logout()}>
+          logout
+        </DropdownMenuItem>
+
+        <DropdownMenuItem disabled>Derma</DropdownMenuItem>
+        <DropdownMenuArrow />
+      </DropdownMenuContent>
+    </DropdownMenu>
   )
 }
 

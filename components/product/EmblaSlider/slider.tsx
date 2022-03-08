@@ -27,15 +27,15 @@ const SliderCarousel = ({ product }: any) => {
                   <Image
                     className="a-img"
                     priority={i === 0}
-                    width={image.width}
-                    height={image.height}
+                    width={image.width / 4}
+                    height={image.height / 4}
                     quality="100"
                     layout="intrinsic"
                     src={image.url}
                     alt={image.alt || 'betterlate product'}
                     placeholder="blur"
                     blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                      shimmer(image.width, image.height)
+                      shimmer(image.width / 4, image.height / 4)
                     )}`}
                   />
                 </div>

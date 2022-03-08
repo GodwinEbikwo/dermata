@@ -3,7 +3,7 @@ export const fade = {
   enter: {
     opacity: 1,
     transition: {
-      duration: 0.8,
+      duration: 0.4,
       staggerChildren: 0.03,
     },
   },

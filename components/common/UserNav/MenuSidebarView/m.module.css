@@ -1,0 +1,27 @@
+.list {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1em var(--px-2);
+}
+
+.label {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.button {
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.navBottom {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: var(--spacer-half);
+}
+
+.item {
+  border: 1px solid var(--border-color);
+  padding: 1em var(--px-2);
+}

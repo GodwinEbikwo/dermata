@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { Cross, ChevronLeft } from '@components/icons'
 import { UserNav } from '@components/common'
 import styled from 'styled-components'
+import Div100vh from 'react-div-100vh'
 
 type ComponentProps = { className?: string } & (
   | { handleClose: () => any; handleBack?: never }
@@ -15,7 +16,7 @@ const SidebarLayout: FC<ComponentProps> = ({
   handleBack,
 }) => {
   return (
-    <Root className={className}>
+    <Root>
       <RootHeader>
         {handleClose && (
           <button
@@ -48,14 +49,9 @@ export default SidebarLayout
 
 const Root = styled.div`
   position: relative;
-  height: 100%;
   display: flex;
+  height: 100%;
   flex-direction: column;
-  padding: 0 var(--px-2);
-
-  @media (min-width: 768px) {
-    padding: 0 calc(var(--px-2) - 0.75rem);
-  }
 `
 
 const RootHeader = styled.header`
@@ -87,7 +83,8 @@ const RootHeader = styled.header`
   }
 `
 
-const Container = styled.div`
+const Container = styled(Div100vh)`
+  position: relative;
   display: flex;
   flex-direction: column;
 `
