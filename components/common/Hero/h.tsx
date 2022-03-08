@@ -11,13 +11,14 @@ export const First = () => {
   return (
     <div style={{ height: halfHeight }} className={s.hgrid}>
       <m.aside className={s.hleft}>
-        <div className={s.bgCover}>
+        <div className={s.bgCover} data-scroll>
           <Image
             alt="Mountains"
             src="https://res.cloudinary.com/godwinebikwo/image/upload/e_grayscale/v1646679540/joeyy-lee-s8SJ8pmxPDA-unsplash_dzfghb.jpg"
             layout="fill"
             objectFit="cover"
             quality={100}
+            className="a-img"
           />
 
           <div className="center-absolute">
@@ -31,13 +32,14 @@ export const First = () => {
       </m.aside>
 
       <m.aside className={s.hright}>
-        <div className={s.bgCover}>
+        <div className={s.bgCover} data-scroll>
           <Image
             alt="Mountains"
             src="https://res.cloudinary.com/godwinebikwo/image/upload/e_grayscale/v1646680459/buffalo-5-1024x_ua0owq.jpg"
             layout="fill"
             objectFit="cover"
             quality={100}
+            className="a-img"
           />
 
           <div className="center-absolute">
