@@ -10,6 +10,7 @@ const isShopify = provider === 'shopify'
 module.exports = withCommerceConfig({
   commerce,
   swcMinify: true,
+  styledComponents: true,
   images: {
     domains: ['res.cloudinary.com'],
   },
