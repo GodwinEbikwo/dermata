@@ -5,16 +5,6 @@
   width: 100%;
 }
 
-.hleft {
-  position: relative;
-  width: 100%;
-  background-color: var(--sage3);
-  background-image: url('https://res.cloudinary.com/godwinebikwo/image/upload/e_grayscale/v1646679540/joeyy-lee-s8SJ8pmxPDA-unsplash_dzfghb.jpg');
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .hLeftInner {
   position: absolute;
   bottom: 1rem;
@@ -23,19 +13,20 @@
 }
 
 .BannerTitle {
+  position: relative;
   line-height: 1;
   text-transform: uppercase;
   color: white;
+  z-index: 3;
 }
 
-.hright {
-  position: relative;
+.bgCover {
+  position: fixed;
+  height: 50vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
   background-color: var(--sage3);
-  background-image: url('https://res.cloudinary.com/godwinebikwo/image/upload/e_grayscale/v1646680459/buffalo-5-1024x_ua0owq.jpg');
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* padding: 3rem 0; */
 }
 
 .btnContainer {
@@ -66,6 +57,13 @@
 }
 
 @media (min-width: 700px) {
+  .bgCover {
+    height: 100vh;
+    width: 50vw;
+    overflow: hidden;
+    z-index: -1;
+  }
+
   .hgrid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
