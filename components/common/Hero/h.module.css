@@ -3,6 +3,7 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 0;
   width: 100%;
+  margin-bottom: var(--spacer-md);
 }
 
 .hLeftInner {
@@ -52,6 +53,7 @@
   .hgrid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
+    margin-bottom: 0;
   }
 
   .hLeftInner h1 {

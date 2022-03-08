@@ -63,7 +63,7 @@
   --spacer-lg: 5rem;
   --easing: cubic-bezier(0.215, 0.61, 0.355, 1);
 
-  --size-300: clamp(0.8rem, 0.75rem + 0.24vw, 0.95rem);
+  --size-300: clamp(0.8rem, 0.85rem + 0.24vw, 0.95rem);
   --size-400: clamp(0.88rem, 0.83rem + 0.24vw, 0.95rem); /*1rem*/
   --size-500: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
   --size-600: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
@@ -92,7 +92,7 @@
   --white: #000;
   --accent: #101010;
   --black: #fff;
-  --border-color: rgba(0, 0, 0, 0.3);
+  --border-color: rgba(0, 0, 0, 0.1);
   --input-bg: hsl(0 0% 9.5%);
   --profile-bg: hsl(120 16.7% 97.6%);
   --input-border-color: var(--sage11);

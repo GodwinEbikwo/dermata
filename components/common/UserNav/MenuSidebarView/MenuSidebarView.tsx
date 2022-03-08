@@ -29,7 +29,7 @@ const MenuSidebarView: FC<MenuProps> = (props) => {
           <li className={s.list}>
             <Link href="/search">
               <a onClick={() => closeSidebar()}>
-                <h3 className={s.label}>Shop All</h3>
+                <h4 className={s.label}>Shop All</h4>
               </a>
             </Link>
           </li>
@@ -38,7 +38,7 @@ const MenuSidebarView: FC<MenuProps> = (props) => {
             <li key={l.href} className={s.list}>
               <Link href={l.href}>
                 <a onClick={() => closeSidebar()}>
-                  <h3 className={s.label}>{l.label}</h3>
+                  <h4 className={s.label}>{l.label}</h4>
                 </a>
               </Link>
             </li>
@@ -61,10 +61,6 @@ const MenuSidebarView: FC<MenuProps> = (props) => {
               )}
             </div>
 
-            <div className={s.widget}>
-              <I18nWidget />
-            </div>
-
             <div className={s.switcher}>
               <button
                 className={s.button}
@@ -72,7 +68,7 @@ const MenuSidebarView: FC<MenuProps> = (props) => {
                   theme === 'dark' ? setTheme('light') : setTheme('dark')
                 }}
               >
-                {theme === 'dark' ? <span>Dark</span> : <span>Light</span>}
+                <Sun />
               </button>
             </div>
           </div>

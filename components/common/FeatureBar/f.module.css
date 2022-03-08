@@ -12,7 +12,6 @@
 .rootInner {
   padding: 1rem;
   background-color: var(--bg);
-  border: 1px solid var(--border-color);
 }
 
 .root button {
@@ -51,5 +50,8 @@
     bottom: var(--spacer-half);
     font-size: var(--size-300);
     max-width: 100%;
+  }
+  .rootInner {
+    border: 1px solid var(--border-color);
   }
 }
