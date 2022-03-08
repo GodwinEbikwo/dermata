@@ -80,13 +80,17 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
   font-weight: 600;
-  margin-left: 2em;
+}
+
+.btnItem {
+  flex: 1 1 0%;
 }
 
 .userNavBoxInner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  flex: 1 1 0%;
 }
 
 .userNavBoxInner > * + * {
@@ -118,6 +122,7 @@
   cursor: pointer;
   align-items: center;
   color: var(--text-color);
+  font-weight: 600;
 }
 
 .headerlogo {

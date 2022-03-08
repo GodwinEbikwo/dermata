@@ -45,21 +45,25 @@ const MenuSidebarView: FC<MenuProps> = (props) => {
           ))}
         </ul>
 
-        <div className={s.navBottom}>
+        <footer className={s.navBottom}>
           <div className={s.item}>
-            {customer ? (
-              <DropdownMenu />
-            ) : (
-              <button
-                className={s.button}
-                aria-label="Menu"
-                onClick={() => openModal()}
-              >
-                <span>Login / Register</span>
-              </button>
-            )}
+            <div className={s.userBox}>
+              {customer ? (
+                <DropdownMenu />
+              ) : (
+                <button
+                  className={s.button}
+                  aria-label="Menu"
+                  onClick={() => openModal()}
+                >
+                  <span>Login / Register</span>
+                </button>
+              )}
+            </div>
 
-            <I18nWidget />
+            <div className={s.widget}>
+              <I18nWidget />
+            </div>
 
             <div className={s.switcher}>
               <button
@@ -72,7 +76,7 @@ const MenuSidebarView: FC<MenuProps> = (props) => {
               </button>
             </div>
           </div>
-        </div>
+        </footer>
       </nav>
     </SidebarLayout>
   )

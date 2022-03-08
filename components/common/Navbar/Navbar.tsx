@@ -12,7 +12,6 @@ import useCustomer from '@framework/customer/use-customer'
 import { Avatar } from '@components/common'
 import { LineItem } from '@commerce/types/cart'
 import UserNav from '../UserNav'
-import Menu from '@components/icons/Menu'
 
 interface Link {
   href: string
@@ -21,21 +20,6 @@ interface Link {
 
 interface NavbarProps {
   links?: Link[]
-}
-
-function Form() {
-  return (
-    <form className="h-full">
-      <input
-        id="search__input"
-        className={s.search__input}
-        type="text"
-        name="q"
-        placeholder="Search…"
-        autoComplete="off"
-      />
-    </form>
-  )
 }
 
 const countItem = (count: number, item: LineItem) => count + item.quantity
@@ -156,21 +140,25 @@ function Header({ links }: NavbarProps) {
 
       <div className={s.mobileNav}>
         <div className={s.mobileNavInner}>
-          <Button
-            aria-label="toggle"
-            className={s.item}
-            variant="naked"
-            onClick={() => {
-              setSidebarView('MOBILEMENU_VIEW')
-              toggleSidebar()
-            }}
-          >
-            <span>Menu</span>
-          </Button>
+          <div className={s.btnItem}>
+            <Button
+              aria-label="toggle"
+              className={s.item}
+              variant="naked"
+              onClick={() => {
+                setSidebarView('MOBILEMENU_VIEW')
+                toggleSidebar()
+              }}
+            >
+              <span>Menu</span>
+            </Button>
+          </div>
 
-          <Link href="/">
-            <a className={s.mobileNavLogo}>Dermata</a>
-          </Link>
+          <div className="flex align-center">
+            <Link href="/">
+              <a className={s.mobileNavLogo}>Dermata</a>
+            </Link>
+          </div>
 
           <div className={s.userNavBoxInner}>
             <UserNav />

@@ -160,6 +160,7 @@ const Div = styled.div`
     padding: 0.5rem;
     background-color: var(--text-color);
     color: var(--bg);
+    border-radius: 5px;
   }
 
   @media (min-width: 1024px) {

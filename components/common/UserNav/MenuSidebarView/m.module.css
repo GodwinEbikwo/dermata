@@ -26,10 +26,28 @@
 }
 
 .item {
+  padding: 0 1%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   padding: 1em var(--px-2);
+}
+
+.userBox {
+  flex: 1 1 0%;
+}
+
+.widget {
+  display: flex;
+  align-items: center;
+}
+
+.switcher {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 0%;
+  /* background-color: red; */
 }

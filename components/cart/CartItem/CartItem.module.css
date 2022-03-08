@@ -54,7 +54,6 @@
 
 .root_options_inner {
   display: inline-flex;
-  padding-bottom: 0.25rem;
   align-items: center;
   justify-content: center;
   text-transform: lowercase;
@@ -68,7 +67,9 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border-color);
-  height: 1.25rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  height: 1em;
   padding: 1em;
   margin-left: 0.5em;
   margin-right: 0.5em;

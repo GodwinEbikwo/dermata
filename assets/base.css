@@ -27,8 +27,8 @@
   --black: #000;
   --marquee-text: var(--white);
 
-  --button-bg: #fff;
-  --button-text: #000;
+  --button-bg: var(--sage4);
+  --button-text: var(--white);
 
   --input-text: #fff;
   --input-bg: var(--sage5);
@@ -97,7 +97,7 @@
   --profile-bg: hsl(120 16.7% 97.6%);
   --input-border-color: var(--sage11);
 
-  --button-bg: #000;
+  --button-bg: #131313;
   --button-text: #fff;
 }
 

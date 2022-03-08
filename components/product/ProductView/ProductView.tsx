@@ -13,10 +13,8 @@ import {
 } from '../helpers'
 import Link from 'next/link'
 import Button from '@components/ui/Button'
-import Accordion from '@components/ui/Accordion'
 import SliderCarousel from '../EmblaSlider/slider'
 import { shimmer, toBase64 } from '@config/img-helpers'
-import styled from 'styled-components'
 import ProductCard from '../ProductCard'
 import { ProductOptions } from '..'
 
@@ -186,10 +184,3 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 }
 
 export default ProductView
-
-const List = styled.ul`
-  li {
-    margin-bottom: 4px;
-    list-style: disc;
-  }
-`

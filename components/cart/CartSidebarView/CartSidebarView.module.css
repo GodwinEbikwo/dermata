@@ -10,10 +10,6 @@
   }
 }
 
-.root.empty {
-  background-color: aquamarine;
-}
-
 .states_styles {
   display: flex;
   align-items: center;
