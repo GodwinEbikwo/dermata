@@ -4,8 +4,7 @@
   width: 100%;
   height: 100%;
   max-width: 100%;
-  transition: all 500ms var(--easing);
-  background-color: var(--sage2);
+  background-color: var(--sage3);
 }
 
 .available {
@@ -44,6 +43,15 @@
 @media (min-width: 1024px) {
   .productBottom {
     padding: var(--spacer-half) 0;
+  }
+
+  .imageContainer img {
+    transition: all 0.8s var(--easing);
+  }
+
+  .imageContainer:hover img {
+    transform: scale(1.1);
+    transform-origin: 50% 50%;
   }
 }
 

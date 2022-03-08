@@ -40,22 +40,6 @@
   width: 100%;
 }
 
-.gif {
-  position: absolute;
-  right: 0;
-  top: -53px;
-}
-
-.gif svg {
-  fill: white;
-}
-
-.two_inner {
-  position: relative;
-  width: 100%;
-  height: 725px;
-}
-
 @media (min-width: 700px) {
   .bgCover {
     height: 100vh;
