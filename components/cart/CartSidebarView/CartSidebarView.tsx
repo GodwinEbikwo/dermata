@@ -35,6 +35,7 @@ const CartSidebarView: FC = () => {
   return (
     <SidebarLayout
       className={cn(
+        [s.root],
         [s.cart],
         { close: closeSidebar },
         {

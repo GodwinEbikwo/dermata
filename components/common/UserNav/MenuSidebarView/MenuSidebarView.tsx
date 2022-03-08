@@ -7,19 +7,23 @@ import s from './m.module.css'
 import { DropdownMenu } from '@radix-ui/react-dropdown-menu'
 import { useCart } from '@framework/cart'
 import useCustomer from '@framework/customer/use-customer'
+import I18nWidget from '@components/common/I18nWidget/I18nWidget'
+import { useTheme } from 'next-themes'
+import { Sun } from '@components/icons'
 
 interface MenuProps {
   links?: LinkProps[]
 }
 
 const MenuSidebarView: FC<MenuProps> = (props) => {
+  const { theme, setTheme } = useTheme()
   const { data } = useCart()
   const { data: customer } = useCustomer()
   const { closeSidebar, openModal } = useUI()
   const handleClose = () => closeSidebar()
 
   return (
-    <SidebarLayout handleClose={handleClose}>
+    <SidebarLayout handleClose={handleClose} className={s.root}>
       <nav className="relative">
         <ul style={{ marginTop: 'var(--spacer)' }}>
           <li className={s.list}>
@@ -54,6 +58,19 @@ const MenuSidebarView: FC<MenuProps> = (props) => {
                 <span>Login / Register</span>
               </button>
             )}
+
+            <I18nWidget />
+
+            <div className={s.switcher}>
+              <button
+                className={s.button}
+                onClick={() => {
+                  theme === 'dark' ? setTheme('light') : setTheme('dark')
+                }}
+              >
+                {theme === 'dark' ? <span>Dark</span> : <span>Light</span>}
+              </button>
+            </div>
           </div>
         </div>
       </nav>

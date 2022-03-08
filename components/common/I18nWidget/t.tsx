@@ -139,20 +139,19 @@ const I18nWidget: FC = () => {
         <DropdownMenuItem>
           {options?.length && display ? (
             <div className={s.dropdownMenu}>
-              <ul>
-                {options.map((locale: any) => (
-                  <li key={locale}>
-                    <Link href={currentPath} locale={locale}>
-                      <a
-                        className={cn(s.item)}
-                        onClick={() => setDisplay(false)}
-                      >
-                        {LOCALES_MAP[locale].name}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              {options.map((locale: any) => (
+                <span key={locale}>
+                  <Link href={currentPath} locale={locale}>
+                    <a
+                      className={cn(s.item)}
+                      onClick={() => setDisplay(false)}
+                      style={{ color: 'var(--text-color)' }}
+                    >
+                      {LOCALES_MAP[locale].name}
+                    </a>
+                  </Link>
+                </span>
+              ))}
             </div>
           ) : null}
         </DropdownMenuItem>

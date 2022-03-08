@@ -1,5 +1,13 @@
 .root {
   min-height: 100vh;
+  margin-top: 2em;
+  padding: var(--spacer) var(--spacer-half);
+}
+
+@media (min-width: 1024px) {
+  .root {
+    margin-top: 1em;
+  }
 }
 
 .root.empty {

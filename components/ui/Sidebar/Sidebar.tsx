@@ -1,70 +1,6 @@
 import { FC, useEffect, useRef } from 'react'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
-import styled from 'styled-components'
-
-const Root = styled.aside`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 50;
-  height: 100%;
-`
-
-const Inner = styled.div`
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  overflow: hidden;
-`
-
-const BackDrop = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(39, 39, 39, 0.8);
-  transition: all 1s cubic-bezier(0.77, 0, 0.18, 1);
-  backdrop-filter: blur(15px) saturate(180%);
-`
-
-const Container = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  width: 100%;
-  max-width: 100%;
-
-  @media (min-width: 768px) {
-    padding-left: 3rem;
-    width: 500px;
-  }
-
-  .inner {
-    width: 100%;
-    height: 100%;
-    @media (min-width: 768px) {
-      width: 100vw;
-    }
-  }
-
-  .inner_sidebar {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-    background-color: var(--bg);
-    line-height: 1.5rem;
-    -webkit-overflow-scrolling: touch !important;
-  }
-`
+import s from './sb.module.css'
 
 interface SidebarProps {
   children: any
@@ -98,18 +34,23 @@ const Sidebar: FC<SidebarProps> = ({ children, onClose }) => {
   }, [])
 
   return (
-    <Root ref={sidebarRef} onKeyDown={onKeyDownSidebar} tabIndex={1}>
-      <Inner>
-        <BackDrop onClick={onClose} />
-        <Container>
-          <div className="inner">
-            <div className="inner_sidebar" ref={contentRef}>
+    <div
+      className={s.root}
+      ref={sidebarRef}
+      onKeyDown={onKeyDownSidebar}
+      tabIndex={1}
+    >
+      <div className={s.inner}>
+        <div className={s.backDrop} onClick={onClose} />
+        <section className={s.container}>
+          <div className="w-full h-full">
+            <div className={s.inner_sidebar} ref={contentRef}>
               {children}
             </div>
           </div>
-        </Container>
-      </Inner>
-    </Root>
+        </section>
+      </div>
+    </div>
   )
 }
 
