@@ -1,10 +1,7 @@
 import s from './hero.module.css'
-import Image from 'next/image'
-import Div100vh, { use100vh } from 'react-div-100vh'
 import { m } from 'framer-motion'
 import { ProductCard } from '@components/product'
-import { variantsAni, revealIn } from '@config/transitions'
-import useEmblaCarousel from 'embla-carousel-react'
+import { variantsAni } from '@config/transitions'
 import { First } from './h'
 
 function FancySpan({ children }: any) {
@@ -25,8 +22,6 @@ function NotCard({ label }: any) {
 }
 
 export default function Hero({ products }: any) {
-  const height = use100vh()
-  const halfHeight = height ? height / 1.135 : '50vh'
   return (
     <section className={s.root}>
       <div className={s.root}>
@@ -34,6 +29,7 @@ export default function Hero({ products }: any) {
       </div>
 
       <m.ul
+        style={{ marginTop: 'var(--spacer-lg' }}
         initial="initial"
         whileInView="enter"
         variants={variantsAni}
