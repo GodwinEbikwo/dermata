@@ -148,17 +148,6 @@ function Header({ links }: NavbarProps) {
                 toggleSidebar()
               }}
             />
-            {/* <Button
-              aria-label="toggle"
-              className={s.item}
-              variant="naked"
-              onClick={() => {
-                setSidebarView('MOBILEMENU_VIEW')
-                toggleSidebar()
-              }}
-            >
-              <span>Menu</span>
-            </Button> */}
           </div>
 
           <div className="flex align-center">

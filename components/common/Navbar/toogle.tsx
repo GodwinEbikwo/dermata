@@ -11,8 +11,13 @@ const Path = (props: any) => (
 )
 
 export const MenuToggle = ({ toggle }: any) => (
-  <button aria-label="menu toggle" onClick={toggle} className="cursor-pointer">
-    <svg width="22" height="22" viewBox="0 0 23 23">
+  <button
+    aria-label="menu toggle"
+    onClick={toggle}
+    className="cursor-pointer"
+    style={{ marginTop: '0.15em' }}
+  >
+    <svg width="24" height="24" viewBox="0 0 23 23">
       <Path
         variants={{
           exit: { d: 'M 2 2.5 L 30 2.5' },
@@ -34,7 +39,7 @@ export const MenuToggle = ({ toggle }: any) => (
         transition={{ duration: 0.1 }}
       />
       <Path
-        d="M 2 16.346 L 7.5 16.346"
+        d="M 2 16.346 L 30 16.346"
         variants={{
           exit: { opacity: 0 },
           enter: {
