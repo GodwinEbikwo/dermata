@@ -24,16 +24,19 @@
 .imageContainer {
   position: relative;
   overflow: hidden;
+  margin-bottom: 0.55556rem;
+  background-color: var(--sage3);
 }
 
 .productBottom {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 0.75rem 0;
 }
 
-.name {
+.productInfo {
+  display: flex;
+  justify-content: space-between;
   text-transform: uppercase;
   font-weight: 600;
   font-size: var(--fs-static);
@@ -41,8 +44,11 @@
 }
 
 @media (min-width: 1024px) {
+}
+
+@media (min-width: 1024px) {
   .productBottom {
-    padding: var(--spacer-half) 0;
+    padding-top: 0;
   }
 
   .imageContainer img {

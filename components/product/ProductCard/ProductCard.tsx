@@ -25,7 +25,7 @@ const ProductCard: FC<Props> = ({
   imgProps,
   className,
   noNameTag = false,
-  variant = 'default',
+  variant = 'simple',
 }) => {
   const { price } = usePrice({
     amount: product.price.value,
@@ -50,8 +50,8 @@ const ProductCard: FC<Props> = ({
                   alt={product.name || 'Product Image'}
                   className="himg"
                   src={product.images[0]?.url || placeholderImg}
-                  width={width ? width : 960}
-                  height={height ? height : 960}
+                  width={667}
+                  height={1000}
                   quality={100}
                   layout="responsive"
                   {...imgProps}
@@ -64,11 +64,8 @@ const ProductCard: FC<Props> = ({
                 {product.availableForSale === false ? (
                   <div className={s.available}>sold out</div>
                 ) : (
-                  <div className={s.name}>
-                    <div className={s.price}>
-                      <span>－</span>
-                      {product.name}
-                    </div>
+                  <div className={s.productInfo}>
+                    <div className={s.price}>{product.name}</div>
                     <div className={s.price}>{`${price}`}</div>
                   </div>
                 )}
@@ -96,9 +93,7 @@ const ProductCard: FC<Props> = ({
               )}
               {!noNameTag && (
                 <div className={s.imageContainerBottom}>
-                  <div className={s.name}>
-                    <span>{product.name}</span>
-                  </div>
+                  <div className={s.name}>{product.name}</div>
 
                   <div className={s.price}>
                     {`${price} ${product.price?.currencyCode}`}

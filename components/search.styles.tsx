@@ -101,8 +101,38 @@ export const SearchContainerInner = styled.div`
     @media (min-width: 1252px) {
       grid-gap: 2em;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      height: fit-content;
       grid-column: 1 / span 12;
+
+      & > li {
+        transition: transform 300ms ease;
+        grid-column: span 1;
+      }
+
+      & > li:nth-child(5) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      & > li:nth-child(8) {
+        transform: translateY(-13px);
+      }
+
+      & > li:nth-child(9) {
+        transform: translateY(-13px);
+      }
+
+      & > li:nth-child(12) {
+        grid-column: span 2;
+        grid-row: span 2;
+        overflow: hidden;
+      }
+
+      & > li:nth-child(13) {
+        transform: translateY(-13px);
+      }
+      & > li:nth-child(14) {
+        transform: translateY(-13px);
+      }
     }
   }
 `
