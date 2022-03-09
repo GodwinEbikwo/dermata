@@ -11,12 +11,7 @@ const Path = (props: any) => (
 )
 
 export const MenuToggle = ({ toggle }: any) => (
-  <button
-    aria-label="menu toggle"
-    onClick={toggle}
-    className="cursor-pointer"
-    style={{ marginTop: '0.15em' }}
-  >
+  <button aria-label="menu toggle" onClick={toggle} className="cursor-pointer">
     <svg width="24" height="24" viewBox="0 0 23 23">
       <Path
         variants={{

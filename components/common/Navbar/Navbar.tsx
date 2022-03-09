@@ -121,14 +121,15 @@ function Header({ links }: NavbarProps) {
             <ul className="flex">
               <li className={s.header_nav_item}>
                 <Link href="/">
-                  <a>contact</a>
+                  <a>Faq</a>
                 </Link>
               </li>
               <li className={s.header_nav_item}>
                 <Link href="/">
-                  <a>Faq</a>
+                  <a>contact</a>
                 </Link>
               </li>
+
               <li className={s.header_nav_item}>
                 <Link href="/">
                   <a>shipping & returns</a>
