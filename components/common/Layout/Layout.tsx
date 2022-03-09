@@ -145,7 +145,7 @@ const Layout: FC<Props> = ({
               {children}
 
               <footer data-scroll-section>
-                <Footer clinks={navBarlinks} pages={pageProps.pages} />
+                <Footer pages={pageProps.pages} />
               </footer>
             </main>
             <ModalUI />

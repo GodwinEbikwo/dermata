@@ -1,6 +1,7 @@
 .body {
-  margin: auto;
-  max-width: 72rem;
+  position: relative;
+  max-width: 1440px;
+  width: 100%;
 }
 
 .heading {
@@ -35,4 +36,58 @@
 
 .body a:hover {
   text-decoration: none;
+}
+
+.body p {
+  line-height: 1.8;
+}
+
+.body h2 {
+  margin-bottom: var(--spacer-half);
+  text-transform: uppercase;
+  position: relative;
+  text-indent: 4%;
+  font-weight: 600;
+  font-size: var(--size-500);
+}
+
+.body h2::before {
+  height: 2.5px;
+  width: 0.5em;
+  content: '';
+  display: block;
+  background: var(--text-color);
+  position: absolute;
+  left: 2px;
+  top: 13px;
+}
+
+.body h3 {
+  margin-bottom: var(--spacer-half);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: var(--size-500);
+}
+
+.body li {
+  border-bottom: 1px solid var(--border-color);
+  text-transform: uppercase;
+  padding: 1em 0;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .body {
+    width: 50%;
+  }
+
+  .body h2 {
+    text-indent: 2.7%;
+  }
+
+  .body h2::before {
+    height: 2.85px;
+    left: 2px;
+    top: 15px;
+  }
 }

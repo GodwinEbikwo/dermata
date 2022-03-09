@@ -27,14 +27,18 @@
   --black: #000;
   --marquee-text: var(--white);
 
-  --button-bg: var(--sage4);
-  --button-text: var(--white);
+  --button-bg: #fff;
+  --button-text: #131313;
 
   --input-text: #fff;
   --input-bg: var(--sage5);
   --input-border-color: var(--accent-8);
 
   --profile-bg: var(--sage3);
+
+  --footer-bg: var(--sage2);
+  --footer-text: var(--text-color);
+  --footer-bc: var(--border-color);
 
   --accent-0: #fff;
   --accent-1: #fafafa;
@@ -86,6 +90,10 @@
   --sage10: hsl(154 2.8% 51.7%);
   --sage11: hsl(155 3% 43%);
   --sage12: hsl(155 24% 9%);
+
+  --footer-bg: #131313;
+  --footer-text: rgba(255, 255, 255, 0.8);
+  --footer-bc: rgba(255, 255, 255, 0.4);
 
   --bg: var(--sage1);
   --text-color: #222;

@@ -10,6 +10,10 @@ import getSlug from '@lib/get-slug'
 import { missingLocaleInPages } from '@lib/usage-warns'
 import { Page } from '@commerce/types/page'
 import { useRouter } from 'next/router'
+import styled from 'styled-components'
+import { NextSeo } from 'next-seo'
+import { fade } from '@config/transitions'
+import { m } from 'framer-motion'
 
 export async function getStaticProps({
   preview,
@@ -73,12 +77,27 @@ export default function Pages({
   page,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter()
-
   return router.isFallback ? (
     <h1>Loading...</h1> // TODO (BC) Add Skeleton Views
   ) : (
-    <div className="">{page?.body && <Text html={page.body} />}</div>
+    <>
+      <NextSeo title={page.name} />
+      <m.div initial="initial" animate="enter" exit="exit" data-scroll-section>
+        <m.div variants={fade}>
+          <Root>{page?.body && <Text html={page.body} />}</Root>
+        </m.div>
+      </m.div>
+    </>
   )
 }
+
+const Root = styled.div`
+  margin: 10vh 0;
+  padding: 0 var(--px-2);
+
+  @media (min-width: 1024px) {
+    margin-top: 16vh;
+  }
+`
 
 Pages.Layout = Layout

@@ -11,16 +11,10 @@ import {
   MenuFooter,
 } from './Footer.styles'
 
-interface CollectionProps {
-  label: string
-  href: string
-}
-
 interface Props {
   className?: string
   children?: any
   pages?: Page[]
-  clinks?: CollectionProps[]
 }
 
 const links = [
@@ -30,9 +24,8 @@ const links = [
   },
 ]
 
-const Footer: FC<Props> = ({ className, pages, clinks }) => {
+const Footer: FC<Props> = ({ pages }) => {
   const { sitePages } = usePages(pages)
-
   return (
     <FooterStyles>
       <FooterInner>
@@ -41,7 +34,68 @@ const Footer: FC<Props> = ({ className, pages, clinks }) => {
             <MenuFooter>
               <li>
                 <Link href="/">
-                  <a className="sitetitle">Mason Concepts</a>
+                  <a className="sitetitle">Subscribe</a>
+                </Link>
+              </li>
+            </MenuFooter>
+
+            <form className="flex">
+              <label htmlFor="search__input" className="hidden">
+                S
+              </label>
+              <input
+                id="search__input"
+                className="search__input"
+                type="text"
+                name="q"
+                placeholder="EMAIL ADDRESS"
+                autoComplete="off"
+              />
+              <button className="search_btn">
+                <span>Join</span>
+              </button>
+            </form>
+          </FooterBlock>
+
+          <FooterBlock>
+            <MenuFooter>
+              {[...links, ...sitePages].map((page) => (
+                <li key={page.url}>
+                  <Link href={page.url!}>
+                    <a aria-label={page.name} className="link link--metis">
+                      {page.name}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </MenuFooter>
+          </FooterBlock>
+
+          <FooterBlock>
+            <MenuFooter>
+              <li>
+                <Link href="/">
+                  <a className="link link--metis">INSTAGRAM</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link link--metis">FACEBOOK</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link link--metis">YOUTUBE</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link link--metis">TIKTOK</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link link--metis">SNAPChat</a>
                 </Link>
               </li>
             </MenuFooter>
@@ -50,58 +104,27 @@ const Footer: FC<Props> = ({ className, pages, clinks }) => {
           <FooterBlock>
             <MenuFooter>
               <li>
-                <Link href="/about">
-                  <a aria-label="go to faq page" className="link link--metis">
-                    FAQ
-                  </a>
+                <Link href="/">
+                  <a className="link link--metis">DERMATA</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link link--metis">23 charing cross</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link link--metis">SE24 LONDON</a>
                 </Link>
               </li>
 
-              <li>
-                <Link href="/policy">
-                  <a
-                    aria-label="go to policy page"
-                    className="link link--metis"
-                  >
-                    Privacy Policy
-                  </a>
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/care">
-                  <a
-                    aria-label="go to custome care page"
-                    className="link link--metis"
-                  >
-                    Customer Care
-                  </a>
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/refunds">
-                  <a
-                    aria-label="go to shipping and return page"
-                    className="link link--metis"
-                  >
-                    Shipping & Returns
-                  </a>
+              <li style={{ marginTop: '2em' }}>
+                <Link href="/">
+                  <a className="link link--metis">CREATED BY GODWIN</a>
                 </Link>
               </li>
             </MenuFooter>
-          </FooterBlock>
-
-          <FooterBlock>
-            <div className="end">
-              <MenuFooter>
-                <li>
-                  <Link href="/">
-                    <a className="link link--metis">Site by Godwin</a>
-                  </Link>
-                </li>
-              </MenuFooter>
-            </div>
           </FooterBlock>
         </FooterGrid>
       </FooterInner>

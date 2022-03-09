@@ -31,6 +31,7 @@
   display: inline;
   color: var(--text-color);
   margin-right: 0.5em;
+  text-transform: uppercase;
 }
 
 .bagCount {
@@ -199,7 +200,7 @@
 
 .header_nav_item a {
   display: inline-flex;
-  padding: var(--nav-padding) 1.5rem;
+  padding: var(--nav-padding) 1rem;
   white-space: nowrap;
   transition: all 300ms ease;
 }
