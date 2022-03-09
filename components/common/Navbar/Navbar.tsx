@@ -12,6 +12,7 @@ import useCustomer from '@framework/customer/use-customer'
 import { Avatar } from '@components/common'
 import { LineItem } from '@commerce/types/cart'
 import UserNav from '../UserNav'
+import { MenuToggle } from './toogle'
 
 interface Link {
   href: string
@@ -141,7 +142,13 @@ function Header({ links }: NavbarProps) {
       <div className={s.mobileNav}>
         <div className={s.mobileNavInner}>
           <div className={s.btnItem}>
-            <Button
+            <MenuToggle
+              toggle={() => {
+                setSidebarView('MOBILEMENU_VIEW')
+                toggleSidebar()
+              }}
+            />
+            {/* <Button
               aria-label="toggle"
               className={s.item}
               variant="naked"
@@ -151,7 +158,7 @@ function Header({ links }: NavbarProps) {
               }}
             >
               <span>Menu</span>
-            </Button>
+            </Button> */}
           </div>
 
           <div className="flex align-center">
