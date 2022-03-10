@@ -55,22 +55,23 @@ function Header({ links }: NavbarProps) {
               </button>
             </div>
 
-            <div className={s.header_switcher_box}>
+            {/* <div className={s.header_switcher_box}>
               <I18nWidget />
-            </div>
+            </div> */}
 
             {process.env.COMMERCE_CUSTOMERAUTH_ENABLED && (
               <div className={s.header_account_link}>
                 {customer ? (
                   <DropdownMenuDemo />
                 ) : (
-                  <button
-                    className={s.avatarButton}
-                    aria-label="avatar"
+                  <Button
+                    className={s.item}
+                    variant="naked"
+                    aria-label="login"
                     onClick={() => openModal()}
                   >
-                    <Avatar />
-                  </button>
+                    login
+                  </Button>
                 )}
               </div>
             )}

@@ -50,8 +50,8 @@ const ProductCard: FC<Props> = ({
                   alt={product.name || 'Product Image'}
                   className="himg"
                   src={product.images[0]?.url || placeholderImg}
-                  width={667}
-                  height={1000}
+                  width={400}
+                  height={600}
                   quality={100}
                   layout="responsive"
                   {...imgProps}

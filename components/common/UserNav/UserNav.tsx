@@ -18,8 +18,7 @@ const countItem = (count: number, item: LineItem) => count + item.quantity
 
 const UserNav: FC<Props> = ({ className }) => {
   const { data } = useCart()
-  const { data: customer } = useCustomer()
-  const { toggleSidebar, setSidebarView, openModal } = useUI()
+  const { toggleSidebar, setSidebarView } = useUI()
   const itemsCount = data?.lineItems.reduce(countItem, 0) ?? 0
 
   return (
@@ -45,36 +44,6 @@ const UserNav: FC<Props> = ({ className }) => {
             </Button>
           </li>
         )}
-
-        {/* {process.env.COMMERCE_CUSTOMERAUTH_ENABLED && (
-          <li className={s.item}>
-            {customer ? (
-              <DropdownMenu />
-            ) : (
-              <button
-                className={s.avatarButton}
-                aria-label="Menu"
-                onClick={() => openModal()}
-              >
-                <Avatar />
-              </button>
-            )}
-          </li>
-        )} */}
-
-        {/* <li className={s.mobileMenu}>
-          <Button
-            aria-label="toggle"
-            className={s.item}
-            variant="naked"
-            onClick={() => {
-              setSidebarView('MOBILEMENU_VIEW')
-              toggleSidebar()
-            }}
-          >
-            <Menu />
-          </Button>
-        </li> */}
       </ul>
     </nav>
   )

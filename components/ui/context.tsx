@@ -160,6 +160,7 @@ export const UIProvider: FC = (props) => {
         : dispatch({ type: 'OPEN_SIDEBAR' }),
     [dispatch, state.displaySidebar]
   )
+
   const closeSidebarIfPresent = useCallback(
     () => state.displaySidebar && dispatch({ type: 'CLOSE_SIDEBAR' }),
     [dispatch, state.displaySidebar]

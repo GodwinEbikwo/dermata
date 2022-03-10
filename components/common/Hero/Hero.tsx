@@ -3,10 +3,7 @@ import { m } from 'framer-motion'
 import { ProductCard } from '@components/product'
 import { variantsAni } from '@config/transitions'
 import { First } from './h'
-
-function FancySpan({ children }: any) {
-  return <span className="block relative overflow-hidden">{children}</span>
-}
+import styled from 'styled-components'
 
 function NotCard({ label }: any) {
   return (
@@ -20,6 +17,30 @@ function NotCard({ label }: any) {
     </div>
   )
 }
+
+const Grid = styled.section`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 16vh var(--px-2);
+  grid-column-gap: 1.953vw;
+  grid-row-gap: 12.25vh;
+
+  a:nth-child(5n + 3) {
+    grid-column: 4 / 3;
+  }
+
+  a:nth-child(10n + 5) {
+    grid-column: 3 / 1;
+  }
+
+  a:nth-child(10n + 6) {
+    grid-column: 4 / -3;
+  }
+
+  a:nth-child(10n + 10) {
+    grid-column: 1 / 2;
+  }
+`
 
 export default function Hero({ products }: any) {
   return (
@@ -35,8 +56,7 @@ export default function Hero({ products }: any) {
         variants={variantsAni}
         className={s.grid}
       >
-        <NotCard label="jewellry" />
-        {products.slice(0, 3).map((product: any, i: number) => (
+        {products.map((product: any, i: number) => (
           <m.li className="relative" key={product.id}>
             <ProductCard
               variant="simple"
@@ -51,7 +71,7 @@ export default function Hero({ products }: any) {
         ))}
       </m.ul>
 
-      <m.ul
+      {/* <m.ul
         initial="initial"
         whileInView="enter"
         variants={variantsAni}
@@ -95,7 +115,7 @@ export default function Hero({ products }: any) {
             />
           </m.li>
         ))}
-      </m.ul>
+      </m.ul> */}
     </section>
   )
 }

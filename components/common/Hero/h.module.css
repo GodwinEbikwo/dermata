@@ -46,8 +46,6 @@
     position: fixed;
     height: 100vh;
     width: 50vw;
-    overflow: hidden;
-    z-index: -1;
   }
 
   .hgrid {
