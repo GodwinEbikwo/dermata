@@ -1,7 +1,5 @@
-import { m } from 'framer-motion'
 import { use100vh } from 'react-div-100vh'
 import s from './h.module.css'
-import { Button } from '@components/ui'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -10,9 +8,10 @@ export const First = () => {
   const halfHeight = height ? height : '50vh'
   return (
     <div style={{ height: halfHeight }} className={s.hgrid}>
-      <m.aside className={s.hleft}>
+      <aside className={s.hleft}>
         <div className={s.bgCover} data-scroll>
           <Image
+            priority={true}
             alt="Mountains"
             src="https://res.cloudinary.com/godwinebikwo/image/upload/e_grayscale/v1646679540/joeyy-lee-s8SJ8pmxPDA-unsplash_dzfghb.jpg"
             layout="fill"
@@ -29,11 +28,12 @@ export const First = () => {
             </h1>
           </div>
         </div>
-      </m.aside>
+      </aside>
 
-      <m.aside className={s.hright}>
+      <aside className={s.hright}>
         <div className={s.bgCover} data-scroll>
           <Image
+            priority={true}
             alt="Mountains"
             src="https://res.cloudinary.com/godwinebikwo/image/upload/e_grayscale/v1646680459/buffalo-5-1024x_ua0owq.jpg"
             layout="fill"
@@ -50,7 +50,7 @@ export const First = () => {
             </h1>
           </div>
         </div>
-      </m.aside>
+      </aside>
     </div>
   )
 }

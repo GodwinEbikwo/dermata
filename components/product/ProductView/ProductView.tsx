@@ -56,7 +56,6 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
   }
 
   //@ts-ignore
-
   const images = product.images
 
   return (
@@ -132,34 +131,35 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
         </aside>
       </div>
 
-      <div className={s.rgridTitle}>
-        <h3>
-          <Link href="/search">
-            <a>
-              <span>－</span>
-              More
-              <br />
-              Products
-            </a>
-          </Link>
-        </h3>
-      </div>
+      <section className={s.related_products}>
+        <div className={s.related_products_title}>
+          <h3>
+            <Link href="/search">
+              <a>
+                <span>－</span>Most viewed
+              </a>
+            </Link>
+          </h3>
+        </div>
 
-      <ul className={s.rgrid}>
-        {relatedProducts.map((p) => (
-          <li key={p.path}>
-            <ProductCard
-              noNameTag
-              product={p}
-              variant="simple"
-              imgProps={{
-                width: 540,
-                height: 810,
-              }}
-            />
-          </li>
-        ))}
-      </ul>
+        <div className="relative">
+          <ul className={s.related_item_grid}>
+            {relatedProducts.slice(8, 11).map((p) => (
+              <li key={p.path} className={s.related_item}>
+                <ProductCard
+                  noNameTag
+                  product={p}
+                  variant="simple"
+                  imgProps={{
+                    width: 540,
+                    height: 810,
+                  }}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <NextSeo
         title={product.name}
