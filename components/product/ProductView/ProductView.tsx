@@ -144,7 +144,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 
         <div className="relative">
           <ul className={s.related_item_grid}>
-            {relatedProducts.slice(8, 11).map((p) => (
+            {relatedProducts.map((p) => (
               <li key={p.path} className={s.related_item}>
                 <ProductCard
                   noNameTag
