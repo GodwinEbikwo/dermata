@@ -23,7 +23,7 @@ export const First = () => {
           <div className="center-absolute">
             <h1 className={s.BannerTitle}>
               <Link href="/search">
-                <a>Jewelry</a>
+                <a className="link link--metis">Jewelry</a>
               </Link>
             </h1>
           </div>
@@ -45,7 +45,7 @@ export const First = () => {
           <div className="center-absolute">
             <h1 className={s.BannerTitle}>
               <Link href="/search">
-                <a>ACCESSORIES</a>
+                <a className="link link--metis">ACCESSORIES</a>
               </Link>
             </h1>
           </div>
