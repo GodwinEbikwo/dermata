@@ -113,6 +113,7 @@ const Layout: FC<Props> = ({
   children,
   pageProps: { categories = [], ...pageProps },
 }) => {
+  const router = useRouter()
   const { asPath } = useRouter()
   const containerRef = useRef(null)
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
@@ -156,9 +157,28 @@ const Layout: FC<Props> = ({
               title={cookietitle}
               hide={acceptedCookies}
               action={
-                <button onClick={() => onAcceptCookies()}>
-                  Accept cookies
-                </button>
+                <div className="flex" style={{ gap: '0.2em' }}>
+                  <button
+                    onClick={() => onAcceptCookies()}
+                    style={{ width: '70%' }}
+                  >
+                    Accept cookies
+                  </button>
+                  <button
+                    onClick={(e: any) => {
+                      e.preventDefault()
+                      router.push('/privacy-policy')
+                    }}
+                    style={{
+                      width: '30%',
+                      background: 'transparent',
+                      color: 'var(--text-color)',
+                      border: '1px solid var(--button-bg)',
+                    }}
+                  >
+                    Read
+                  </button>
+                </div>
               }
             />
           </div>

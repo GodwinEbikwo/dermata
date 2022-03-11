@@ -35,12 +35,7 @@ const FeatureBar: React.FC<FeatureBarProps> = ({
       aria-label="cookies consent"
     >
       <div className={s.rootInner}>
-        <p className={s.title}>
-          {title}
-          <Link href="policy">
-            <a>Read more</a>
-          </Link>
-        </p>
+        <p className={s.title}>{title}</p>
         {action && action}
       </div>
     </aside>
