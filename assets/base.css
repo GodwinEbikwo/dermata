@@ -110,7 +110,7 @@
   --white: #000;
   --accent: #101010;
   --black: #fff;
-  --border-color: rgba(0, 0, 0, 0.1);
+  --border-color: rgba(0, 0, 0, 1);
   --input-bg: hsl(0 0% 9.5%);
   --profile-bg: hsl(120 16.7% 97.6%);
   --input-border-color: var(--sage11);
