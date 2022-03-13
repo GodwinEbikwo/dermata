@@ -239,7 +239,11 @@ export function NavDropDown({ links }: any) {
             </ContentList>
             <div
               data-scroll
-              style={{ width: '100%', height: '360px' }}
+              style={{
+                width: '100%',
+                height: '360px',
+                background: 'var(--sage4)',
+              }}
               className="relative overflow-hidden"
             >
               <Image
