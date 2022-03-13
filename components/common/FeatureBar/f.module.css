@@ -1,6 +1,6 @@
 .root {
   position: fixed;
-  right: 0;
+  left: 0;
   bottom: 0;
   width: 100%;
   z-index: 30;
@@ -50,7 +50,7 @@
 
 @media (min-width: 768px) {
   .root {
-    right: var(--px-2);
+    left: var(--px-2);
     width: 26.5%;
     bottom: var(--spacer-half);
     font-size: var(--size-300);
