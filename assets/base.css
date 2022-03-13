@@ -1,3 +1,11 @@
+@font-face {
+  src: url('/fonts/SSR.otf') format('otf'), url('/fonts/SSR.otf') format('woff');
+  font-family: 'SSR';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
 :root {
   --sage1: hsl(155 7% 8.4%);
   --sage2: hsl(150 7.4% 10.6%);
@@ -51,8 +59,9 @@
   --accent-8: #111;
   --accent-9: #000;
 
-  --font: aktiv-grotesk-extended, ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont;
+  --font: aktiv-grotesk-extended, ui-sans-serif, system-ui, sans-serif;
+  --font2: 'SSR', ui-sans-serif, system-ui, sans-serif;
+
   --border-color: rgba(255, 255, 255, 0.15);
 
   --fs-static: 13px;

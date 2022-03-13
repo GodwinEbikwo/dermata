@@ -35,7 +35,7 @@
 .productInfo {
   display: flex;
   justify-content: space-between;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 400;
   font-size: var(--fs-static);
   letter-spacing: var(--ls-ps);
