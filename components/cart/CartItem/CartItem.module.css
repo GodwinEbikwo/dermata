@@ -43,7 +43,6 @@
 .name_price {
   display: flex;
   justify-content: space-between;
-  letter-spacing: var(--ls-sm);
 }
 
 .root_options {

@@ -30,7 +30,7 @@ export const One = ({ product }: any) => {
           <Image
             priority={true}
             alt="Mountains"
-            src="https://res.cloudinary.com/godwinebikwo/image/upload/v1646680459/buffalo-5-1024x_ua0owq.jpg"
+            src="https://res.cloudinary.com/godwinebikwo/image/upload/v1647185984/98A0655-Edit-2_05198bd0-11d1-49f7-8ed6-f6646e69ffcf_ib4hlg.jpg"
             layout="fill"
             objectFit="cover"
             quality={100}

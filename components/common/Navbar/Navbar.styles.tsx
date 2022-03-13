@@ -14,6 +14,7 @@ export const NavHeaderInner = styled.div`
   padding: 0.5rem var(--px-2);
   background-color: var(--bg);
   border-bottom: 1px solid var(--border-color);
+  font-size: var(--fs-static);
 
   .logo_container {
     flex: 1 1 0%;

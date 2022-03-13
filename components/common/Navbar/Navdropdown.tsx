@@ -51,7 +51,7 @@ const StyledTriggerWithCaret = React.forwardRef(
   ({ children, ...props }: any, forwardedRef) => (
     <StyledTrigger {...props} ref={forwardedRef}>
       {children}
-      <StyledCaret aria-hidden />
+      {/* <StyledCaret aria-hidden /> */}
     </StyledTrigger>
   )
 )
