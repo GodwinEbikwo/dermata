@@ -4,6 +4,7 @@ import { ProductCard } from '@components/product'
 import { variantsAni } from '@config/transitions'
 import { First } from './h'
 import styled from 'styled-components'
+import { One } from './h2'
 
 function NotCard({ label }: any) {
   return (
@@ -45,8 +46,10 @@ const Grid = styled.section`
 export default function Hero({ products }: any) {
   return (
     <section className={s.root}>
-      <div className={s.root}>
-        <First />
+      <One product={products} />
+      <div>
+        {/* <First /> */}
+        {/* <One /> */}
       </div>
 
       <m.ul
@@ -56,7 +59,7 @@ export default function Hero({ products }: any) {
         variants={variantsAni}
         className={s.grid}
       >
-        {products.map((product: any, i: number) => (
+        {products.slice(0, 15).map((product: any, i: number) => (
           <m.li className="relative" key={product.id}>
             <ProductCard
               variant="simple"
@@ -70,52 +73,6 @@ export default function Hero({ products }: any) {
           </m.li>
         ))}
       </m.ul>
-
-      {/* <m.ul
-        initial="initial"
-        whileInView="enter"
-        variants={variantsAni}
-        className={s.grid}
-      >
-        {products.slice(4, 7).map((product: any, i: number) => (
-          <m.li className="relative" key={product.id}>
-            <ProductCard
-              variant="simple"
-              product={product}
-              imgProps={{
-                priority: i === 0,
-                width: 540,
-                height: 810,
-              }}
-            />
-          </m.li>
-        ))}
-
-        <NotCard label="Accessories" />
-      </m.ul>
-
-      <m.ul
-        initial="initial"
-        whileInView="enter"
-        variants={variantsAni}
-        className={s.grid}
-      >
-        <NotCard label="Suits" />
-
-        {products.slice(12, 15).map((product: any, i: number) => (
-          <m.li className="relative" key={product.id}>
-            <ProductCard
-              variant="simple"
-              product={product}
-              imgProps={{
-                priority: i === 0,
-                width: 540,
-                height: 810,
-              }}
-            />
-          </m.li>
-        ))}
-      </m.ul> */}
     </section>
   )
 }

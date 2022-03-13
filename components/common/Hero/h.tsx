@@ -23,13 +23,13 @@ export const First = () => {
         </div>
       </aside>
 
-      <div className="center-absolute">
+      {/* <div className="center-absolute">
         <div className={s.BannerTitle}>
           <Link href="/search">
             <a className="link link--metis">SHop now</a>
           </Link>
         </div>
-      </div>
+      </div> */}
 
       <aside className={s.hright}>
         <div className={s.bgCover} data-scroll>

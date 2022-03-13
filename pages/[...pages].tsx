@@ -96,7 +96,7 @@ const Root = styled.div`
   padding: 0 var(--px-2);
 
   @media (min-width: 1024px) {
-    margin-top: 16vh;
+    margin-top: 10vh;
   }
 `
 

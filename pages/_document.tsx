@@ -34,7 +34,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <link rel="stylesheet" href="https://use.typekit.net/hph2pnz.css" />
+        </Head>
         <body className="loading">
           <Main />
           <NextScript />

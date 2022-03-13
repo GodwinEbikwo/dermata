@@ -6,7 +6,7 @@ export const SearchContainer = styled.div`
   padding-bottom: var(--spacer-md);
 
   @media (min-width: 1252px) {
-    margin-top: 17vh;
+    margin-top: 10vh;
     padding-bottom: 10vh;
   }
 `

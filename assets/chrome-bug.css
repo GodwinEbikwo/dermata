@@ -7,12 +7,12 @@
  * https://lab.laukstein.com/bug/input
  * https://twitter.com/timer150/status/1345217126680899584
  */
-body.loading * {
+/* body.loading * {
   transition: none !important;
-}
+} */
 
 /* Page Loader */
-body.loading::before,
+/* body.loading::before,
 body.loading::after {
   content: '';
   position: fixed;
@@ -44,4 +44,4 @@ body.loading::after {
     opacity: 1;
     transform: rotate3d(0.5, 0.5, 1);
   }
-}
+} */

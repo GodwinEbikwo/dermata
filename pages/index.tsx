@@ -13,7 +13,7 @@ export async function getStaticProps({
 }: GetStaticPropsContext) {
   const config = { locale, locales }
   const productsPromise = commerce.getAllProducts({
-    variables: { first: 15 },
+    variables: { first: 17 },
     config,
     preview,
     // Saleor provider only

@@ -70,7 +70,7 @@
 
 @media (min-width: 1024px) {
   .root {
-    padding-top: 5.5vh;
+    padding-top: 0vh;
   }
 
   .content {

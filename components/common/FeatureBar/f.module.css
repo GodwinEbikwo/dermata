@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--button-bg);
-  padding: 1rem 2rem;
+  padding: 0.9rem 2rem;
   text-align: center;
   font-size: var(--size-300);
   line-height: 1rem;

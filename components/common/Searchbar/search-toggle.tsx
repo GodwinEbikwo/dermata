@@ -10,7 +10,7 @@ const SearchToggle = ({ toggle }: any) => (
     onClick={toggle}
     className="cursor-pointer"
   >
-    <span className="text-uppercase" style={{ color: 'var(--black)' }}>
+    <span className="text-uppercase" style={{ color: 'inherit' }}>
       <svg
         width="20"
         height="20"
@@ -27,7 +27,7 @@ const SearchToggle = ({ toggle }: any) => (
           strokeWidth="32"
         />
         <path
-          fill="#000"
+          fill="inherit"
           stroke="currentColor"
           strokeLinecap="round"
           strokeMiterlimit="10"

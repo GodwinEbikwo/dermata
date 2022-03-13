@@ -21,6 +21,7 @@ import s from './Layout.module.css'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import { options } from '@config/scroll'
 import Footer from '../Footer'
+import MobileNavbar from '../Navbar/MobileNav'
 
 const Loading = () => (
   <div className="flex align-center text-center justify-center">
@@ -121,6 +122,7 @@ const Layout: FC<Props> = ({
 
   const navBarlinks = categories.slice(0, 5).map((c) => ({
     label: c.name,
+    desc: c.description,
     href: `/search/${c.slug}`,
   }))
 
@@ -136,7 +138,8 @@ const Layout: FC<Props> = ({
           }
           watch={[]}
         >
-          <Navbar links={navBarlinks} />
+          <MobileNavbar links={navBarlinks} pages={pageProps.pages} />
+          {/* <Navbar links={navBarlinks} /> */}
           <div className={cn(s.root)}>
             <main
               ref={containerRef}

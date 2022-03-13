@@ -132,7 +132,7 @@ const Footer: FC<Props> = ({ pages }) => {
   )
 }
 
-function usePages(pages?: Page[]) {
+export function usePages(pages?: Page[]) {
   const { locale } = useRouter()
   const sitePages: Page[] = []
 

@@ -1,8 +1,9 @@
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import styled, { keyframes } from 'styled-components'
-import { ArrowRight, Contact, Orders, Profile } from '@components/icons'
+import { ArrowRight, Contact, Orders, Profile, Sun } from '@components/icons'
 import { useRouter } from 'next/router'
 import useLogout from '@framework/auth/use-logout'
+import { useTheme } from 'next-themes'
 
 export const slideUpAndFade = keyframes`
   from {
@@ -121,6 +122,7 @@ export const RightSlot = styled.div`
 const DropdownMenuDemo = () => {
   const router = useRouter()
   const logout = useLogout()
+  const { theme, setTheme } = useTheme()
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -187,7 +189,14 @@ const DropdownMenuDemo = () => {
           logout
         </DropdownMenuItem>
 
-        <DropdownMenuItem disabled>Derma</DropdownMenuItem>
+        <DropdownMenuItem
+          style={{ display: 'flex', justifyContent: 'flex-end' }}
+          onSelect={() => {
+            theme === 'dark' ? setTheme('light') : setTheme('dark')
+          }}
+        >
+          <Sun />
+        </DropdownMenuItem>
         <DropdownMenuArrow />
       </DropdownMenuContent>
     </DropdownMenu>

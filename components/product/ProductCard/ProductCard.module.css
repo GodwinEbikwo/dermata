@@ -24,7 +24,6 @@
   position: relative;
   overflow: hidden;
   margin-bottom: 0.55556rem;
-  background-color: var(--sage3);
 }
 
 .productBottom {
@@ -37,9 +36,28 @@
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
   font-size: var(--fs-static);
   letter-spacing: var(--ls-ps);
+}
+
+.imageContainerBottom {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: transparent;
+}
+
+.imageContainerBottom .name {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.imageContainerBottom .price {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 @media (min-width: 1024px) {

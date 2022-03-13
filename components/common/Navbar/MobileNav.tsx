@@ -1,12 +1,16 @@
-import { useEffect } from 'react'
+import { FC, useEffect } from 'react'
 import Link from 'next/link'
 import { UserNav } from '@components/common'
-import s from './n.module.css'
+import { NavHeader, NavHeaderInner } from './Navbar.styles'
 import { useLocomotiveScroll } from 'react-locomotive-scroll'
 import { m } from 'framer-motion'
+import SearchToogle from '@components/common/Searchbar/search-toggle'
 import SearchMenu from '@components/common/Searchbar/search-menu'
 import { variantsAni } from '@config/transitions'
 import { useMenu } from '@context/search-context'
+import { NavDropDown } from './Navdropdown'
+import { Page } from '@commerce/types/page'
+import { usePages } from '../Footer/Footer'
 
 interface Link {
   href: string
@@ -15,36 +19,84 @@ interface Link {
 
 interface NavbarProps {
   links?: Link[]
+  pages?: Page[]
 }
 
-export default function Header({ links }: NavbarProps) {
+const MobileNavbar: FC<NavbarProps> = ({ links, pages }) => {
   const { openSearchMenu } = useMenu()
+  const { sitePages } = usePages(pages)
+  const { scroll } = useLocomotiveScroll()
+  useEffect(() => {
+    scroll &&
+      scroll.on('scroll', (func: any) => {
+        document.documentElement.setAttribute('data-direction', func.direction)
+      })
+  })
+
   return (
-    <header className={s.headerContainer}>
-      <div className={s.headerBoxAnimation}>
-        <div className={s.headerInner}>
-          <div className={s.logoContainer}>
-            <Link href="/">
-              <a className={s.logo} aria-label="Logo">
-                <h4 className={s.logoTitle}>Mason Concepts</h4>
-              </a>
-            </Link>
+    <NavHeader
+      data-scroll
+      data-scroll-sticky
+      data-scroll-target="#scroll-container"
+    >
+      <div
+        className="header-box_animation"
+        style={{ transition: 'all 0.25s linear' }}
+      >
+        <NavHeaderInner>
+          <div className="logo_container">
+            <h4 className="text-uppercase" style={{ fontWeight: 700 }}>
+              <Link href="/">
+                <a className="logo" aria-label="Logo">
+                  Dermata
+                </a>
+              </Link>
+            </h4>
+          </div>
+
+          <div className="nav_left hide-for-mobile">
+            <nav className="navMenu">
+              <NavDropDown links={links} />
+              {sitePages.slice(4, 5).map((page) => (
+                <Link href={page.url!} key={page.url}>
+                  <a
+                    aria-label={page.name}
+                    className="nav_link link link--metis"
+                  >
+                    {page.name}
+                  </a>
+                </Link>
+              ))}
+              {sitePages.slice(0, 3).map((page) => (
+                <Link href={page.url!} key={page.url}>
+                  <a
+                    aria-label={page.name}
+                    className="nav_link link link--metis"
+                  >
+                    {page.name}
+                  </a>
+                </Link>
+              ))}
+            </nav>
           </div>
 
           <m.div
-            className={s.userNavBox}
+            className="userNav_Box"
             initial={false}
             animate={openSearchMenu ? 'enter' : 'exit'}
             exit="exit"
             variants={variantsAni}
           >
-            <nav className={s.userNavBoxInner}>
+            <nav className="userNav_Box_Inner">
+              <SearchToogle toggle={openSearchMenu} />
               <UserNav />
             </nav>
           </m.div>
-        </div>
+        </NavHeaderInner>
         <SearchMenu links={links} />
       </div>
-    </header>
+    </NavHeader>
   )
 }
+
+export default MobileNavbar

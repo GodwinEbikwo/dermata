@@ -85,7 +85,7 @@ const ProductCard: FC<Props> = ({
                     src={product.images[0]?.url || placeholderImg}
                     width={450}
                     height={600}
-                    quality="85"
+                    quality="100"
                     layout="responsive"
                     {...imgProps}
                   />
@@ -94,9 +94,12 @@ const ProductCard: FC<Props> = ({
               {!noNameTag && (
                 <div className={s.imageContainerBottom}>
                   <div className={s.name}>{product.name}</div>
-
                   <div className={s.price}>
-                    {`${price} ${product.price?.currencyCode}`}
+                    <Link href="/search">
+                      <a className="link link--metis">
+                        Discover the collection
+                      </a>
+                    </Link>
                   </div>
                 </div>
               )}
