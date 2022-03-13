@@ -47,6 +47,7 @@ export default function Hero({ products }: any) {
   return (
     <section className={s.root}>
       <One product={products} />
+      <First />
       <div>
         {/* <First /> */}
         {/* <One /> */}

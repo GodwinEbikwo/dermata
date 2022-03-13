@@ -14,7 +14,7 @@ export const First = () => {
           <Image
             priority={true}
             alt="Mountains"
-            src="https://res.cloudinary.com/godwinebikwo/image/upload/v1646680460/buffalo-2-1024x_tqllsc.jpg"
+            src="https://res.cloudinary.com/godwinebikwo/image/upload/e_grayscale/v1647185984/98A0655-Edit-2_05198bd0-11d1-49f7-8ed6-f6646e69ffcf_ib4hlg.jpg"
             layout="fill"
             objectFit="cover"
             quality={100}
@@ -23,13 +23,13 @@ export const First = () => {
         </div>
       </aside>
 
-      {/* <div className="center-absolute">
+      <div className="center-absolute">
         <div className={s.BannerTitle}>
           <Link href="/search">
             <a className="link link--metis">SHop now</a>
           </Link>
         </div>
-      </div> */}
+      </div>
 
       <aside className={s.hright}>
         <div className={s.bgCover} data-scroll>

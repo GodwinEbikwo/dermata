@@ -5,6 +5,7 @@
   width: 100%;
   margin-bottom: var(--spacer-md);
   border-bottom: 1px solid var(--border-color);
+  position: relative;
 }
 
 .BannerTitle {
@@ -16,7 +17,7 @@
   color: var(--button-text);
   padding: 1rem 2rem;
   border-radius: 999px;
-  font-size: var(--size-500);
+  font-size: var(--size-300);
 }
 
 .bgCover {
@@ -39,18 +40,8 @@
   width: 100%;
 }
 
-@media (min-width: 700px) {
-  .bgCover {
-    position: fixed;
-    height: 100vh;
-    width: 50vw;
-    overflow: hidden;
-    z-index: -1;
-  }
-
+@media (min-width: 1024px) {
   .hgrid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    margin-bottom: 0;
+    display: none;
   }
 }
