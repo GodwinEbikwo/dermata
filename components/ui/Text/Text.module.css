@@ -76,6 +76,11 @@
   font-weight: 600;
 }
 
+.paragraph {
+  font-size: inherit;
+  line-height: 1.7;
+}
+
 @media (min-width: 768px) {
   .body {
     width: 50%;

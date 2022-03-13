@@ -107,6 +107,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
             />
 
             <Text
+              variant="paragraph"
               className={s.productDesc}
               html={product.descriptionHtml || product.description}
             />
