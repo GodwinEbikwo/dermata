@@ -77,20 +77,18 @@ const CartSidebarView: FC = () => {
       ) : (
         <>
           <div className={s.cart_content}>
-            <div>
-              <Div className="w-full info-container">
-                <span className="info-container_inner">
-                  <span className="flex flex-wrap justify-center align-center">
-                    <span className="block spc">
-                      {data?.lineItems.length} Item
-                      {data?.lineItems.length === 1 ? '' : 's'}
-                    </span>
-                    <span className="block spc">&bull;</span>
-                    <span className="block">UK shipping Only</span>
+            <Div className="w-full info-container">
+              <span className="info-container_inner">
+                <span className="flex flex-wrap justify-center align-center">
+                  <span className="block spc">
+                    {data?.lineItems.length} Item
+                    {data?.lineItems.length === 1 ? '' : 's'}
                   </span>
+                  <span className="block spc">&bull;</span>
+                  <span className="block">UK shipping Only</span>
                 </span>
-              </Div>
-            </div>
+              </span>
+            </Div>
 
             <ul className={s.lineItemsList}>
               {data!.lineItems.map((item: any) => (
@@ -161,9 +159,5 @@ const Div = styled.div`
     background-color: var(--text-color);
     color: var(--bg);
     border-radius: 5px;
-  }
-
-  @media (min-width: 1024px) {
-    margin-top: 4.5em;
   }
 `

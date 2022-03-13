@@ -243,6 +243,7 @@ export function NavDropDown({ links }: any) {
               className="relative overflow-hidden"
             >
               <Image
+                quality={100}
                 className="limg"
                 priority={true}
                 layout="fill"

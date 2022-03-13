@@ -8,7 +8,7 @@ const SearchToggle = ({ toggle }: any) => (
   <Button
     aria-label="search toggle"
     onClick={toggle}
-    className="cursor-pointer"
+    className="cursor-pointer hide-for-mobile"
   >
     <span className="text-uppercase" style={{ color: 'inherit' }}>
       <svg

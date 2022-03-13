@@ -4,9 +4,10 @@ import { LineItem } from '@commerce/types/cart'
 import useCart from '@framework/cart/use-cart'
 import useCustomer from '@framework/customer/use-customer'
 import { useUI } from '@components/ui/context'
-import Button from '@components/ui/Button'
 import s from './UserNav.module.css'
 import DropdownMenuDemo from '@components/ui/DropDown'
+import Menu from '@components/icons/Menu'
+import Button from '@components/ui/Button/Button'
 
 interface Props {
   className?: string
@@ -59,6 +60,20 @@ const UserNav: FC<Props> = ({ className }) => {
             </Button>
           </li>
         )}
+
+        <li className={s.mobileMenu}>
+          <Button
+            className={s.item}
+            variant="naked"
+            onClick={() => {
+              setSidebarView('MOBILEMENU_VIEW')
+              toggleSidebar()
+            }}
+            aria-label="Menu"
+          >
+            <Menu />
+          </Button>
+        </li>
       </ul>
     </nav>
   )
