@@ -26,6 +26,12 @@ const Left = styled.div`
   border-bottom: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
 
+  .imgContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
   @media (max-width: 767px) {
     width: 100vw;
     height: 100vw;
@@ -108,10 +114,10 @@ export const Final = ({ product }: any) => {
 
       <Div100vh className="flex flex-wrap hide-for-mobile">
         <Left>
-          <div className={s.bgCover} data-scroll>
+          <div className="imgContainer" data-scroll>
             <Image
               priority={true}
-              alt="Mountains"
+              alt="shoe"
               src="https://res.cloudinary.com/godwinebikwo/image/upload/v1647279662/nikeshoes_vreeig.webp"
               layout="fill"
               objectFit="cover"
