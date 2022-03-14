@@ -45,13 +45,13 @@ const MobileNavbar: FC<NavbarProps> = ({ links, pages }) => {
       >
         <NavHeaderInner>
           <div className="logo_container">
-            <h4 className="text-uppercase" style={{ fontWeight: 700 }}>
+            <h3 className="text-uppercase" style={{ fontWeight: 700 }}>
               <Link href="/">
                 <a className="logo" aria-label="Logo">
                   Dermata
                 </a>
               </Link>
-            </h4>
+            </h3>
           </div>
 
           <div className="nav_left hide-for-mobile">
