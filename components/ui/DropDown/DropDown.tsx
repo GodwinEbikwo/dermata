@@ -162,7 +162,7 @@ const DropdownMenuDemo = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <a className="cursor-pointer" style={{ fontSize: '0.2em' }}>
+        <a className="cursor-pointer" style={{ marginTop: '0.3em' }}>
           <Profile />
         </a>
       </DropdownMenuTrigger>

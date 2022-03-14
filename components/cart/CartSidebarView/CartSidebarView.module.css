@@ -84,6 +84,8 @@
   padding: var(--spacer-half) 0;
   border-top: 1px solid var(--border-color);
   background-color: var(--bg);
+  font-family: var(--font2);
+  text-transform: capitalize;
 }
 
 .cart_footer_list {

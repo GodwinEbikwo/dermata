@@ -6,6 +6,7 @@
   left: 0;
   z-index: 50;
   height: 100%;
+  transition: all 400ms ease;
 }
 
 .inner {
@@ -23,9 +24,9 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(39, 39, 39, 0.8);
+  background-color: rgba(39, 39, 39, 0.4);
   transition: all 1s cubic-bezier(0.77, 0, 0.18, 1);
-  backdrop-filter: blur(15px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
 }
 
 .container {

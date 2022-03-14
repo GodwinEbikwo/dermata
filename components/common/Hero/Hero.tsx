@@ -1,10 +1,7 @@
 import s from './hero.module.css'
 import { m } from 'framer-motion'
 import { ProductCard } from '@components/product'
-import { variantsAni, switchLayout, slideup } from '@config/transitions'
-import { First } from './h'
 import styled from 'styled-components'
-import { One } from './h2'
 import Link from 'next/link'
 import { Final } from './fhero'
 

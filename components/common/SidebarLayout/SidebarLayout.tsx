@@ -26,6 +26,7 @@ const SidebarLayout: FC<ComponentProps> = ({
             <Cross />
           </button>
         )}
+
         <UserNav />
       </RootHeader>
       <Container>{children}</Container>

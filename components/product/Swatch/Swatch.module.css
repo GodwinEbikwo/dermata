@@ -18,7 +18,7 @@
 }
 
 .swatch:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   border: 1px solid var(--button-bg);
 }
 
@@ -42,15 +42,17 @@
 
 .active {
   border: 1px solid var(--button-bg);
+  background-color: var(--button-bg);
+  color: var(--button-text);
 }
 
 .textLabel {
-  width: 2rem;
-  padding: 0 4em;
+  width: 1rem;
+  padding: 0 3em;
   min-width: 3rem;
 }
 
 .active.textLabel {
-  padding: 0 calc(2rem - 1px);
+  padding: 0 calc(4rem - 1px);
   border: 1px solid var(--button-bg);
 }

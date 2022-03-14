@@ -13,10 +13,12 @@ export const NavHeaderInner = styled.div`
   justify-content: space-between;
   padding: 0.75rem var(--px-2);
   backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--border-color);
   font-size: var(--fs-static);
   background: var(--bg);
 
+  @media (min-width: 768px) {
+    border-bottom: 1px solid var(--border-color);
+  }
   @media (min-width: 1024px) {
     padding: 0.5rem var(--px-2);
   }

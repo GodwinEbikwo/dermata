@@ -1,5 +1,4 @@
 import Div100vh from 'react-div-100vh'
-import s from './h2.module.css'
 import Image from 'next/image'
 import styled from 'styled-components'
 import Link from 'next/link'
