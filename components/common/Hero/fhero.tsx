@@ -57,7 +57,7 @@ const Right = styled.div`
     text-align: center;
     width: 100vw;
     height: 50vw;
-    border-top: 1px solid var(--border-color);
+    /* border-top: 1px solid var(--border-color); */
     border-bottom: 1px solid var(--border-color);
     border-right: none;
   }
@@ -91,7 +91,7 @@ const Right = styled.div`
 export const Final = ({ product }: any) => {
   return (
     <Root>
-      <RootInner className="flex flex-wrap hide-for-desktop">
+      {/* <RootInner className="flex flex-wrap hide-for-desktop">
         <Left>
           <div className="imgContainer" data-scroll>
             <Image
@@ -117,9 +117,9 @@ export const Final = ({ product }: any) => {
             </div>
           </div>
         </Right>
-      </RootInner>
+      </RootInner> */}
 
-      <Div100vh className="flex flex-wrap hide-for-mobile">
+      <Div100vh className="flex flex-wrap">
         <Left>
           <div className="imgContainer" data-scroll>
             <Image
