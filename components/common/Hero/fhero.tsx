@@ -56,7 +56,7 @@ const Right = styled.div`
     justify-content: center;
     text-align: center;
     width: 100vw;
-    height: 50vw;
+    /* height: 50vw; */
     /* border-top: 1px solid var(--border-color); */
     border-bottom: 1px solid var(--border-color);
     border-right: none;
@@ -74,6 +74,7 @@ const Right = styled.div`
       padding-bottom: var(--spacer-half);
       align-items: flex-start;
     }
+
     .a {
       font-size: 12px;
       text-transform: uppercase;
@@ -88,64 +89,72 @@ const Right = styled.div`
   }
 `
 
-export const Final = ({ product }: any) => {
+interface Props {
+  variant?: 'default' | 'two'
+}
+
+export const Final = ({ variant = 'default' }: Props) => {
   return (
     <Root>
-      {/* <RootInner className="flex flex-wrap hide-for-desktop">
-        <Left>
-          <div className="imgContainer" data-scroll>
-            <Image
-              priority={true}
-              alt="Mountains"
-              src="https://res.cloudinary.com/godwinebikwo/image/upload/v1647279662/nikeshoes_vreeig.webp"
-              layout="fill"
-              objectFit="cover"
-              quality={100}
-              className="a-img"
-            />
-          </div>
-        </Left>
-
-        <Right>
-          <div className="rightInner">
-            <span className="a">new arrivals</span>
-            <h2 className="b">Shoe collection</h2>
-            <div className="text-uppercase">
-              <Link href="/">
-                <a className="link link--metis a">shop now</a>
-              </Link>
+      {variant === 'default' && (
+        <Div100vh className="flex flex-wrap">
+          <Left>
+            <div className="imgContainer" data-scroll>
+              <Image
+                priority={true}
+                alt="shoe"
+                src="https://res.cloudinary.com/godwinebikwo/image/upload/v1647279662/nikeshoes_vreeig.webp"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+                className="a-img"
+              />
             </div>
-          </div>
-        </Right>
-      </RootInner> */}
+          </Left>
 
-      <Div100vh className="flex flex-wrap">
-        <Left>
-          <div className="imgContainer" data-scroll>
-            <Image
-              priority={true}
-              alt="shoe"
-              src="https://res.cloudinary.com/godwinebikwo/image/upload/v1647279662/nikeshoes_vreeig.webp"
-              layout="fill"
-              objectFit="cover"
-              quality={100}
-              className="a-img"
-            />
-          </div>
-        </Left>
-
-        <Right>
-          <div className="rightInner">
-            <span className="a">new arrivals</span>
-            <h2 className="b">Shoe collection</h2>
-            <div className="text-uppercase">
-              <Link href="/">
-                <a className="link link--metis a">shop now</a>
-              </Link>
+          <Right>
+            <div className="rightInner">
+              <span className="a">new arrivals</span>
+              <h2 className="b">Shoe collection</h2>
+              <div className="text-uppercase">
+                <Link href="/">
+                  <a className="link link--metis a">shop now</a>
+                </Link>
+              </div>
             </div>
-          </div>
-        </Right>
-      </Div100vh>
+          </Right>
+        </Div100vh>
+      )}
+
+      {variant === 'two' && (
+        <Div100vh className="flex flex-wrap">
+          <Right>
+            <div className="rightInner">
+              <span className="a">new arrivals</span>
+              <h2 className="b">Shoe collection</h2>
+              <div className="text-uppercase">
+                <Link href="/">
+                  <a className="link link--metis a">shop now</a>
+                </Link>
+              </div>
+            </div>
+          </Right>
+
+          <Left>
+            <div className="imgContainer" data-scroll>
+              <Image
+                priority={true}
+                alt="shoe"
+                src="https://res.cloudinary.com/godwinebikwo/image/upload/v1647279662/nikeshoes_vreeig.webp"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+                className="a-img"
+              />
+            </div>
+          </Left>
+        </Div100vh>
+      )}
     </Root>
   )
 }

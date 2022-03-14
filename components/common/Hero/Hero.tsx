@@ -48,13 +48,7 @@ const Grid = styled.section`
 export default function Hero({ products }: any) {
   return (
     <section className={s.root}>
-      {/* <One product={products} />
-      <First /> */}
-      <Final />
-      <div>
-        {/* <First /> */}
-        {/* <One /> */}
-      </div>
+      <Final variant="default" />
 
       <div className={s.gridHeader}>
         <div className="flex flex-row align-center space-between text-uppercase">
