@@ -39,11 +39,13 @@ const ProductCard: FC<Props> = ({
     className
   )
 
+  const simpleClassName = cn(className, {})
+
   return (
     <Link href={`/product/${product.slug}`}>
       <a className={rootClassName} aria-label={product.name}>
         {variant === 'simple' && (
-          <>
+          <div className={simpleClassName}>
             <div className={s.imageContainer} data-scroll>
               {product?.images && (
                 <Image
@@ -71,7 +73,7 @@ const ProductCard: FC<Props> = ({
                 )}
               </div>
             )}
-          </>
+          </div>
         )}
 
         {variant === 'default' && (

@@ -1,10 +1,12 @@
 import s from './hero.module.css'
 import { m } from 'framer-motion'
 import { ProductCard } from '@components/product'
-import { variantsAni } from '@config/transitions'
+import { variantsAni, switchLayout, slideup } from '@config/transitions'
 import { First } from './h'
 import styled from 'styled-components'
 import { One } from './h2'
+import Link from 'next/link'
+import { Final } from './fhero'
 
 function NotCard({ label }: any) {
   return (
@@ -46,21 +48,72 @@ const Grid = styled.section`
 export default function Hero({ products }: any) {
   return (
     <section className={s.root}>
-      <One product={products} />
-      <First />
+      {/* <One product={products} />
+      <First /> */}
+      <Final />
       <div>
         {/* <First /> */}
         {/* <One /> */}
       </div>
 
-      <m.ul
-        style={{ marginTop: 'var(--spacer-lg' }}
+      <div className={s.gridHeader}>
+        <div className="flex flex-row align-center space-between text-uppercase">
+          <div>Shop Jewellery</div>
+          <Link href="/">
+            <a>shop now</a>
+          </Link>
+        </div>
+      </div>
+
+      <ul className={s.grid}>
+        {products.slice(0, 4).map((product: any, i: number) => (
+          <li className="relative" key={product.id}>
+            <ProductCard
+              variant="simple"
+              product={product}
+              imgProps={{
+                priority: i === 0,
+                width: 540,
+                height: 810,
+              }}
+            />
+          </li>
+        ))}
+      </ul>
+
+      <div className={s.gridHeader}>
+        <div className="flex flex-row align-center space-between text-uppercase">
+          <div>Shop Accessories</div>
+          <Link href="/">
+            <a>shop now</a>
+          </Link>
+        </div>
+      </div>
+
+      <ul className={s.grid}>
+        {products.slice(4, 8).map((product: any, i: number) => (
+          <li className="relative" key={product.id}>
+            <ProductCard
+              variant="simple"
+              product={product}
+              imgProps={{
+                priority: i === 0,
+                width: 540,
+                height: 810,
+              }}
+            />
+          </li>
+        ))}
+      </ul>
+
+      {/* <m.ul
+        style={{ marginTop: 'var(--spacer-half' }}
         initial="initial"
         whileInView="enter"
         variants={variantsAni}
         className={s.grid}
       >
-        {products.slice(0, 15).map((product: any, i: number) => (
+        {products.slice(4, 15).map((product: any, i: number) => (
           <m.li className="relative" key={product.id}>
             <ProductCard
               variant="simple"
@@ -73,7 +126,7 @@ export default function Hero({ products }: any) {
             />
           </m.li>
         ))}
-      </m.ul>
+      </m.ul> */}
     </section>
   )
 }

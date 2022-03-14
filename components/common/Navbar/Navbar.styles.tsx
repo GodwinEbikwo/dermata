@@ -15,6 +15,7 @@ export const NavHeaderInner = styled.div`
   backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid var(--border-color);
   font-size: var(--fs-static);
+  background: var(--bg);
 
   @media (min-width: 1024px) {
     padding: 0.5rem var(--px-2);
