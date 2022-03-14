@@ -30,12 +30,18 @@ const Left = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+
+    @media (max-width: 767px) {
+      height: 100%;
+    }
   }
 
   @media (max-width: 767px) {
     width: 100vw;
     height: 100vw;
     height: 108vw;
+    border-bottom: none;
     border-right: none;
   }
 `
@@ -51,6 +57,7 @@ const Right = styled.div`
     text-align: center;
     width: 100vw;
     height: 50vw;
+    border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     border-right: none;
   }
@@ -86,7 +93,7 @@ export const Final = ({ product }: any) => {
     <Root>
       <RootInner className="flex flex-wrap hide-for-desktop">
         <Left>
-          <div className={s.bgCover} data-scroll>
+          <div className="imgContainer" data-scroll>
             <Image
               priority={true}
               alt="Mountains"
