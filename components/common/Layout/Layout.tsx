@@ -140,18 +140,16 @@ const Layout: FC<Props> = ({
         >
           <MobileNavbar links={navBarlinks} pages={pageProps.pages} />
           {/* <Navbar links={navBarlinks} /> */}
-          <div className={cn(s.root)}>
-            <main
-              ref={containerRef}
-              data-scroll-container
-              id="scroll-container"
-            >
-              {children}
-
-              <footer data-scroll-section>
-                <Footer pages={pageProps.pages} />
-              </footer>
-            </main>
+          <div
+            className={cn(s.root)}
+            data-scroll-container
+            ref={containerRef}
+            id="scroll-container"
+          >
+            <main>{children}</main>
+            <footer data-scroll-section>
+              <Footer pages={pageProps.pages} />
+            </footer>
             <ModalUI />
             <CheckoutProvider>
               <SidebarUI links={navBarlinks} />

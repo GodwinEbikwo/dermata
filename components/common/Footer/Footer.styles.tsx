@@ -4,7 +4,7 @@ export const FooterStyles = styled.div`
   position: relative;
   background-color: var(--footer-bg);
   padding: 0 0 var(--spacer-half) 0;
-  min-height: 45vh;
+  min-height: 40vh;
   margin-top: var(--spacer-md);
   color: var(--footer-text);
 `
