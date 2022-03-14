@@ -71,7 +71,7 @@ const Right = styled.div`
 
     @media (max-width: 767px) {
       width: 100%;
-      padding-bottom: var(--spacer-half);
+      padding-bottom: var(--spacer);
       align-items: flex-start;
     }
 
@@ -115,7 +115,7 @@ export const Final = ({ variant = 'default' }: Props) => {
           <Right>
             <div className="rightInner">
               <span className="a">new arrivals</span>
-              <h2 className="b">Shoe collection</h2>
+              <h2 className="b">For Feets</h2>
               <div className="text-uppercase">
                 <Link href="/">
                   <a className="link link--metis a">shop now</a>
