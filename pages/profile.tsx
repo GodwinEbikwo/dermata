@@ -29,7 +29,7 @@ export const Root = styled.div`
   max-width: 35rem;
 
   @media (min-width: 768px) {
-    margin-top: 18vh;
+    margin-top: 10vh;
     background: var(--profile-bg);
     padding: var(--spacer);
     border: 1px solid var(--border-color);

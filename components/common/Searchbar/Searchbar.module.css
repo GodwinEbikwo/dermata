@@ -10,10 +10,11 @@
   height: 100%;
   border: none;
   text-transform: uppercase;
-  padding: 0.2rem 1.5rem 0;
+  padding: 1rem 1.5rem;
   font-size: var(--fs-static);
   transition: 180ms box-shadow ease-in-out;
-  background-color: var(--sage1);
+  background-color: var(--sage3);
+  border: 1px solid var(--border-color);
 }
 
 .input::placeholder {

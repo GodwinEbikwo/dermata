@@ -16,6 +16,10 @@ export const NavHeaderInner = styled.div`
   border-bottom: 1px solid var(--border-color);
   font-size: var(--fs-static);
 
+  @media (min-width: 1024px) {
+    padding: 0.5rem var(--px-2);
+  }
+
   .logo_container {
     flex: 1 1 0%;
   }
@@ -38,7 +42,6 @@ export const NavHeaderInner = styled.div`
 
     @media (min-width: 1024px) {
       display: inline-flex;
-      padding: 0.5rem var(--px-2);
     }
   }
 

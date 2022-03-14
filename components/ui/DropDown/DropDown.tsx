@@ -15,6 +15,42 @@ export const slideUpAndFade = keyframes`
   }
 `
 
+export const slideRightAndFade = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`
+
+export const slideDownAndFade = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+
+export const slideLeftAndFade = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`
+
 export const StyledArrow = styled(DropdownMenuPrimitive.Arrow)`
   fill: var(--sage8);
   height: 7px;
@@ -37,16 +73,16 @@ export const StyledContent = styled(DropdownMenuPrimitive.Content)`
 
     &[data-state='open'] {
       &[data-side='top'] {
-        animation-name: ${slideUpAndFade};
+        animation-name: ${slideDownAndFade};
       }
       &[data-side='right'] {
-        animation-name: ${slideUpAndFade};
+        animation-name: ${slideLeftAndFade};
       }
       &[data-side='bottom'] {
         animation-name: ${slideUpAndFade};
       }
       &[data-side='left'] {
-        animation-name: ${slideUpAndFade};
+        animation-name: ${slideRightAndFade};
       }
     }
   }
@@ -71,7 +107,7 @@ export const StyledItem = styled(DropdownMenuPrimitive.Item)`
   }
 
   &:focus {
-    background-color: var(--accent-2);
+    background-color: var(--sage3);
   }
 
   &.bold {
@@ -126,7 +162,7 @@ const DropdownMenuDemo = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <a className="cursor-pointer">
+        <a className="cursor-pointer" style={{ fontSize: '0.2em' }}>
           <Profile />
         </a>
       </DropdownMenuTrigger>
@@ -197,7 +233,7 @@ const DropdownMenuDemo = () => {
         >
           <Sun />
         </DropdownMenuItem>
-        <DropdownMenuArrow />
+        {/* <DropdownMenuArrow /> */}
       </DropdownMenuContent>
     </DropdownMenu>
   )
