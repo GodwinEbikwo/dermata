@@ -62,7 +62,7 @@
   --font: aktiv-grotesk-extended, ui-sans-serif, system-ui, sans-serif;
   --font2: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
 
-  --border-color: rgba(255, 255, 255, 0.15);
+  --border-color: rgba(255, 255, 255, 0.3);
 
   --fs-static: 13px;
   --ls-ps: 0;
@@ -121,7 +121,7 @@
 
 @media (min-width: 768px) {
   :root {
-    --px-2: 2rem;
+    --px-2: 1rem;
   }
 }
 

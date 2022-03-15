@@ -4,7 +4,66 @@
   width: 100%;
 }
 
-.content {
+.gridHeader {
+  padding: var(--spacer-half) calc((var(--spacer-half) / 2) + 0.2em);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0px;
+  margin-bottom: 0;
+}
+
+.grid > * {
+  border-top: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
+
+@media (max-width: 767px) {
+  .grid > *:nth-child(2n + 3) {
+    border-bottom: 1px solid var(--border-color);
+  }
+  .grid > *:nth-child(2n + 4) {
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+.grid > *:nth-child(-n + 1) {
+  border-left: 1px solid transparent;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .root {
+    padding-top: 0vh;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .grid > * {
+    padding: 0;
+    border-top: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .grid > *:nth-child(-n + 1) {
+    border-left: 1px solid transparent;
+  }
+
+  /* 
+
+
+
+  .content {
   display: flex;
   flex-direction: column;
 }
@@ -23,28 +82,13 @@
   text-transform: uppercase;
 }
 
-.gridHeader {
-  margin-top: 1.5rem;
-  padding: 1rem var(--px-2);
-}
-
-.grid {
-  --gap: 1em;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gap);
-  width: 100%;
-  height: 100%;
-  margin-bottom: 1rem;
-  padding: 1rem var(--px-2);
-}
-
-.grid > * {
-  --min: 15ch;
-  flex: 1 1 var(--min);
-}
-
-.card {
+    .content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  
+  .card {
   display: none;
 }
 
@@ -64,32 +108,9 @@
   transform-origin: top left;
   z-index: 0;
 }
-
-@media (min-width: 768px) {
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2em;
-    padding: 0 var(--px-2);
-  }
-}
-
-@media (min-width: 1024px) {
-  .root {
-    padding-top: 0vh;
-  }
-
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2em;
-  }
-
+  
+  
+  
   .card {
     display: block;
     position: relative;
@@ -113,10 +134,10 @@
     letter-spacing: var(--ls-sm);
     font-weight: 500;
     text-transform: uppercase;
-  }
+  } */
 }
 
-@media (min-width: 1066px) {
+/* @media (min-width: 1066px) {
   .card {
     height: 21.5rem;
   }
@@ -138,4 +159,4 @@
   .card {
     height: 30.4rem;
   }
-}
+} */

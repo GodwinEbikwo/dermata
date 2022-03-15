@@ -1,21 +1,26 @@
 import styled from 'styled-components'
 
 export const SearchContainer = styled.div`
-  margin-top: 5rem;
+  margin-top: 4rem;
   min-height: 100vh;
-  padding-bottom: var(--spacer-md);
+  padding-bottom: 0;
 
   @media (min-width: 1252px) {
-    margin-top: 10vh;
-    padding-bottom: 10vh;
+    margin-top: 8vh;
+  }
+
+  .filters {
+    display: flex;
+    padding: 0 calc((var(--spacer-half) / 2) + 0.2em);
   }
 `
 
 export const SearchContainerInner = styled.div`
-  padding: 0 var(--px-2);
+  padding: 0;
+
   @media (min-width: 1252px) {
     display: grid;
-    grid-gap: 1em;
+    grid-gap: 0em;
     grid-template-columns: repeat(12, 1fr);
   }
 
@@ -90,6 +95,64 @@ export const SearchContainerInner = styled.div`
   }
 
   .s_second {
+    --gap: 0em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    width: 100%;
+    height: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+  }
+
+  .s_second > * {
+    --min: 15ch;
+    flex: 1 1 var(--min);
+    border-top: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+  }
+
+  @media (max-width: 768px) {
+    .s_second > *:nth-child(odd) {
+      border-left: 1px solid transparent;
+    }
+  }
+
+  .s_second > *:nth-child(-n + 1) {
+    border-left: 1px solid transparent;
+  }
+
+  @media (min-width: 768px) {
+    .s_second {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1252px) {
+    .s_second {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 0px;
+      margin-bottom: 0;
+      grid-column: 1 / span 12;
+    }
+
+    .s_second > * {
+      border-top: 1px solid var(--border-color);
+      border-left: 1px solid var(--border-color);
+      /* border-bottom: 1px solid var(--border-color); */
+    }
+
+    .s_second > *:nth-child(-n + 1) {
+      border-left: 1px solid transparent;
+    }
+  }
+
+  /* 
+  .s_second {
     display: grid;
     grid-gap: 1em;
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -99,11 +162,25 @@ export const SearchContainerInner = styled.div`
     }
 
     @media (min-width: 1252px) {
-      grid-gap: 2em;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-gap: 0px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       grid-column: 1 / span 12;
+    }
 
-      & > li {
+    @media (min-width: 1252px) {
+      & > * {
+        border-top: 1px solid var(--border-color);
+        border-left: 1px solid var(--border-color);
+      }
+
+      & > *:nth-child(-n + 1) {
+        border-left: 1px solid transparent;
+      }
+    }
+  } */
+`
+
+/* & > li {
         transition: transform 300ms ease;
         grid-column: span 1;
       }
@@ -132,7 +209,4 @@ export const SearchContainerInner = styled.div`
       }
       & > li:nth-child(14) {
         transform: translateY(-13px);
-      }
-    }
-  }
-`
+      } */

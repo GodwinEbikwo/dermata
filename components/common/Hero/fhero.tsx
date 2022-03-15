@@ -25,12 +25,16 @@ const Left = styled.div`
   border-bottom: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
 
+  &.has-border-left {
+    border-left: 1px solid var(--border-color);
+  }
+
   .imgContainer {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
-
+    background: #f6f6f6;
     @media (max-width: 767px) {
       height: 100%;
     }
@@ -127,11 +131,11 @@ export const Final = ({ variant = 'default' }: Props) => {
       )}
 
       {variant === 'two' && (
-        <Div100vh className="flex flex-wrap">
+        <Div100vh className="flex flex-wrap hide-for-mobile">
           <Right>
             <div className="rightInner">
-              <span className="a">new arrivals</span>
-              <h2 className="b">Shoe collection</h2>
+              <span className="a">Accesories</span>
+              <h2 className="b">For Groceries</h2>
               <div className="text-uppercase">
                 <Link href="/">
                   <a className="link link--metis a">shop now</a>
@@ -140,12 +144,12 @@ export const Final = ({ variant = 'default' }: Props) => {
             </div>
           </Right>
 
-          <Left>
+          <Left className="has-border-left ">
             <div className="imgContainer" data-scroll>
               <Image
                 priority={true}
                 alt="shoe"
-                src="https://res.cloudinary.com/godwinebikwo/image/upload/v1647279662/nikeshoes_vreeig.webp"
+                src="https://res.cloudinary.com/godwinebikwo/image/upload/v1647365809/forma_bag1_atbfgx.jpg"
                 layout="fill"
                 objectFit="cover"
                 quality={100}

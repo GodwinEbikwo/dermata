@@ -126,7 +126,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
           </div>
 
           <div
-            className="px flex"
+            className="filters"
             style={{ justifyContent: 'space-between', marginBottom: '1em' }}
           >
             <DropdownMenu>

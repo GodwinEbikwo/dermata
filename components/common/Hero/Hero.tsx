@@ -72,6 +72,8 @@ export default function Hero({ products }: any) {
         ))}
       </ul>
 
+      <Final variant="two" />
+
       <div className={s.gridHeader}>
         <div className="flex flex-row align-center space-between text-uppercase">
           <div>Shop Accessories</div>
@@ -82,7 +84,7 @@ export default function Hero({ products }: any) {
       </div>
 
       <ul className={s.grid}>
-        {products.slice(4, 8).map((product: any, i: number) => (
+        {products.slice(8, 12).map((product: any, i: number) => (
           <li className="relative" key={product.id}>
             <ProductCard
               variant="simple"
