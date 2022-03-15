@@ -1,5 +1,6 @@
 .root {
   padding: 0 var(--spacer-half);
+  font-family: var(--font2);
 }
 
 .list {

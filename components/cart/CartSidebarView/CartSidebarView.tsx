@@ -143,6 +143,7 @@ export default CartSidebarView
 
 const Div = styled.div`
   margin-bottom: var(--spacer);
+  font-family: var(--font2);
 
   .spc {
     margin-right: 0.5em;

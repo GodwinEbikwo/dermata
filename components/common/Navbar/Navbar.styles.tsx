@@ -15,6 +15,7 @@ export const NavHeaderInner = styled.div`
   backdrop-filter: saturate(180%) blur(20px);
   font-size: var(--fs-static);
   background: var(--bg);
+  font-family: var(--font2);
 
   @media (min-width: 768px) {
     border-bottom: 1px solid var(--border-color);
@@ -28,6 +29,7 @@ export const NavHeaderInner = styled.div`
   }
   .logo {
     cursor: pointer;
+    font-family: var(--font);
     transition: transform 200ms ease-in-out;
   }
   .nav_left {

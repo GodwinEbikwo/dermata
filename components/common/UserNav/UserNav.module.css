@@ -3,6 +3,7 @@
   align-items: center;
   position: relative;
   font-size: var(--size-300);
+  font-family: var(--font2);
 }
 
 .list {

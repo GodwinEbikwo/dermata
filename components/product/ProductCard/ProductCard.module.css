@@ -34,10 +34,11 @@
 
 .productInfo {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   text-transform: uppercase;
   font-size: var(--fs-static);
   letter-spacing: var(--ls-ps);
+  font-family: var(--font2);
 }
 
 .imageContainerBottom {
@@ -60,11 +61,13 @@
 }
 
 @media (min-width: 1024px) {
-}
-
-@media (min-width: 1024px) {
   .productBottom {
     padding-top: 0;
+  }
+
+  .productInfo {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .imageContainer img {
