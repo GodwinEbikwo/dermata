@@ -2,6 +2,8 @@ import Div100vh from 'react-div-100vh'
 import Image from 'next/image'
 import styled from 'styled-components'
 import Link from 'next/link'
+import { m } from 'framer-motion'
+import { revealIn } from '@config/transitions'
 
 const Root = styled.div`
   position: relative;
@@ -120,12 +122,24 @@ export const Final = ({ variant = 'default' }: Props) => {
 
           <Right>
             <div className="rightInner">
-              <span className="a">new arrivals</span>
-              <h2 className="b">For Feets</h2>
-              <div className="text-uppercase">
-                <Link href="/">
-                  <a className="link link--metis a">shop now</a>
-                </Link>
+              <div className="relative overflow-hidden">
+                <m.div variants={revealIn}>
+                  <span className="a">New arrivals</span>
+                </m.div>
+              </div>
+
+              <div className="relative overflow-hidden">
+                <m.div variants={revealIn}>
+                  <h2 className="b">For Feets</h2>
+                </m.div>
+              </div>
+
+              <div className="relative overflow-hidden text-uppercase">
+                <m.div variants={revealIn}>
+                  <Link href="/">
+                    <a className="link link--metis a">shop now</a>
+                  </Link>
+                </m.div>
               </div>
             </div>
           </Right>
@@ -136,7 +150,12 @@ export const Final = ({ variant = 'default' }: Props) => {
         <Div100vh className="flex flex-wrap hide-for-mobile">
           <Right>
             <div className="rightInner">
-              <span className="a">Accesories</span>
+              <div className="relative overflow-hidden">
+                <m.div variants={revealIn}>
+                  <span className="a">Accesories</span>
+                </m.div>
+              </div>
+
               <h2 className="b">For Groceries</h2>
               <div className="text-uppercase">
                 <Link href="/">
