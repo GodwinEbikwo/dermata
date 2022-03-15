@@ -5,7 +5,8 @@
 }
 
 .gridHeader {
-  padding: var(--spacer-half) calc((var(--spacer-half) / 2) + 0.2em);
+  font-family: var(--font2);
+  padding: var(--spacer-half) calc((var(--spacer-half) / 2) + 0.4em);
 }
 
 .grid {
@@ -26,6 +27,11 @@
   }
   .grid > *:nth-child(2n + 4) {
     border-bottom: 1px solid var(--border-color);
+  }
+}
+@media (max-width: 768px) {
+  .s_second > *:nth-child(odd) {
+    border-left: 1px solid transparent;
   }
 }
 

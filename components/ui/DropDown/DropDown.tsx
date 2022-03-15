@@ -59,6 +59,7 @@ export const StyledArrow = styled(DropdownMenuPrimitive.Arrow)`
 `
 
 export const StyledContent = styled(DropdownMenuPrimitive.Content)`
+  position: relative;
   min-width: 220px;
   background-color: var(--bg);
   padding: 10px;
@@ -128,6 +129,7 @@ export const StyledItemList = styled(DropdownMenuPrimitive.Item)`
   position: relative;
   user-select: none;
   cursor: pointer;
+  font-family: var(--font2);
 
   &:focus {
     background-color: var(--sage3);

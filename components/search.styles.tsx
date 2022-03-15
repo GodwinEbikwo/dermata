@@ -11,7 +11,18 @@ export const SearchContainer = styled.div`
 
   .filters {
     display: flex;
-    padding: 0 calc((var(--spacer-half) / 2) + 0.2em);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 calc((var(--spacer-half) / 2) + 0.4em);
+    padding-top: var(--spacer-half);
+    font-family: var(--font2);
+    border-top: 1px solid var(--border-color);
+
+    @media (min-width: 1252px) {
+      border-top: none;
+      padding-top: 0;
+      padding-bottom: var(--spacer-half);
+    }
   }
 `
 

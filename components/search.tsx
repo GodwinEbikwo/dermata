@@ -125,21 +125,18 @@ export default function Search({ categories, brands }: SearchPropsType) {
             )}
           </div>
 
-          <div
-            className="filters"
-            style={{ justifyContent: 'space-between', marginBottom: '1em' }}
-          >
+          <div className="filters">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button
+                <a
                   style={{ fontWeight: 500, color: 'var(--text-color)' }}
                   className="cursor-pointer text-uppercase"
                 >
                   Filter
-                </button>
+                </a>
               </DropdownMenuTrigger>
 
-              <StyledContent sideOffset={0}>
+              <StyledContent sideOffset={20}>
                 {categories.map((cat: any) => (
                   <StyledItemList key={cat.path}>
                     <Link
@@ -164,15 +161,15 @@ export default function Search({ categories, brands }: SearchPropsType) {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button
+                <a
                   style={{ fontWeight: 500, color: 'var(--text-color)' }}
                   className="cursor-pointer text-uppercase"
                 >
                   Sort by
-                </button>
+                </a>
               </DropdownMenuTrigger>
 
-              <StyledContent sideOffset={0}>
+              <StyledContent sideOffset={20}>
                 {Object.entries(SORT).map(([key, text]) => (
                   <StyledItemList key={key}>
                     <Link
