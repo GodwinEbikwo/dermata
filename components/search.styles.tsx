@@ -18,6 +18,11 @@ export const SearchContainer = styled.div`
     font-family: var(--font2);
     border-top: 1px solid var(--border-color);
 
+    @media (min-width: 768px) {
+      border-top: none;
+      padding-bottom: var(--spacer-half);
+    }
+
     @media (min-width: 1252px) {
       border-top: none;
       padding-top: 0;
@@ -123,7 +128,7 @@ export const SearchContainerInner = styled.div`
     border-left: 1px solid var(--border-color);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .s_second > *:nth-child(odd) {
       border-left: 1px solid transparent;
     }
@@ -136,8 +141,8 @@ export const SearchContainerInner = styled.div`
   @media (min-width: 768px) {
     .s_second {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2em;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0px;
       padding: 0;
     }
   }

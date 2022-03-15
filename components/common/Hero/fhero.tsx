@@ -35,12 +35,13 @@ const Left = styled.div`
     height: 100%;
     overflow: hidden;
     background: #f6f6f6;
-    @media (max-width: 767px) {
+
+    @media (max-width: 1023px) {
       height: 100%;
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     width: 100vw;
     height: 100vw;
     height: 108vw;
@@ -55,11 +56,12 @@ const Right = styled.div`
   border-bottom: 1px solid var(--border-color);
   border-right: none;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     justify-content: center;
     text-align: center;
     width: 100vw;
     /* height: 50vw; */
+
     /* border-top: 1px solid var(--border-color); */
     border-bottom: 1px solid var(--border-color);
     border-right: none;
@@ -72,7 +74,7 @@ const Right = styled.div`
     justify-content: flex-end;
     padding: 15px 15px 45px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       width: 100%;
       padding-bottom: var(--spacer);
       align-items: flex-start;

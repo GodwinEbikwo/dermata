@@ -139,7 +139,9 @@
   .related_item_grid > * {
     --min: 15ch;
     flex: 1 1 var(--min);
+    border: none !important;
   }
+
   .related_products_title {
     margin-bottom: var(--spacer-half);
   }
