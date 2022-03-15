@@ -70,8 +70,8 @@ export const revealIn = {
     y: '0%',
     opacity: 1,
     transition: {
-      duration: 1.25,
-      ease: [0.165, 0.84, 0.44, 1],
+      duration: 1.7,
+      ease: [0.25, 0.46, 0.45, 0.94],
     },
   },
   exit: {

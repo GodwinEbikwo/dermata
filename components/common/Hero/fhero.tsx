@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { m } from 'framer-motion'
-import { revealIn } from '@config/transitions'
+import { revealIn, wrapperVariants } from '@config/transitions'
 
 const Root = styled.div`
   position: relative;
@@ -107,7 +107,11 @@ export const Final = ({ variant = 'default' }: Props) => {
       {variant === 'default' && (
         <Div100vh className="flex flex-wrap">
           <Left>
-            <div className="imgContainer" data-scroll>
+            <m.div
+              className="imgContainer"
+              data-scroll
+              variants={wrapperVariants}
+            >
               <Image
                 priority={true}
                 alt="shoe"
@@ -117,7 +121,7 @@ export const Final = ({ variant = 'default' }: Props) => {
                 quality={100}
                 className="a-img"
               />
-            </div>
+            </m.div>
           </Left>
 
           <Right>
