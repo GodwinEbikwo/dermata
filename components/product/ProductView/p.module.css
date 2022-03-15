@@ -128,7 +128,7 @@
 
 @media (max-width: 1439px) {
   .related_item_grid {
-    --gap: 0.5em;
+    --gap: 0em;
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap);
