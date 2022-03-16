@@ -49,7 +49,7 @@ const SliderCarousel = ({ product }: any) => {
 export default SliderCarousel
 
 const R = styled.div`
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `

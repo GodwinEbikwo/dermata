@@ -87,19 +87,19 @@
   }
 
   .gridLeft {
-    width: 65%;
+    width: 60%;
     display: flex;
   }
 
   .gridRight {
-    width: 35%;
+    width: 40%;
     padding: 0 var(--px-2);
   }
 
   .gridLeftInner {
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .gridImgContainer {
@@ -109,6 +109,22 @@
 
   .accordionContainer {
     margin-top: var(--spacer);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gridLeft {
+    width: 65%;
+  }
+
+  .gridRight {
+    width: 35%;
+  }
+
+  .gridLeftInner {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

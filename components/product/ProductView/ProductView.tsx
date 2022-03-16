@@ -147,7 +147,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
           <ul className={s.related_item_grid}>
             {relatedProducts.map((p) => (
               <li key={p.path} className={s.related_item}>
-                <Link href={`/product/${product.slug}`}>
+                <Link href={`/product/${p.slug}`}>
                   <a aria-label={p.name} data-scroll>
                     {p?.images && (
                       <Image

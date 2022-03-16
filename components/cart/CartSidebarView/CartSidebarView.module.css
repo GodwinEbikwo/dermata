@@ -37,7 +37,13 @@
 
 .states_title {
   text-align: center;
-  font-weight: 600;
+  font-family: var(--font2);
+  font-weight: 500;
+}
+
+.states_caption {
+  font-family: var(--font2);
+  font-style: italic;
 }
 
 .states_para {

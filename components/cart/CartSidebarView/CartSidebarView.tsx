@@ -9,6 +9,7 @@ import usePrice from '@framework/product/use-price'
 import SidebarLayout from '@components/common/SidebarLayout'
 import Button from '@components/ui/Button'
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const CartSidebarView: FC = () => {
   const { closeSidebar, setSidebarView } = useUI()
@@ -53,6 +54,16 @@ const CartSidebarView: FC = () => {
               </div>
               <span className="text-center text-uppercase">
                 <div className={s.states_title}>Your cart is empty</div>
+                <div className={s.states_caption}>
+                  <Link href="/search">
+                    <a
+                      className="link link--metis text-uppercase"
+                      onClick={handleClose}
+                    >
+                      got to shop
+                    </a>
+                  </Link>
+                </div>
               </span>
             </div>
           </div>

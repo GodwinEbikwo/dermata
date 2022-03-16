@@ -40,15 +40,46 @@ export const SearchContainerInner = styled.div`
     gap: var(--gap);
     width: 100%;
     height: 100%;
-    margin-bottom: 1rem;
-    padding: 1rem 0;
+    padding-top: 1rem;
+    border-left: 1px solid var(--border-color);
   }
 
   .s_second > * {
     --min: 15ch;
     flex: 1 1 var(--min);
     border-top: 1px solid var(--border-color);
-    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+  }
+
+  @media (max-width: 767px) {
+    /* .s_second > *:nth-child(-n + 1) {
+      border-left: 1px solid transparent;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .s_second > *:nth-child(-n + 3) {
+      border-left: 1px solid transparent;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .s_second > *:nth-child(-n + 5) {
+      border-left: 1px solid transparent;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .s_second > *:nth-child(-n + 7) {
+      border-left: 1px solid transparent;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .s_second > *:nth-child(-n + 9) {
+      border-left: 1px solid transparent;
+      border-right: 1px solid var(--border-color);
+    }
+    .s_second > *:nth-child(-n + 11) {
+      border-left: 1px solid transparent;
+      border-right: 1px solid var(--border-color);
+    } */
   }
 
   /* @media (max-width: 767px) {
@@ -56,10 +87,22 @@ export const SearchContainerInner = styled.div`
       border-left: 1px solid transparent;
     }
   } */
-
+  /* 
   .s_second > *:nth-child(-n + 1) {
     border-left: 1px solid transparent;
   }
+
+  .s_second > *:nth-child(-n + 3) {
+    border-left: 1px solid transparent;
+  }
+
+  .s_second > *:nth-child(-n + 5) {
+    border-left: 1px solid transparent;
+  }
+
+  .s_second > *:nth-child(-n + 7) {
+    border-left: 1px solid transparent;
+  } */
 
   @media (min-width: 768px) {
     .s_second {
@@ -70,15 +113,15 @@ export const SearchContainerInner = styled.div`
       --min: 35ch;
       flex: 1 1 var(--min);
     }
-
-    .s_second > *:last-child {
-      border-right: 1px solid var(--border-color);
-    }
   }
 
   @media (min-width: 1252px) {
     .s_second {
       margin-bottom: 0;
+    }
+
+    .s_second > *:first-child {
+      border-left: none;
     }
   }
 

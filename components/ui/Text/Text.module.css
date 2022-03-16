@@ -49,6 +49,7 @@
   text-indent: 4%;
   font-weight: 600;
   font-size: var(--size-500);
+  letter-spacing: var(--ls-md);
 }
 
 .body h2::before {
@@ -67,6 +68,7 @@
   text-transform: uppercase;
   font-weight: 600;
   font-size: var(--size-500);
+  letter-spacing: var(--ls-md);
 }
 
 .body li {
@@ -81,7 +83,7 @@
   line-height: 1.8;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1440px) {
   .body {
     width: 50%;
   }

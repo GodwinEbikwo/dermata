@@ -156,6 +156,17 @@ export default function Search({ categories, brands }: SearchPropsType) {
                     </Link>
                   </StyledItemList>
                 ))}
+                <StyledItemList>
+                  <Link href={{ pathname: getCategoryPath('', brand), query }}>
+                    <a
+                      onClick={(e) => handleClick(e, 'categories')}
+                      style={{ fontWeight: 500, color: 'var(--text-color)' }}
+                      className="cursor-pointer text-uppercase"
+                    >
+                      Reset
+                    </a>
+                  </Link>
+                </StyledItemList>
               </StyledContent>
             </DropdownMenu>
 
@@ -187,6 +198,17 @@ export default function Search({ categories, brands }: SearchPropsType) {
                     </Link>
                   </StyledItemList>
                 ))}
+                <StyledItemList>
+                  <Link href={{ pathname, query: filterQuery({ q }) }}>
+                    <a
+                      onClick={(e) => handleClick(e, 'categories')}
+                      style={{ fontWeight: 500, color: 'var(--text-color)' }}
+                      className="cursor-pointer text-uppercase"
+                    >
+                      Reset
+                    </a>
+                  </Link>
+                </StyledItemList>
               </StyledContent>
             </DropdownMenu>
           </div>
