@@ -22,46 +22,51 @@ const Quantity: FC<QuantityProps> = ({
   return (
     <div className={s.root}>
       <button
-        className={s.actions}
         onClick={handleRemove}
         aria-label="remove product"
+        className="text-uppercase"
+        style={{ fontFamily: 'var(--font2)' }}
       >
-        <Cross width={20} height={20} />
+        Remove
       </button>
 
-      <label className={s.label}>
-        <input
-          className={s.input}
-          onChange={(e) =>
-            Number(e.target.value) < max + 1 ? handleChange(e) : () => {}
-          }
-          value={value}
-          type="number"
-          max={max}
-          min="0"
-          readOnly
-        />
-      </label>
-      <button
-        aria-label="reduce quantity"
-        type="button"
-        onClick={decrease}
-        className={s.actions}
-        style={{ marginLeft: '-1px' }}
-        disabled={value <= 1}
-      >
-        <Minus width={18} height={18} />
-      </button>
-      <button
-        aria-label="increase quantity"
-        type="button"
-        onClick={increase}
-        className={cn(s.actions)}
-        style={{ marginLeft: '-1px' }}
-        disabled={value < 1 || value >= max}
-      >
-        <Plus width={18} height={18} />
-      </button>
+      <div className={s.inputBox}>
+        <button
+          aria-label="reduce quantity"
+          type="button"
+          onClick={decrease}
+          className={s.actions}
+          style={{ borderRight: 'none' }}
+          disabled={value <= 1}
+        >
+          <Minus width={18} height={18} />
+        </button>
+
+        <label className={s.label}>
+          <input
+            className={s.input}
+            onChange={(e) =>
+              Number(e.target.value) < max + 1 ? handleChange(e) : () => {}
+            }
+            value={value}
+            type="number"
+            max={max}
+            min="0"
+            readOnly
+          />
+        </label>
+
+        <button
+          aria-label="increase quantity"
+          type="button"
+          onClick={increase}
+          className={cn(s.actions)}
+          style={{ marginLeft: '-1px' }}
+          disabled={value < 1 || value >= max}
+        >
+          <Plus width={18} height={18} />
+        </button>
+      </div>
     </div>
   )
 }

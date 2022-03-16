@@ -1,7 +1,12 @@
 .root {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   height: 2.25rem;
+}
+
+.inputBox {
+  display: flex;
 }
 
 .actions {
@@ -30,18 +35,16 @@
 }
 
 .label {
-  margin-left: 0.5rem;
-  width: 100%;
+  width: 60%;
   border: 1px solid var(--border-color);
 }
 
 .input {
+  text-align: center;
   pointer-events: auto;
   height: 100%;
   width: 100%;
   user-select: none;
   background-color: transparent;
-  padding-left: 1rem;
-  padding-right: 1rem;
   color: var(--text-color);
 }

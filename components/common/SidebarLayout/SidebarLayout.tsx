@@ -54,11 +54,6 @@ const RootHeader = styled.header`
   min-height: 46px;
   background-color: var(--bg);
 
-  .back {
-    margin-left: 0.5rem;
-    font-size: var(--size-300);
-  }
-
   .button_actions {
     display: flex;
     align-items: center;
@@ -77,5 +72,4 @@ const Container = styled(Div100vh)`
   position: relative;
   display: flex;
   flex-direction: column;
-  /* padding: var(--spacer) var(--spacer-half); */
 `
