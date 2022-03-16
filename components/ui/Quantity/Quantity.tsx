@@ -25,7 +25,7 @@ const Quantity: FC<QuantityProps> = ({
         onClick={handleRemove}
         aria-label="remove product"
         className="text-uppercase"
-        style={{ fontFamily: 'var(--font2)' }}
+        style={{ fontFamily: 'var(--font2)', textDecoration: 'underline' }}
       >
         Remove
       </button>
