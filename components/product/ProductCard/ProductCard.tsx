@@ -7,8 +7,6 @@ import Image, { ImageProps } from 'next/image'
 import usePrice from '@framework/product/use-price'
 
 interface Props {
-  width?: number
-  height?: number
   className?: string
   product: Product
   noNameTag?: boolean
@@ -19,8 +17,6 @@ interface Props {
 const placeholderImg = '/product-img-placeholder.svg'
 
 const ProductCard: FC<Props> = ({
-  width,
-  height,
   product,
   imgProps,
   className,

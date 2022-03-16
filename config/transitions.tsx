@@ -70,7 +70,7 @@ export const revealIn = {
     y: '0%',
     opacity: 1,
     transition: {
-      duration: 1.7,
+      duration: 1.65,
       ease: [0.25, 0.46, 0.45, 0.94],
     },
   },
@@ -126,19 +126,36 @@ export const variantsAni = {
   },
 }
 
+// export const menuInOut = {
+//   initial: { y: '110%', opacity: 0 },
+//   enter: {
+//     y: '0%',
+//     opacity: 1,
+//     transition: {
+//       duration: 1,
+//       ease: [0.83, 0, 0.17, 1],
+//     },
+//   },
+//   exit: {
+//     y: '110%',
+//     opacity: 0,
+//     transition: { duration: 0.45, ease: [0.83, 0, 0.17, 1] },
+//   },
+// }
+
 export const menuInOut = {
   initial: { y: '110%', opacity: 0 },
   enter: {
     y: '0%',
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 1.5,
       ease: [0.83, 0, 0.17, 1],
     },
   },
   exit: {
     y: '110%',
     opacity: 0,
-    transition: { duration: 0.45, ease: [0.83, 0, 0.17, 1] },
+    transition: { duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] },
   },
 }

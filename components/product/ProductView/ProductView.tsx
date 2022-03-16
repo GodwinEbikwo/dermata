@@ -15,13 +15,18 @@ import Link from 'next/link'
 import Button from '@components/ui/Button'
 import SliderCarousel from '../EmblaSlider/slider'
 import { shimmer, toBase64 } from '@config/img-helpers'
-import ProductCard from '../ProductCard'
 import { ProductOptions } from '..'
+import { m } from 'framer-motion'
+import { menuInOut } from '@config/transitions'
 
 interface ProductViewProps {
   product: Product
   relatedProducts: Product[]
   className?: string
+}
+
+function Wrapper({ children }: any) {
+  return <div className="relative overflow-hidden">{children}</div>
 }
 
 const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
@@ -93,24 +98,41 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
               data-scroll-sticky="true"
               data-scroll-target="#product-info"
             >
-              <h3 className={s.productTitle}>
-                <span>－</span>
-                {product.name}
-              </h3>
-              <h3 className={s.productPrice}>{price}</h3>
+              <Wrapper>
+                <m.div variants={menuInOut}>
+                  <h3 className={s.productTitle}>
+                    <span>－</span>
+                    {product.name}
+                  </h3>
+                </m.div>
+              </Wrapper>
+
+              <Wrapper>
+                <m.div variants={menuInOut}>
+                  <h3 className={s.productPrice}>{price}</h3>
+                </m.div>
+              </Wrapper>
             </div>
 
-            <ProductOptions
-              options={product.options}
-              selectedOptions={selectedOptions}
-              setSelectedOptions={setSelectedOptions}
-            />
+            <Wrapper>
+              <m.div variants={menuInOut}>
+                <ProductOptions
+                  options={product.options}
+                  selectedOptions={selectedOptions}
+                  setSelectedOptions={setSelectedOptions}
+                />
+              </m.div>
+            </Wrapper>
 
-            <Text
-              variant="paragraph"
-              className={s.productDesc}
-              html={product.descriptionHtml || product.description}
-            />
+            <Wrapper>
+              <m.div variants={menuInOut}>
+                <Text
+                  variant="paragraph"
+                  className={s.productDesc}
+                  html={product.descriptionHtml || product.description}
+                />
+              </m.div>
+            </Wrapper>
 
             <div className={s.btnContainer}>
               {process.env.COMMERCE_CART_ENABLED && (

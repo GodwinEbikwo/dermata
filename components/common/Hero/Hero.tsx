@@ -45,7 +45,13 @@ const Grid = styled.section`
 export default function Hero({ products }: any) {
   return (
     <section className={s.root}>
-      <Final variant="default" />
+      <Final
+        caption="new arrivals"
+        title="for feet"
+        variant="default"
+        location="search"
+        string="https://res.cloudinary.com/godwinebikwo/image/upload/v1647279662/nikeshoes_vreeig.webp"
+      />
 
       <div className={s.gridHeader}>
         <div className="flex flex-row align-center space-between text-uppercase">
@@ -99,27 +105,13 @@ export default function Hero({ products }: any) {
         ))}
       </ul>
 
-      {/* <m.ul
-        style={{ marginTop: 'var(--spacer-half' }}
-        initial="initial"
-        whileInView="enter"
-        variants={variantsAni}
-        className={s.grid}
-      >
-        {products.slice(4, 15).map((product: any, i: number) => (
-          <m.li className="relative" key={product.id}>
-            <ProductCard
-              variant="simple"
-              product={product}
-              imgProps={{
-                priority: i === 0,
-                width: 540,
-                height: 810,
-              }}
-            />
-          </m.li>
-        ))}
-      </m.ul> */}
+      <Final
+        location="search/suits"
+        caption="explore"
+        title="weddings"
+        variant="default"
+        string="https://res.cloudinary.com/godwinebikwo/image/upload/v1646219775/9_2400x2400_vfjaic.jpg"
+      />
     </section>
   )
 }

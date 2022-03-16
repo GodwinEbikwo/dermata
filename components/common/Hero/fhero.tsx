@@ -1,27 +1,16 @@
+//@ts ignore
 import Div100vh from 'react-div-100vh'
-import Image from 'next/image'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { m } from 'framer-motion'
 import { revealIn, wrapperVariants } from '@config/transitions'
+import Image, { ImageProps } from 'next/image'
 
 const Root = styled.div`
   position: relative;
 `
 
-const RootInner = styled.div`
-  display: flex;
-
-  @media (max-width: 767px) {
-    flex-wrap: wrap;
-  }
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-`
-
-const Left = styled.div`
+const Left = styled(m.div)`
   display: flex;
   width: 50vw;
   border-bottom: 1px solid var(--border-color);
@@ -52,7 +41,7 @@ const Left = styled.div`
   }
 `
 
-const Right = styled.div`
+const Right = styled(m.div)`
   display: flex;
   width: 50vw;
   border-bottom: 1px solid var(--border-color);
@@ -62,9 +51,6 @@ const Right = styled.div`
     justify-content: center;
     text-align: center;
     width: 100vw;
-    /* height: 50vw; */
-
-    /* border-top: 1px solid var(--border-color); */
     border-bottom: 1px solid var(--border-color);
     border-right: none;
   }
@@ -97,16 +83,50 @@ const Right = styled.div`
   }
 `
 
-interface Props {
-  variant?: 'default' | 'two'
+const v = {
+  initial: { opacity: 0 },
+  enter: {
+    opacity: 1,
+    transition: { staggerChildren: 0.35, delayChildren: 0.035 },
+  },
 }
 
-export const Final = ({ variant = 'default' }: Props) => {
+interface StaticImageData {
+  src: string
+}
+
+interface StaticRequire {
+  default: StaticImageData
+}
+
+declare type StaticImport = StaticRequire | StaticImageData
+
+interface Props {
+  variant?: 'default' | 'two'
+  string?: string | StaticImport
+  caption?: string
+  title?: string
+  location?: string
+}
+
+function Wrapper({ children }: any) {
+  return (
+    <div className="relative overflow-hidden text-uppercase">{children}</div>
+  )
+}
+
+export const Final = ({
+  variant = 'default',
+  string,
+  caption,
+  title,
+  location,
+}: Props) => {
   return (
     <Root>
       {variant === 'default' && (
         <Div100vh className="flex flex-wrap">
-          <Left>
+          <Left initial="initial" whileInView="enter" variants={v}>
             <m.div
               className="imgContainer"
               data-scroll
@@ -115,7 +135,7 @@ export const Final = ({ variant = 'default' }: Props) => {
               <Image
                 priority={true}
                 alt="shoe"
-                src="https://res.cloudinary.com/godwinebikwo/image/upload/v1647279662/nikeshoes_vreeig.webp"
+                src={string}
                 layout="fill"
                 objectFit="cover"
                 quality={100}
@@ -124,27 +144,27 @@ export const Final = ({ variant = 'default' }: Props) => {
             </m.div>
           </Left>
 
-          <Right>
+          <Right initial="initial" whileInView="enter" variants={v}>
             <div className="rightInner">
-              <div className="relative overflow-hidden">
+              <Wrapper>
                 <m.div variants={revealIn}>
-                  <span className="a">New arrivals</span>
+                  <span className="a">{caption}</span>
                 </m.div>
-              </div>
+              </Wrapper>
 
-              <div className="relative overflow-hidden">
+              <Wrapper>
                 <m.div variants={revealIn}>
-                  <h2 className="b">For Feets</h2>
+                  <h2 className="b">{title}</h2>
                 </m.div>
-              </div>
+              </Wrapper>
 
-              <div className="relative overflow-hidden text-uppercase">
+              <Wrapper>
                 <m.div variants={revealIn}>
-                  <Link href="/">
+                  <Link href={`/${location}`}>
                     <a className="link link--metis a">shop now</a>
                   </Link>
                 </m.div>
-              </div>
+              </Wrapper>
             </div>
           </Right>
         </Div100vh>
@@ -152,25 +172,41 @@ export const Final = ({ variant = 'default' }: Props) => {
 
       {variant === 'two' && (
         <Div100vh className="flex flex-wrap hide-for-mobile">
-          <Right>
+          <Right initial="initial" whileInView="enter" variants={v}>
             <div className="rightInner">
-              <div className="relative overflow-hidden">
+              <Wrapper>
                 <m.div variants={revealIn}>
                   <span className="a">Accesories</span>
                 </m.div>
-              </div>
+              </Wrapper>
 
-              <h2 className="b">For Groceries</h2>
-              <div className="text-uppercase">
-                <Link href="/">
-                  <a className="link link--metis a">shop now</a>
-                </Link>
-              </div>
+              <Wrapper>
+                <m.div variants={revealIn}>
+                  <h2 className="b">For Groceries</h2>
+                </m.div>
+              </Wrapper>
+
+              <Wrapper>
+                <m.div variants={revealIn}>
+                  <Link href="/">
+                    <a className="link link--metis a">shop now</a>
+                  </Link>
+                </m.div>
+              </Wrapper>
             </div>
           </Right>
 
-          <Left className="has-border-left ">
-            <div className="imgContainer" data-scroll>
+          <Left
+            initial="initial"
+            whileInView="enter"
+            variants={v}
+            className="has-border-left "
+          >
+            <m.div
+              className="imgContainer"
+              data-scroll
+              variants={wrapperVariants}
+            >
               <Image
                 priority={true}
                 alt="shoe"
@@ -180,7 +216,7 @@ export const Final = ({ variant = 'default' }: Props) => {
                 quality={100}
                 className="a-img"
               />
-            </div>
+            </m.div>
           </Left>
         </Div100vh>
       )}
