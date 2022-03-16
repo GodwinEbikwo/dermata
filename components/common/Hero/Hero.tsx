@@ -50,7 +50,7 @@ export default function Hero({ products }: any) {
         title="for feet"
         variant="default"
         location="search"
-        string="https://res.cloudinary.com/godwinebikwo/image/upload/v1647279662/nikeshoes_vreeig.webp"
+        string="v1647279662/nikeshoes_vreeig.webp"
       />
 
       <div className={s.gridHeader}>
@@ -110,7 +110,7 @@ export default function Hero({ products }: any) {
         caption="explore"
         title="weddings"
         variant="default"
-        string="https://res.cloudinary.com/godwinebikwo/image/upload/v1646219775/9_2400x2400_vfjaic.jpg"
+        string="v1646219775/9_2400x2400_vfjaic.jpg"
       />
     </section>
   )

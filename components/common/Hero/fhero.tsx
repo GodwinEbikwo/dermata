@@ -135,7 +135,7 @@ export const Final = ({
               <Image
                 priority={true}
                 alt="shoe"
-                src={string}
+                src={`https://res.cloudinary.com/godwinebikwo/image/upload/${string}`}
                 layout="fill"
                 objectFit="cover"
                 quality={100}
