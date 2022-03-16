@@ -103,7 +103,7 @@ declare type StaticImport = StaticRequire | StaticImageData
 
 interface Props {
   variant?: 'default' | 'two'
-  string?: string | StaticImport
+  string?: string
   caption?: string
   title?: string
   location?: string
