@@ -1,17 +1,17 @@
 {
   "title": "Dermata ",
   "titleTemplate": "%s",
-  "description": "An art and lifestyle brand",
+  "description": "Dermata a shop hub for hybebeast and normies",
   "openGraph": {
     "title": "Dermata",
-    "description": "An art and lifestyle brand",
+    "description": "Dermata a shop hub for hybebeast and normies",
     "type": "website",
     "locale": "en_GB",
     "url": "https://Dermata.vercel.app",
-    "site_name": "Dermata art and lifestyle brand",
+    "site_name": "Dermata Co.",
     "images": [
       {
-        "url": "https://res.cloudinary.com/godwinebikwo/image/upload/v1645334092/Dermatapng_j6grlk.png",
+        "url": "https://res.cloudinary.com/godwinebikwo/image/upload/v1647440769/Unknown-4_lcymlo.png",
         "width": 1280,
         "height": 800,
         "alt": "Dermata Commerce"
