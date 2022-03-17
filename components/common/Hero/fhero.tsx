@@ -24,8 +24,7 @@ const Left = styled(m.div)`
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    background: #f6f6f6;
+    overflow: clip;
 
     @media (max-width: 1023px) {
       height: 100%;

@@ -80,11 +80,11 @@ export default function Hero({ products }: any) {
       </ul>
 
       <Final
-        location="search/suits"
-        caption="explore"
-        title="weddings"
+        location="search/trousers"
+        caption="explore trousers"
+        title="for legs"
         variant="default"
-        string="v1646219775/9_2400x2400_vfjaic.jpg"
+        string="v1647554983/rdenim2_p6osmx.jpg"
       />
     </section>
   )
