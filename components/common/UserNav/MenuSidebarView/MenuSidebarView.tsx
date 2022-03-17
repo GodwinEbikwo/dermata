@@ -29,7 +29,7 @@ const MenuSidebarView: FC<MenuProps> = (props) => {
           <li className={s.list}>
             <Link href="/search">
               <a onClick={() => closeSidebar()}>
-                <h4 className={s.label}>Shop All</h4>
+                <h4 className={s.label}>All</h4>
               </a>
             </Link>
           </li>

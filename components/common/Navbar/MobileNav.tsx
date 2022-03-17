@@ -57,17 +57,7 @@ const MobileNavbar: FC<NavbarProps> = ({ links, pages }) => {
           <div className="nav_left hide-for-mobile">
             <nav className="navMenu">
               <NavDropDown links={links} />
-              {sitePages.slice(4, 5).map((page) => (
-                <Link href={page.url!} key={page.url}>
-                  <a
-                    aria-label={page.name}
-                    className="nav_link link link--metis"
-                  >
-                    {page.name}
-                  </a>
-                </Link>
-              ))}
-              {sitePages.slice(0, 3).map((page) => (
+              {sitePages.slice(0, 4).map((page) => (
                 <Link href={page.url!} key={page.url}>
                   <a
                     aria-label={page.name}
@@ -79,7 +69,6 @@ const MobileNavbar: FC<NavbarProps> = ({ links, pages }) => {
               ))}
             </nav>
           </div>
-
           <m.div
             className="userNav_Box"
             initial={false}

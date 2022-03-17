@@ -21,8 +21,10 @@
 }
 
 .imageContainer {
+  width: 100%;
+  max-width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: clip;
   margin-bottom: 0.55556rem;
   border-bottom: 1px solid var(--border-color);
   padding: calc(var(--spacer-half) / 2);
@@ -31,7 +33,7 @@
 .productBottom {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .productInfo {

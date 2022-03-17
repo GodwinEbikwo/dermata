@@ -134,22 +134,26 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
               </m.div>
             </Wrapper>
 
-            <div className={s.btnContainer}>
-              {process.env.COMMERCE_CART_ENABLED && (
-                <Button
-                  aria-label={`Add ${product.name} to your cart`}
-                  type="button"
-                  onClick={addToCart}
-                  loading={loading}
-                  className={s.button}
-                  disabled={variant?.availableForSale === false}
-                >
-                  {variant?.availableForSale === false
-                    ? 'Product not available'
-                    : `Add To Cart - ${price}`}
-                </Button>
-              )}
-            </div>
+            <Wrapper>
+              <m.div variants={menuInOut}>
+                <div className={s.btnContainer}>
+                  {process.env.COMMERCE_CART_ENABLED && (
+                    <Button
+                      aria-label={`Add ${product.name} to your cart`}
+                      type="button"
+                      onClick={addToCart}
+                      loading={loading}
+                      className={s.button}
+                      disabled={variant?.availableForSale === false}
+                    >
+                      {variant?.availableForSale === false
+                        ? 'Product not available'
+                        : `Add To Cart - ${price}`}
+                    </Button>
+                  )}
+                </div>
+              </m.div>
+            </Wrapper>
           </div>
         </aside>
       </div>

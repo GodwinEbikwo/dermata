@@ -228,13 +228,9 @@ export function NavDropDown({ links }: any) {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ContentList>
-              <ContentListItem title="Shop all" href="/search" />
+              <ContentListItem title="All" href="/search" />
               {links?.map((l: any) => (
-                <ContentListItem
-                  key={l.href}
-                  title={l.label}
-                  href={l.href}
-                ></ContentListItem>
+                <ContentListItem key={l.href} title={l.label} href={l.href} />
               ))}
             </ContentList>
             <div

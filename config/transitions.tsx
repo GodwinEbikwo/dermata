@@ -149,8 +149,8 @@ export const menuInOut = {
     y: '0%',
     opacity: 1,
     transition: {
-      duration: 1.5,
-      ease: [0.83, 0, 0.17, 1],
+      duration: 1.6,
+      ease: [0.215, 0.61, 0.355, 1],
     },
   },
   exit: {

@@ -30,8 +30,8 @@ export default function Hero({ products }: any) {
       <div className={s.gridHeader}>
         <div className="flex flex-row align-center space-between text-uppercase">
           <div>Shop Jewellery</div>
-          <Link href="/">
-            <a>shop now</a>
+          <Link href="/search/jewellry">
+            <a className="link link--metis">shop now</a>
           </Link>
         </div>
       </div>
@@ -56,15 +56,15 @@ export default function Hero({ products }: any) {
 
       <div className={s.gridHeader}>
         <div className="flex flex-row align-center space-between text-uppercase">
-          <div>Shop Accessories</div>
-          <Link href="/">
-            <a>shop now</a>
+          <div>Shop shirts</div>
+          <Link href="/search/shirts">
+            <a className="link link--metis">shop now</a>
           </Link>
         </div>
       </div>
 
       <ul className={s.grid}>
-        {products.slice(8, 12).map((product: any, i: number) => (
+        {products.slice(4, 8).map((product: any, i: number) => (
           <li className="relative" key={product.id}>
             <ProductCard
               variant="simple"

@@ -26,6 +26,7 @@ import {
   StyledContent,
   StyledItemList,
 } from './ui/DropDown/DropDown'
+import Div100vh from 'react-div-100vh'
 
 const SORT = {
   'trending-desc': 'Trending',
@@ -236,14 +237,12 @@ export default function Search({ categories, brands }: SearchPropsType) {
                   ))}
                 </>
               ) : (
-                <>
-                  {rangeMap(12, (i) => (
-                    <Skeleton key={i}>
-                      <div style={{ width: '25rem', height: '20rem' }} />
-                    </Skeleton>
-                  ))}
-                </>
-              )}{' '}
+                <Div100vh className="relative">
+                  <div className="center-absolute">
+                    <h1 className="text-uppercase">Loading...</h1>
+                  </div>
+                </Div100vh>
+              )}
             </ul>
           </SearchContainerInner>
         </SearchContainer>
