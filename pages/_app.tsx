@@ -1,7 +1,6 @@
 import '@assets/main.css'
 import { FC } from 'react'
 import { AppProps } from 'next/app'
-import { Head } from '@components/common'
 import { ManagedUIContext } from '@components/ui/context'
 import { AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
@@ -14,17 +13,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as any).Layout || Noop
 
   return (
-    <>
-      <Head />
-      <ManagedUIContext>
-        <AppProvider>
-          <AnimatePresence exitBeforeEnter>
-            <Layout pageProps={pageProps}>
-              <Component {...pageProps} key={router.asPath} />
-            </Layout>
-          </AnimatePresence>
-        </AppProvider>
-      </ManagedUIContext>
-    </>
+    <ManagedUIContext>
+      <AppProvider>
+        <AnimatePresence exitBeforeEnter>
+          <Layout pageProps={pageProps}>
+            <Component {...pageProps} key={router.asPath} />
+          </Layout>
+        </AnimatePresence>
+      </AppProvider>
+    </ManagedUIContext>
   )
 }

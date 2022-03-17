@@ -1,7 +1,5 @@
 import s from './hero.module.css'
-import { m } from 'framer-motion'
 import { ProductCard } from '@components/product'
-import styled from 'styled-components'
 import Link from 'next/link'
 import { Final } from './fhero'
 
@@ -17,30 +15,6 @@ function NotCard({ label }: any) {
     </div>
   )
 }
-
-const Grid = styled.section`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  padding: 16vh var(--px-2);
-  grid-column-gap: 1.953vw;
-  grid-row-gap: 12.25vh;
-
-  a:nth-child(5n + 3) {
-    grid-column: 4 / 3;
-  }
-
-  a:nth-child(10n + 5) {
-    grid-column: 3 / 1;
-  }
-
-  a:nth-child(10n + 6) {
-    grid-column: 4 / -3;
-  }
-
-  a:nth-child(10n + 10) {
-    grid-column: 1 / 2;
-  }
-`
 
 export default function Hero({ products }: any) {
   return (
