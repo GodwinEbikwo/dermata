@@ -94,6 +94,14 @@ const LoginView: FC<Props> = () => {
               Sign Up
             </a>
           </div>
+          <div className="inner">
+            <a
+              className="link link--metis"
+              onClick={() => setModalView('FORGOT_VIEW')}
+            >
+              Forgot your password?
+            </a>
+          </div>
         </FormBottom>
       </FormInner>
     </FormRoot>

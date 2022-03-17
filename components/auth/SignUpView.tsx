@@ -102,7 +102,7 @@ const SignUpView: FC<Props> = () => {
 
         <FormBottom>
           <div className="inner">
-            <span className="grey-text">Do you have an account?</span>
+            <span className="grey-text">Already have an account?</span>
             {` `}
             <a
               className="link link--metis"

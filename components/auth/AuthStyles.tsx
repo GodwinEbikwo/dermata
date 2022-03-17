@@ -7,10 +7,12 @@ export const FormRoot = styled.form`
   width: 21rem;
   flex-direction: column;
   transition: all 300ms ease;
+  font-family: var(--font2);
 
   button {
     background: var(--black);
     color: var(--accent);
+    font-family: var(--font);
   }
 `
 
@@ -68,6 +70,7 @@ export const FormBottom = styled.div`
   .inner {
     display: inline-block;
     color: var(--button-text);
+    margin-bottom: 0.25rem;
 
     a {
       font-weight: 500;
