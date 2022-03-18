@@ -137,7 +137,7 @@ export const Final = ({
                 layout="fill"
                 objectFit="cover"
                 quality={100}
-                className="a-img"
+                className="himg"
               />
             </m.div>
           </Left>
@@ -212,7 +212,7 @@ export const Final = ({
                 layout="fill"
                 objectFit="cover"
                 quality={100}
-                className="a-img"
+                className="himg"
               />
             </m.div>
           </Left>

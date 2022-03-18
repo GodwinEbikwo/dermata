@@ -43,6 +43,7 @@ export default function Hero({ products }: any) {
               variant="simple"
               product={product}
               imgProps={{
+                priority: i === 0,
                 width: 640,
                 height: 960,
               }}
@@ -69,6 +70,7 @@ export default function Hero({ products }: any) {
               variant="simple"
               product={product}
               imgProps={{
+                priority: i === 0,
                 width: 512.5,
                 height: 768,
               }}
