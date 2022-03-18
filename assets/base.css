@@ -77,7 +77,7 @@
   --spacer-lg: 5rem;
   --easing: cubic-bezier(0.215, 0.61, 0.355, 1);
 
-  --size-300: clamp(0.8rem, 0.85rem + 0.24vw, 0.85rem);
+  --size-300: clamp(0.8rem, 0.85rem + 0.24vw, 0.9rem);
   --size-400: clamp(0.88rem, 0.83rem + 0.24vw, 0.95rem); /*1rem*/
   --size-500: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
   --size-600: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
@@ -102,7 +102,7 @@
   --sage12: hsl(155 24% 9%);
 
   --footer-bg: #131313;
-  --footer-text: rgba(255, 255, 255, 0.8);
+  --footer-text: rgba(255, 255, 255, 0.9);
   --footer-bc: rgba(255, 255, 255, 0.4);
 
   --bg: var(--sage1);

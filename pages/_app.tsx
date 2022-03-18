@@ -5,6 +5,7 @@ import { ManagedUIContext } from '@components/ui/context'
 import { AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
 import AppProvider from '@context/search-context'
+import { Head } from '@components/common'
 
 const Noop: FC = ({ children }) => <>{children}</>
 
@@ -13,14 +14,17 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as any).Layout || Noop
 
   return (
-    <ManagedUIContext>
-      <AppProvider>
-        <AnimatePresence exitBeforeEnter>
-          <Layout pageProps={pageProps}>
-            <Component {...pageProps} key={router.asPath} />
-          </Layout>
-        </AnimatePresence>
-      </AppProvider>
-    </ManagedUIContext>
+    <>
+      <Head />
+      <ManagedUIContext>
+        <AppProvider>
+          <AnimatePresence exitBeforeEnter>
+            <Layout pageProps={pageProps}>
+              <Component {...pageProps} key={router.asPath} />
+            </Layout>
+          </AnimatePresence>
+        </AppProvider>
+      </ManagedUIContext>
+    </>
   )
 }

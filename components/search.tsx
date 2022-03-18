@@ -27,6 +27,7 @@ import {
   StyledItemList,
 } from './ui/DropDown/DropDown'
 import Div100vh from 'react-div-100vh'
+import { NextSeo } from 'next-seo'
 
 const SORT = {
   'trending-desc': 'Trending',
@@ -69,185 +70,190 @@ export default function Search({ categories, brands }: SearchPropsType) {
   }
 
   return (
-    <m.div initial="initial" animate="enter" exit="exit" data-scroll-section>
-      <m.div variants={fade}>
-        <SearchContainer>
-          <div className="px relative">
-            {(q || activeCategory || activeBrand) && (
-              <div
-                style={{
-                  marginBottom: 'var(--spacer-half)',
-                  transition: 'all ease-in 750ms',
-                }}
-              >
-                {data ? (
-                  <>
-                    <div
-                      style={{
-                        transition: 'all ease-in 300ms',
-                        fontWeight: 600,
-                      }}
-                      className={cn('animated text-uppercase', {
-                        fadeIn: data.found,
-                        hidden: !data.found,
-                      })}
-                    >
-                      <span>－</span> {activeCategory?.name} (
-                      {data.products.length} item
-                      {data.products.length === 1 ? '' : 's'})
-                    </div>
-                    <span
-                      className={cn('animated', {
-                        fadeIn: !data.found,
-                        hidden: data.found,
-                      })}
-                    >
-                      {q ? (
-                        <>
-                          There are no products that match "<strong>{q}</strong>
-                          "
-                        </>
-                      ) : (
-                        <>
-                          There are no products that match the selected
-                          category.
-                        </>
-                      )}
-                    </span>
-                  </>
-                ) : q ? (
-                  <>
-                    Searching for: "<strong>{q}</strong>"
-                  </>
-                ) : (
-                  <>Searching...</>
-                )}
-              </div>
-            )}
-          </div>
-
-          <div className="filters">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <a
-                  style={{ fontWeight: 500, color: 'var(--text-color)' }}
-                  className="cursor-pointer text-uppercase"
+    <>
+      <NextSeo title="Search" />
+      <m.div initial="initial" animate="enter" exit="exit" data-scroll-section>
+        <m.div variants={fade}>
+          <SearchContainer>
+            <div className="px relative">
+              {(q || activeCategory || activeBrand) && (
+                <div
+                  style={{
+                    marginBottom: 'var(--spacer-half)',
+                    transition: 'all ease-in 750ms',
+                  }}
                 >
-                  Filter
-                </a>
-              </DropdownMenuTrigger>
-
-              <StyledContent sideOffset={20}>
-                {categories.map((cat: any) => (
-                  <StyledItemList key={cat.path}>
-                    <Link
-                      key={cat.path}
-                      href={{
-                        pathname: getCategoryPath(cat.path, brand),
-                        query,
-                      }}
-                    >
-                      <a
-                        arial-label={cat.name}
-                        className="link link--metis"
-                        onClick={(e) => handleClick(e, 'categories')}
-                      >
-                        {cat.name}
-                      </a>
-                    </Link>
-                  </StyledItemList>
-                ))}
-                <StyledItemList>
-                  <Link href={{ pathname: getCategoryPath('', brand), query }}>
-                    <a
-                      onClick={(e) => handleClick(e, 'categories')}
-                      style={{ fontWeight: 500, color: 'var(--text-color)' }}
-                      className="cursor-pointer text-uppercase"
-                    >
-                      Reset
-                    </a>
-                  </Link>
-                </StyledItemList>
-              </StyledContent>
-            </DropdownMenu>
-
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <a
-                  style={{ fontWeight: 500, color: 'var(--text-color)' }}
-                  className="cursor-pointer text-uppercase"
-                >
-                  Sort by
-                </a>
-              </DropdownMenuTrigger>
-
-              <StyledContent sideOffset={20}>
-                {Object.entries(SORT).map(([key, text]) => (
-                  <StyledItemList key={key}>
-                    <Link
-                      href={{
-                        pathname,
-                        query: filterQuery({ q, sort: key }),
-                      }}
-                    >
-                      <a
-                        onClick={(e) => handleClick(e, 'sort')}
-                        className="link link--metis"
-                      >
-                        {text}
-                      </a>
-                    </Link>
-                  </StyledItemList>
-                ))}
-                <StyledItemList>
-                  <Link href={{ pathname, query: filterQuery({ q }) }}>
-                    <a
-                      onClick={(e) => handleClick(e, 'categories')}
-                      style={{ fontWeight: 500, color: 'var(--text-color)' }}
-                      className="cursor-pointer text-uppercase"
-                    >
-                      Reset
-                    </a>
-                  </Link>
-                </StyledItemList>
-              </StyledContent>
-            </DropdownMenu>
-          </div>
-
-          <SearchContainerInner data-scroll id="search-info">
-            <ul className="s_second">
-              {data ? (
-                <>
-                  {data.products.map((product: Product, i: number) => (
-                    <li key={product.path}>
-                      <ProductCard
-                        className={cn('animated', {
+                  {data ? (
+                    <>
+                      <div
+                        style={{
+                          transition: 'all ease-in 300ms',
+                          fontWeight: 600,
+                        }}
+                        className={cn('animated text-uppercase', {
                           fadeIn: data.found,
                           hidden: !data.found,
                         })}
-                        variant="simple"
-                        product={product}
-                        imgProps={{
-                          priority: i === 0,
-                          width: 666.666667,
-                          height: 1000,
-                        }}
-                      />
-                    </li>
-                  ))}
-                </>
-              ) : (
-                <Div100vh className="relative">
-                  <div className="center-absolute">
-                    <h1 className="text-uppercase">Loading...</h1>
-                  </div>
-                </Div100vh>
+                      >
+                        <span>－</span> {activeCategory?.name} (
+                        {data.products.length} item
+                        {data.products.length === 1 ? '' : 's'})
+                      </div>
+                      <span
+                        className={cn('animated', {
+                          fadeIn: !data.found,
+                          hidden: data.found,
+                        })}
+                      >
+                        {q ? (
+                          <>
+                            There are no products that match "
+                            <strong>{q}</strong>"
+                          </>
+                        ) : (
+                          <>
+                            There are no products that match the selected
+                            category.
+                          </>
+                        )}
+                      </span>
+                    </>
+                  ) : q ? (
+                    <>
+                      Searching for: "<strong>{q}</strong>"
+                    </>
+                  ) : (
+                    <>Searching...</>
+                  )}
+                </div>
               )}
-            </ul>
-          </SearchContainerInner>
-        </SearchContainer>
+            </div>
+
+            <div className="filters">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <a
+                    style={{ fontWeight: 500, color: 'var(--text-color)' }}
+                    className="cursor-pointer text-uppercase"
+                  >
+                    Filter
+                  </a>
+                </DropdownMenuTrigger>
+
+                <StyledContent sideOffset={20}>
+                  {categories.map((cat: any) => (
+                    <StyledItemList key={cat.path}>
+                      <Link
+                        key={cat.path}
+                        href={{
+                          pathname: getCategoryPath(cat.path, brand),
+                          query,
+                        }}
+                      >
+                        <a
+                          arial-label={cat.name}
+                          className="link link--metis"
+                          onClick={(e) => handleClick(e, 'categories')}
+                        >
+                          {cat.name}
+                        </a>
+                      </Link>
+                    </StyledItemList>
+                  ))}
+                  <StyledItemList>
+                    <Link
+                      href={{ pathname: getCategoryPath('', brand), query }}
+                    >
+                      <a
+                        onClick={(e) => handleClick(e, 'categories')}
+                        style={{ fontWeight: 500, color: 'var(--text-color)' }}
+                        className="cursor-pointer text-uppercase"
+                      >
+                        Reset
+                      </a>
+                    </Link>
+                  </StyledItemList>
+                </StyledContent>
+              </DropdownMenu>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <a
+                    style={{ fontWeight: 500, color: 'var(--text-color)' }}
+                    className="cursor-pointer text-uppercase"
+                  >
+                    Sort by
+                  </a>
+                </DropdownMenuTrigger>
+
+                <StyledContent sideOffset={20}>
+                  {Object.entries(SORT).map(([key, text]) => (
+                    <StyledItemList key={key}>
+                      <Link
+                        href={{
+                          pathname,
+                          query: filterQuery({ q, sort: key }),
+                        }}
+                      >
+                        <a
+                          onClick={(e) => handleClick(e, 'sort')}
+                          className="link link--metis"
+                        >
+                          {text}
+                        </a>
+                      </Link>
+                    </StyledItemList>
+                  ))}
+                  <StyledItemList>
+                    <Link href={{ pathname, query: filterQuery({ q }) }}>
+                      <a
+                        onClick={(e) => handleClick(e, 'categories')}
+                        style={{ fontWeight: 500, color: 'var(--text-color)' }}
+                        className="cursor-pointer text-uppercase"
+                      >
+                        Reset
+                      </a>
+                    </Link>
+                  </StyledItemList>
+                </StyledContent>
+              </DropdownMenu>
+            </div>
+
+            <SearchContainerInner data-scroll id="search-info">
+              <ul className="s_second">
+                {data ? (
+                  <>
+                    {data.products.map((product: Product, i: number) => (
+                      <li key={product.path}>
+                        <ProductCard
+                          className={cn('animated', {
+                            fadeIn: data.found,
+                            hidden: !data.found,
+                          })}
+                          variant="simple"
+                          product={product}
+                          imgProps={{
+                            priority: i === 0,
+                            width: 666.666667,
+                            height: 1000,
+                          }}
+                        />
+                      </li>
+                    ))}
+                  </>
+                ) : (
+                  <Div100vh className="relative">
+                    <div className="center-absolute">
+                      <h1 className="text-uppercase">Loading...</h1>
+                    </div>
+                  </Div100vh>
+                )}
+              </ul>
+            </SearchContainerInner>
+          </SearchContainer>
+        </m.div>
       </m.div>
-    </m.div>
+    </>
   )
 }
 

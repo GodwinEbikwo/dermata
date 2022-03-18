@@ -7,6 +7,7 @@ export const FooterStyles = styled.div`
   min-height: 40vh;
   margin-top: 0;
   color: var(--footer-text);
+  font-family: var(--font2);
 `
 
 export const FooterInner = styled.div`
@@ -18,8 +19,7 @@ export const FooterInner = styled.div`
     align-items: center;
     letter-spacing: var(--ls-sm);
     line-height: 1;
-    font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
   }
 `
 
@@ -58,7 +58,7 @@ export const FooterBlock = styled.div`
     width: 100%;
     height: 100%;
     text-transform: uppercase;
-    padding: 0.15em 0.5em;
+    padding: 0.5em 0.5em;
     font-size: var(--fs-static);
     transition: 180ms box-shadow ease-in-out;
     cursor: auto;
@@ -66,23 +66,21 @@ export const FooterBlock = styled.div`
     border: 1px solid var(--footer-bc);
     border-right: 0px;
     background-color: transparent;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .search_btn {
     border: 1px solid var(--footer-bc);
     padding: 0.15em 0.5em;
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 13px;
+    font-weight: 500;
     color: inherit;
   }
 
   .m-auto {
     margin-top: auto;
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 13px;
+    font-weight: 500;
     text-align: left;
     background-color: red;
   }
@@ -103,8 +101,7 @@ export const MenuFooter = styled.ul`
 
   li {
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 13px;
+    font-weight: 500;
     color: var(--footer-text);
   }
 

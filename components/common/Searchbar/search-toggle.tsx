@@ -1,11 +1,6 @@
-import styled from 'styled-components'
-
-const Button = styled.button`
-  margin-top: 0.4em;
-`
-
 const SearchToggle = ({ toggle }: any) => (
-  <Button
+  <button
+    style={{ marginTop: '0.4em' }}
     aria-label="search toggle"
     onClick={toggle}
     className="cursor-pointer hide-for-mobile"
@@ -36,7 +31,7 @@ const SearchToggle = ({ toggle }: any) => (
         />
       </svg>
     </span>
-  </Button>
+  </button>
 )
 
 export default SearchToggle

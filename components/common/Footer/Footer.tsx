@@ -34,7 +34,7 @@ const Footer: FC<Props> = ({ pages }) => {
             <MenuFooter>
               <li>
                 <Link href="/">
-                  <a className="sitetitle">Subscribe</a>
+                  <a className="sitetitle">Subscribe for goodies</a>
                 </Link>
               </li>
             </MenuFooter>
@@ -47,9 +47,7 @@ const Footer: FC<Props> = ({ pages }) => {
                 id="search__input"
                 className="search__input"
                 type="text"
-                name="q"
                 placeholder="EMAIL ADDRESS"
-                autoComplete="off"
               />
               <button className="search_btn">
                 <span>Join</span>

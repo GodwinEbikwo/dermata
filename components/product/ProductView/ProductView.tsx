@@ -71,7 +71,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
             {product.images.map((image, i) => (
               <div className={s.gridImgContainer} key={i} data-scroll>
                 <Image
-                  priority={true}
+                  priority={i === 0}
                   quality="100"
                   width={540}
                   height={810}

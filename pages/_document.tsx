@@ -35,6 +35,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="msapplication-TileColor" content="#da532c" />
+          <meta name="theme-color" content="#ffffff" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -54,15 +57,13 @@ class MyDocument extends Document {
           />
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-          <meta name="msapplication-TileColor" content="#da532c" />
-          <meta name="theme-color" content="#ffffff" />
           <link
             href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&display=swap"
             rel="stylesheet"
           />
           <link rel="stylesheet" href="https://use.typekit.net/hph2pnz.css" />
         </Head>
-        <body className="loading">
+        <body>
           <Main />
           <NextScript />
         </body>

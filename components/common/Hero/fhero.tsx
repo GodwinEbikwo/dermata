@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import { m } from 'framer-motion'
 import { revealIn, wrapperVariants } from '@config/transitions'
-import Image, { ImageProps } from 'next/image'
+import Image from 'next/image'
 
 const Root = styled.div`
   position: relative;
