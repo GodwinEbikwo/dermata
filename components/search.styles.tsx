@@ -46,7 +46,7 @@ export const SearchContainerInner = styled.div`
   }
 
   .s_second > * {
-    --min: 15ch;
+    --min: 20ch;
     flex: 1 1 var(--min);
     border-top: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
