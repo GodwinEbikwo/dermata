@@ -16,6 +16,8 @@ export const SearchContainer = styled.div`
     padding-top: var(--spacer-half);
     font-family: var(--font2);
     border-top: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
 
     @media (min-width: 768px) {
       border-top: none;
