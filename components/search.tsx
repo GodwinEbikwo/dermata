@@ -244,7 +244,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 ) : (
                   <Div100vh className="relative">
                     <div className="center-absolute">
-                      <h1 className="text-uppercase">Loading...</h1>
+                      <h3 className="text-uppercase">Loading...</h3>
                     </div>
                   </Div100vh>
                 )}

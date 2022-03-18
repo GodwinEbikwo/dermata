@@ -247,12 +247,14 @@ body {
   opacity: 1;
   transform: translateY(0%);
   transition: all 1s var(--easing);
+  will-change: transform;
 }
 
 .exit-cookies {
   opacity: 0;
   transform: translateY(150%);
-  transition: all 1s var(--easing);
+  transition: all 1.3s var(--easing);
+  will-change: transform;
 }
 
 .animated {
