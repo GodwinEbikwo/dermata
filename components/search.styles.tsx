@@ -52,59 +52,6 @@ export const SearchContainerInner = styled.div`
     border-right: 1px solid var(--border-color);
   }
 
-  @media (max-width: 767px) {
-    /* .s_second > *:nth-child(-n + 1) {
-      border-left: 1px solid transparent;
-      border-right: 1px solid var(--border-color);
-    }
-
-    .s_second > *:nth-child(-n + 3) {
-      border-left: 1px solid transparent;
-      border-right: 1px solid var(--border-color);
-    }
-
-    .s_second > *:nth-child(-n + 5) {
-      border-left: 1px solid transparent;
-      border-right: 1px solid var(--border-color);
-    }
-
-    .s_second > *:nth-child(-n + 7) {
-      border-left: 1px solid transparent;
-      border-right: 1px solid var(--border-color);
-    }
-
-    .s_second > *:nth-child(-n + 9) {
-      border-left: 1px solid transparent;
-      border-right: 1px solid var(--border-color);
-    }
-    .s_second > *:nth-child(-n + 11) {
-      border-left: 1px solid transparent;
-      border-right: 1px solid var(--border-color);
-    } */
-  }
-
-  /* @media (max-width: 767px) {
-    .s_second > *:nth-child(odd) {
-      border-left: 1px solid transparent;
-    }
-  } */
-  /* 
-  .s_second > *:nth-child(-n + 1) {
-    border-left: 1px solid transparent;
-  }
-
-  .s_second > *:nth-child(-n + 3) {
-    border-left: 1px solid transparent;
-  }
-
-  .s_second > *:nth-child(-n + 5) {
-    border-left: 1px solid transparent;
-  }
-
-  .s_second > *:nth-child(-n + 7) {
-    border-left: 1px solid transparent;
-  } */
-
   @media (min-width: 768px) {
     .s_second {
       padding: 0;
@@ -125,34 +72,6 @@ export const SearchContainerInner = styled.div`
       border-left: none;
     }
   }
-
-  /* 
-  .s_second {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-
-    @media (min-width: 375px) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    @media (min-width: 1252px) {
-      grid-gap: 0px;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-column: 1 / span 12;
-    }
-
-    @media (min-width: 1252px) {
-      & > * {
-        border-top: 1px solid var(--border-color);
-        border-left: 1px solid var(--border-color);
-      }
-
-      & > *:nth-child(-n + 1) {
-        border-left: 1px solid transparent;
-      }
-    }
-  } */
 `
 
 /* & > li {
