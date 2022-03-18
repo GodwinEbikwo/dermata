@@ -102,7 +102,7 @@
   --sage12: hsl(155 24% 9%);
 
   --footer-bg: #131313;
-  --footer-text: rgba(255, 255, 255, 0.9);
+  --footer-text: rgba(255, 255, 255, 0.8);
   --footer-bc: rgba(255, 255, 255, 0.4);
 
   --bg: var(--sage1);

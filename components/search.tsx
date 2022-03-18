@@ -234,8 +234,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
                           product={product}
                           imgProps={{
                             priority: i === 0,
-                            width: 666.666667,
-                            height: 1000,
+                            width: 640,
+                            height: 960,
                           }}
                         />
                       </li>

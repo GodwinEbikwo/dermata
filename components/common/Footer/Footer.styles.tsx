@@ -67,6 +67,12 @@ export const FooterBlock = styled.div`
     border-right: 0px;
     background-color: transparent;
     font-weight: 500;
+    color: var(--text-color);
+  }
+
+  .search__input:focus {
+    border: 1px solid white;
+    color: white;
   }
 
   .search_btn {
@@ -75,6 +81,11 @@ export const FooterBlock = styled.div`
     text-transform: uppercase;
     font-weight: 500;
     color: inherit;
+    transition: all 300ms ease;
+  }
+
+  .search_btn:hover {
+    border: 1px solid white;
   }
 
   .m-auto {

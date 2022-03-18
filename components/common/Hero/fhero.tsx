@@ -132,7 +132,7 @@ export const Final = ({
               variants={wrapperVariants}
             >
               <Image
-                priority={true}
+                loading="lazy"
                 alt="shoe"
                 src={`https://res.cloudinary.com/godwinebikwo/image/upload/${string}`}
                 layout="fill"

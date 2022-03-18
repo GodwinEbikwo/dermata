@@ -72,6 +72,7 @@
     padding: var(--spacer-md) var(--px-2);
     padding-top: 10vh;
     padding-bottom: 0vh !important;
+    margin-bottom: var(--spacer);
   }
 
   .btnContainer {
@@ -140,6 +141,7 @@
   text-transform: uppercase;
   font-weight: 600;
   font-size: var(--size-500);
+  letter-spacing: var(--ls-sm);
 }
 
 @media (max-width: 1439px) {
@@ -155,7 +157,6 @@
   .related_item_grid > * {
     --min: 15ch;
     flex: 1 1 var(--min);
-    margin-bottom: 1em;
   }
 
   .related_products_title {

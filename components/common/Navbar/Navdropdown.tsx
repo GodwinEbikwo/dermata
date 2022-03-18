@@ -4,6 +4,7 @@ import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu'
 import styled from 'styled-components'
 import { CaretDownIcon } from '@radix-ui/react-icons'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const StyledMenu = styled(NavigationMenuPrimitive.Root)`
   z-index: 1;
@@ -224,11 +225,12 @@ export function NavDropDown({ links }: any) {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            <a className="link link--metis">SHOP</a>
+            <Link href="/search">
+              <a className="link link--metis">SHOP</a>
+            </Link>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ContentList>
-              <ContentListItem title="All" href="/search" />
               {links?.map((l: any) => (
                 <ContentListItem key={l.href} title={l.label} href={l.href} />
               ))}
