@@ -6,7 +6,6 @@
   z-index: 30;
   padding: 0;
   transition: all 1s var(--easing);
-  font-size: 13px;
 }
 
 .rootInner {
@@ -23,13 +22,11 @@
   background-color: var(--button-bg);
   padding: 0.9rem 2rem;
   text-align: center;
-  font-size: var(--size-300);
   line-height: 1rem;
   font-weight: 500;
   text-transform: uppercase;
   color: var(--button-text);
   border-radius: 5px;
-  font-size: 13px;
   transition: all 300ms ease;
 }
 
@@ -59,7 +56,6 @@
     right: var(--px-2);
     width: 26.5%;
     bottom: var(--spacer-half);
-    font-size: var(--size-300);
     max-width: 100%;
   }
   .rootInner {
