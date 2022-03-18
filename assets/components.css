@@ -307,25 +307,23 @@ p {
 
 .menu {
   position: fixed;
-  background-color: var(--bg);
   width: 100%;
-  height: 110%;
+  height: 50px;
   max-width: 100%;
-  top: 0;
+  top: 6vh;
   right: 0;
   bottom: 0;
   z-index: 2;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  padding: var(--px-2);
-  opacity: 0;
+  padding: 0;
   visibility: hidden;
-  transition: visibility 0.5s ease 0.1s;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.18, 1),
+    visibility 0.8s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
 }
 
 .open {
-  opacity: 1;
-  transition: opacity 0.35s ease-in;
+  clip-path: inset(0%);
+  transition: clip-path 0.8s cubic-bezier(0.76, 0, 0.24, 1);
   visibility: visible;
 }
 
@@ -334,18 +332,18 @@ p {
   visibility: hidden;
   pointer-events: none;
   position: fixed;
-  top: 0;
+  top: 6vh;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: rgba(39, 39, 39, 0.8);
   z-index: 1;
-  transition: visibility 0.5s ease;
+  transition: visibility 0.8s ease-out;
   backdrop-filter: blur(15px) saturate(180%);
 }
 
 .search-overlay.open {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.35s ease-in;
+  transition: opacity 0.5s ease-in;
 }

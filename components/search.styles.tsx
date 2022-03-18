@@ -23,13 +23,12 @@ export const SearchContainer = styled.div`
     }
 
     @media (min-width: 768px) {
-      border-top: none;
+      /* border-top: none; */
       padding-bottom: var(--spacer-half);
     }
 
     @media (min-width: 1252px) {
-      border-top: none;
-      padding-top: 0;
+      padding-top: 1rem;
       padding-bottom: var(--spacer-half);
     }
   }
