@@ -33,26 +33,11 @@ const StyledTrigger = styled(NavigationMenuPrimitive.Trigger)`
   transition: all 300ms ease;
 `
 
-const StyledCaret = styled(CaretDownIcon)`
-  position: relative;
-  top: 0.85px;
-  color: inherit;
-
-  [data-state='open'] & {
-    transform: rotate(-180deg);
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    transition: transform 250ms ease;
-  }
-`
-
 // eslint-disable-next-line react/display-name
 const StyledTriggerWithCaret = React.forwardRef(
   ({ children, ...props }: any, forwardedRef) => (
     <StyledTrigger {...props} ref={forwardedRef}>
       {children}
-      {/* <StyledCaret aria-hidden /> */}
     </StyledTrigger>
   )
 )
@@ -69,10 +54,6 @@ const StyledLink = styled(NavigationMenuPrimitive.Link)`
     position: relative;
     box-shadow: 0 0 0 1px var(--sage8);
   }
-
-  /* &:hover {
-    background-color: var(--sage3);
-  } */
 
   display: block;
   text-decoration: none;
@@ -115,27 +96,6 @@ const StyledContent = styled(NavigationMenuPrimitive.Content)`
   }
 `
 
-const StyledIndicator = styled(NavigationMenuPrimitive.Indicator)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10px;
-  top: 100%;
-  overflow: hidden;
-  z-index: 1;
-`
-
-const StyledArrow = styled.div`
-  position: relative;
-  top: 70%;
-  width: 10px;
-  height: 10px;
-  left: -10%;
-  transform: rotate(45deg);
-  border-top-left-radius: 2px;
-  background-color: var(--button-bg);
-`
-
 const StyledViewport = styled(NavigationMenuPrimitive.Viewport)`
   --height: 360px;
   --width: 600px;
@@ -148,7 +108,7 @@ const StyledViewport = styled(NavigationMenuPrimitive.Viewport)`
   width: 100%;
   border-radius: 0px;
   overflow: hidden;
-  margin-top: 10px;
+  margin-top: 0px;
   height: var(--height);
   overflow-y: scroll;
   border: 1px solid var(--border-color);
