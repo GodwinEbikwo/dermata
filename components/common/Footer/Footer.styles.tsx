@@ -117,6 +117,6 @@ export const MenuFooter = styled.ul`
   }
 
   li:not(:last-child) {
-    margin-bottom: 0.3em;
+    margin-bottom: 0.5em;
   }
 `

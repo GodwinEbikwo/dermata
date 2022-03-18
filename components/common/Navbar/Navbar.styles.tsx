@@ -31,8 +31,8 @@ export const NavHeaderInner = styled.div`
   }
   .logo {
     cursor: pointer;
-    font-family: var(--font);
     transition: transform 200ms ease-in-out;
+    font-size: var(--size-500);
   }
   .nav_left {
     display: flex;
