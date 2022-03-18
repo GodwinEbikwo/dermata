@@ -18,6 +18,10 @@ export const NavHeaderInner = styled.div`
   font-family: var(--font2);
   border-bottom: 1px solid var(--border-color);
 
+  @media (min-width: 767px) {
+    border-top: 1px solid var(--border-color);
+  }
+
   @media (min-width: 1024px) {
     padding: 0.5rem var(--px-2);
   }

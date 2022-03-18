@@ -42,6 +42,7 @@ export const SearchContainerInner = styled.div`
     height: 100%;
     padding-top: 1rem;
     border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .s_second > * {

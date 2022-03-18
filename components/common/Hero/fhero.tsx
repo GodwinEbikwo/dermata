@@ -68,7 +68,6 @@ const Right = styled(m.div)`
     }
 
     .a {
-      font-size: 12px;
       text-transform: uppercase;
       margin-bottom: 0.2em;
       font-family: var(--font2);
