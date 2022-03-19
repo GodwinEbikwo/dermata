@@ -29,11 +29,13 @@ export const NavHeaderInner = styled.div`
   .logo_container {
     flex: 1 1 0%;
   }
+
   .logo {
     cursor: pointer;
     transition: transform 200ms ease-in-out;
     font-size: var(--size-500);
   }
+
   .nav_left {
     display: flex;
     align-items: center;
@@ -56,6 +58,7 @@ export const NavHeaderInner = styled.div`
     display: inline-flex;
     align-items: center;
   }
+
   .userNav_Box {
     display: flex;
     align-items: center;
@@ -65,6 +68,7 @@ export const NavHeaderInner = styled.div`
       margin-top: 2rem;
     }
   }
+
   .userNav_Box_Inner {
     display: flex;
     align-items: center;

@@ -15,6 +15,7 @@
   border: 1px solid var(--border-color);
   border-top: 0;
   border-left: 0;
+  text-transform: uppercase;
 }
 
 .input::placeholder {
@@ -22,5 +23,5 @@
 }
 
 .input:active {
-  font-weight: 600;
+  text-transform: lowercase;
 }

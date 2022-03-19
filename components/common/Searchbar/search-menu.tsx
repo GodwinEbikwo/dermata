@@ -8,9 +8,8 @@ import Link from 'next/link'
 
 const CloseBtn = styled.button`
   width: 50px;
-  height: 50px;
+  height: 49px;
   border-radius: 0px;
-  box-shadow: 0px 18px 28px 0 var(--accent-2);
   display: inline-flex;
   align-items: center;
   justify-content: center;

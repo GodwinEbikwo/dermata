@@ -3,7 +3,7 @@ const SearchToggle = ({ toggle }: any) => (
     style={{ marginTop: '0.4em' }}
     aria-label="search toggle"
     onClick={toggle}
-    className="cursor-pointer hide-for-mobile"
+    className="cursor-pointer"
   >
     <span className="text-uppercase" style={{ color: 'inherit' }}>
       <svg
