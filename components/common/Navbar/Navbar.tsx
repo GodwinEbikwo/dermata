@@ -63,7 +63,6 @@ const Navbar: FC<NavbarProps> = ({ links, pages }) => {
           </nav>
         </m.div>
       </NavHeaderInner>
-      <SearchMenu links={links} />
     </NavHeader>
   )
 }

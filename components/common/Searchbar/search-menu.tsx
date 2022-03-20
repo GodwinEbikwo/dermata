@@ -5,10 +5,6 @@ import { Searchbar } from '..'
 import { useMenu } from '@context/search-context'
 import styled from 'styled-components'
 
-interface Props {
-  onClose: () => void
-}
-
 const CloseBtn = styled.button`
   width: 50px;
   height: 49px;
@@ -20,9 +16,8 @@ const CloseBtn = styled.button`
   color: white;
 `
 
-export default function SearchMenu({ onClose }: Props) {
+export default function SearchMenu() {
   const { menuOpen, closeSearchMenu } = useMenu()
-
   return (
     <>
       <div className={cn('menu', { open: menuOpen })}>
