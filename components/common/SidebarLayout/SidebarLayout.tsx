@@ -4,38 +4,6 @@ import Div100vh from 'react-div-100vh'
 import { Cross } from '@components/icons'
 import UserNav from '../UserNav'
 
-type ComponentProps = { className?: string } & (
-  | { handleClose: () => any; handleBack?: never }
-  | { handleBack: () => any; handleClose?: never }
-)
-
-const SidebarLayout: FC<ComponentProps> = ({
-  children,
-  className,
-  handleClose,
-}) => {
-  return (
-    <Root className={className ? className : ''}>
-      <RootHeader>
-        {handleClose && (
-          <button
-            className="button_actions"
-            onClick={handleClose}
-            aria-label="Close"
-          >
-            <Cross />
-          </button>
-        )}
-
-        <UserNav />
-      </RootHeader>
-      <Container>{children}</Container>
-    </Root>
-  )
-}
-
-export default SidebarLayout
-
 const Root = styled.div`
   position: relative;
   display: flex;
@@ -73,3 +41,35 @@ const Container = styled(Div100vh)`
   display: flex;
   flex-direction: column;
 `
+
+type ComponentProps = { className?: string } & (
+  | { handleClose: () => any; handleBack?: never }
+  | { handleBack: () => any; handleClose?: never }
+)
+
+const SidebarLayout: FC<ComponentProps> = ({
+  children,
+  className,
+  handleClose,
+}) => {
+  return (
+    <Root className={className ? className : ''}>
+      <RootHeader>
+        {handleClose && (
+          <button
+            className="button_actions"
+            onClick={handleClose}
+            aria-label="Close"
+          >
+            <Cross />
+          </button>
+        )}
+
+        <UserNav />
+      </RootHeader>
+      <Container>{children}</Container>
+    </Root>
+  )
+}
+
+export default SidebarLayout

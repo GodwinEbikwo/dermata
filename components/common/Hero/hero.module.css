@@ -75,7 +75,18 @@
 
   /* 
 
-
+  function NotCard({ label }: any) {
+  return (
+    <div className={s.card}>
+      <div className={s.cardInner}>
+        <div className={s.line} />
+        <div className="center-absolute">
+          <h4 className={s.cardInner_text}>{label}</h4>
+        </div>
+      </div>
+    </div>
+  )
+}
 
   .content {
   display: flex;

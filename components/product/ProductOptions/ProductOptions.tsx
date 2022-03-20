@@ -27,7 +27,7 @@ const ProductOptions: React.FC<ProductOptionsProps> = ({
           <div
             role="listbox"
             className="flex flex-row"
-            style={{ padding: '1rem 0' }}
+            style={{ padding: 'var(--spacer-half) 0' }}
           >
             {opt.values.map((v, i: number) => {
               const active = selectedOptions[opt.displayName.toLowerCase()]

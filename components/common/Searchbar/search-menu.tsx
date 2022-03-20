@@ -4,7 +4,10 @@ import { variantsAni } from '@config/transitions'
 import { Searchbar } from '..'
 import { useMenu } from '@context/search-context'
 import styled from 'styled-components'
-import Link from 'next/link'
+
+interface Props {
+  onClose: () => void
+}
 
 const CloseBtn = styled.button`
   width: 50px;
@@ -17,7 +20,7 @@ const CloseBtn = styled.button`
   color: white;
 `
 
-export default function SearchMenu({ links }: any) {
+export default function SearchMenu({ onClose }: Props) {
   const { menuOpen, closeSearchMenu } = useMenu()
 
   return (
@@ -58,20 +61,3 @@ export default function SearchMenu({ links }: any) {
     </>
   )
 }
-
-const SearchLinks = styled.span`
-  display: inline-block;
-  width: auto;
-  height: fit-content;
-  padding: 0.5em 3em;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border: 1px solid var(--border-color);
-  border-radius: 3px;
-  transition: all 300ms var(--easing);
-
-  &:hover {
-    background: var(--text-color);
-    color: var(--bg);
-  }
-`

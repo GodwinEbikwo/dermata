@@ -52,11 +52,11 @@
 
 .textLabel {
   width: 1rem;
-  padding: 0 3em;
+  padding: 0em 3em;
   min-width: 3rem;
 }
 
 .active.textLabel {
-  padding: 0 calc(4rem - 1px);
+  padding: 0px calc(4rem - 1px);
   border: 1px solid var(--button-bg);
 }

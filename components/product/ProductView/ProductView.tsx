@@ -34,9 +34,10 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
   const { openSidebar } = useUI()
   const [loading, setLoading] = useState(false)
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({})
+  const variant = getProductVariant(product, selectedOptions)
 
   const { price } = usePrice({
-    amount: product.price.value,
+    amount: variant ? variant.price : product.price.value,
     baseAmount: product.price.retailPrice,
     currencyCode: product.price.currencyCode!,
   })
@@ -45,7 +46,6 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
     selectDefaultOptionFromProduct(product, setSelectedOptions)
   }, [product])
 
-  const variant = getProductVariant(product, selectedOptions)
   const addToCart = async () => {
     setLoading(true)
     try {

@@ -60,7 +60,7 @@ const AccordionComponent: FC<AccordionProps> = ({
               transition={{ duration: 0.4 }}
               className="content-placeholder"
             >
-              <>{children}</>
+              {children}
             </m.div>
           </m.div>
         )}

@@ -97,7 +97,7 @@ export const StyledItem = styled(DropdownMenuPrimitive.Item)`
   display: flex;
   align-items: center;
   height: 30px;
-  padding: 0 5px;
+  padding: 0px 5px;
   position: relative;
   user-select: none;
   cursor: pointer;

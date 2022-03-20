@@ -338,12 +338,12 @@ p {
   right: 0;
   background-color: rgba(39, 39, 39, 0.8);
   z-index: 1;
-  transition: visibility 0.8s ease-out;
+  transition: visibility 1.2s ease-out;
   backdrop-filter: blur(15px) saturate(180%);
 }
 
 .search-overlay.open {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 0.8s ease-in;
 }

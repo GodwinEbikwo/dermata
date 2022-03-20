@@ -15,9 +15,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Head />
       <ManagedUIContext>
         <AppProvider>
           <AnimatePresence exitBeforeEnter>

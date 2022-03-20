@@ -3,11 +3,10 @@ import styled from 'styled-components'
 export const FooterStyles = styled.div`
   position: relative;
   background-color: var(--footer-bg);
-  padding: 0 0 var(--spacer-half) 0;
+  padding: 0px 0px var(--spacer-half) 0px;
   min-height: 40vh;
-  margin-top: 0;
+  margin-top: 0px;
   color: var(--footer-text);
-  font-family: var(--font2);
 `
 
 export const FooterInner = styled.div`
@@ -26,19 +25,19 @@ export const FooterInner = styled.div`
 export const FooterGrid = styled.div`
   display: grid;
   gap: 1em;
-  margin: 20px 0;
+  margin: 20px 0px;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   @media (min-width: 1024px) {
-    margin: 5px 0px 0px 0px;
-    padding: 5px 0;
+    margin-top: 5px;
+    padding: 5px 0px;
   }
 
   @media (min-width: 1200px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 `
 
@@ -88,14 +87,6 @@ export const FooterBlock = styled.div`
     border: 1px solid white;
   }
 
-  .m-auto {
-    margin-top: auto;
-    text-transform: uppercase;
-    font-weight: 500;
-    text-align: left;
-    background-color: red;
-  }
-
   .end {
     @media (min-width: 940px) {
       display: flex;
@@ -108,7 +99,7 @@ export const MenuFooter = styled.ul`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: var(--spacer-half) 0;
+  margin: var(--spacer-half) 0px;
 
   li {
     text-transform: uppercase;

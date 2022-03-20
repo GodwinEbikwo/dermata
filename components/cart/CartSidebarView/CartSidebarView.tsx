@@ -54,16 +54,13 @@ const CartSidebarView: FC = () => {
               </div>
               <span className="text-center text-uppercase">
                 <div className={s.states_title}>Your cart is empty</div>
-                <div className={s.states_caption}>
-                  <Link href="/search">
-                    <a
-                      className="link link--metis text-uppercase"
-                      onClick={handleClose}
-                    >
-                      got to shop
-                    </a>
-                  </Link>
-                </div>
+                <Button
+                  onClick={handleClose}
+                  variant="slim"
+                  style={{ marginTop: '0.5rem' }}
+                >
+                  got to shop
+                </Button>
               </span>
             </div>
           </div>

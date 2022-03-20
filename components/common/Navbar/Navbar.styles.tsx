@@ -12,7 +12,6 @@ export const NavHeaderInner = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem var(--px-2);
-  backdrop-filter: saturate(180%) blur(20px);
   font-size: var(--fs-static);
   background: var(--bg);
   font-family: var(--font2);
@@ -64,8 +63,9 @@ export const NavHeaderInner = styled.div`
     align-items: center;
     justify-content: flex-end;
     flex: 1 1 0%;
+
     & > * + * {
-      margin-top: 2rem;
+      margin-top: var(--spacer);
     }
   }
 
@@ -74,9 +74,10 @@ export const NavHeaderInner = styled.div`
     align-items: center;
     justify-content: space-between;
     text-transform: uppercase;
+
     & > * + * {
       position: relative;
-      margin-left: 1rem;
+      margin-left: var(--spacer-half);
     }
   }
 `

@@ -4,6 +4,12 @@ import Image from 'next/image'
 import { shimmer, toBase64 } from '@config/img-helpers'
 import styled from 'styled-components'
 
+const R = styled.div`
+  @media (min-width: 768px) {
+    display: none;
+  }
+`
+
 interface ImageProps {
   url: string
   alt: string
@@ -20,7 +26,7 @@ const SliderCarousel = ({ product }: any) => {
     <R className="betterlate">
       <div className="betterlate__viewport" ref={mainViewportRef}>
         <div className="betterlate__container">
-          {product.map((image: ImageProps, i: any) => (
+          {product.map((image: ImageProps, i: number) => (
             <div className="betterlate__slide" key={i} data-scroll>
               <div className="betterlate__slide__inner" data-scroll>
                 <Image
@@ -28,10 +34,10 @@ const SliderCarousel = ({ product }: any) => {
                   priority={i === 0}
                   width={image.width / 2}
                   height={image.height / 2}
-                  quality="100"
+                  quality={100}
                   layout="intrinsic"
                   src={image.url}
-                  alt={image.alt || 'betterlate product'}
+                  alt={image.alt || 'dermata product'}
                   placeholder="blur"
                   blurDataURL={`data:image/svg+xml;base64,${toBase64(
                     shimmer(image.width / 2, image.height / 2)
@@ -47,9 +53,3 @@ const SliderCarousel = ({ product }: any) => {
 }
 
 export default SliderCarousel
-
-const R = styled.div`
-  @media (min-width: 768px) {
-    display: none;
-  }
-`

@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { CommerceProvider } from '@framework'
 import { useUI } from '@components/ui/context'
 import { Page } from '@commerce/types/page'
-import { Navbar } from '@components/common'
+import { Navbar, Footer } from '@components/common'
 import { Category } from '@commerce/types/site'
 import ShippingView from '@components/checkout/ShippingView'
 import CartSidebarView from '@components/cart/CartSidebarView'
@@ -20,8 +20,6 @@ import LoginView from '@components/auth/LoginView'
 import s from './Layout.module.css'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import { options } from '@config/scroll'
-import Footer from '../Footer'
-import MobileNavbar from '../Navbar/MobileNav'
 
 const Loading = () => (
   <div className="flex align-center text-center justify-center">
@@ -138,8 +136,7 @@ const Layout: FC<Props> = ({
           }
           watch={[]}
         >
-          <MobileNavbar links={navBarlinks} pages={pageProps.pages} />
-          {/* <Navbar links={navBarlinks} /> */}
+          <Navbar links={navBarlinks} pages={pageProps.pages} />
           <div
             className={cn(s.root)}
             data-scroll-container
@@ -158,14 +155,16 @@ const Layout: FC<Props> = ({
               title={cookietitle}
               hide={acceptedCookies}
               action={
-                <div className="flex" style={{ gap: '0.2em' }}>
+                <div className="flex" style={{ gap: '0.25em' }}>
                   <button
+                    aria-label="clicking this button means you accent the sites cookies"
                     onClick={() => onAcceptCookies()}
                     style={{ width: '70%' }}
                   >
                     Accept cookies
                   </button>
                   <button
+                    aria-label="read the store's privacy-policy"
                     onClick={(e: any) => {
                       e.preventDefault()
                       router.push('/privacy-policy')
