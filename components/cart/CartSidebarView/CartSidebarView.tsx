@@ -9,11 +9,12 @@ import usePrice from '@framework/product/use-price'
 import SidebarLayout from '@components/common/SidebarLayout'
 import Button from '@components/ui/Button'
 import styled from 'styled-components'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const CartSidebarView: FC = () => {
   const { closeSidebar, setSidebarView } = useUI()
   const { data, isLoading, isEmpty } = useCart()
+  const router = useRouter()
 
   const { price: subTotal } = usePrice(
     data && {
@@ -29,6 +30,13 @@ const CartSidebarView: FC = () => {
   )
   const handleClose = () => closeSidebar()
   const goToCheckout = () => setSidebarView('CHECKOUT_VIEW')
+
+  const goToShop = async () => {
+    await router.push({
+      pathname: '/search',
+    })
+    handleClose()
+  }
 
   const error = null
   const success = null
@@ -55,7 +63,7 @@ const CartSidebarView: FC = () => {
               <span className="text-center text-uppercase">
                 <div className={s.states_title}>Your cart is empty</div>
                 <Button
-                  onClick={handleClose}
+                  onClick={goToShop}
                   variant="slim"
                   style={{ marginTop: '0.5rem' }}
                 >

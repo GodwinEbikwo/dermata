@@ -8,6 +8,6 @@ interface ScrollProps {
 export const options: ScrollProps = {
   smooth: true,
   class: 'is-inview',
-  lerp: 0.08,
+  lerp: 1,
   getDirection: true,
 }
