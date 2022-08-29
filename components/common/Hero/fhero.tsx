@@ -54,6 +54,7 @@ export const Final = ({
             whileInView="enter"
             variants={v}
             className={s.left}
+            viewport={{ once: true }}
           >
             <m.div
               className={s.imgContainer}
@@ -61,7 +62,7 @@ export const Final = ({
               variants={wrapperVariants}
             >
               <Image
-                loading="lazy"
+                priority={true}
                 alt="shoe"
                 src={`https://res.cloudinary.com/godwinebikwo/image/upload/${string}`}
                 layout="fill"
@@ -77,6 +78,7 @@ export const Final = ({
             whileInView="enter"
             variants={v}
             className={s.right}
+            viewport={{ once: true }}
           >
             <div className={s.rightInner}>
               <Wrapper>
@@ -108,6 +110,7 @@ export const Final = ({
           <m.div
             initial="initial"
             whileInView="enter"
+            viewport={{ once: true }}
             variants={v}
             className={s.right}
           >
@@ -137,6 +140,7 @@ export const Final = ({
           <m.div
             initial="initial"
             whileInView="enter"
+            viewport={{ once: true }}
             variants={v}
             className={`${s.left} ${s.has_border_left}`}
           >
